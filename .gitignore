@@ -1,5 +1,4 @@
 # react
-/build
 /src/.next*
 
 # npm / yarn
