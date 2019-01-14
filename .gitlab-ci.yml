@@ -1,0 +1,67 @@
+image: node:latest
+
+stages:
+- Preparation
+- Validate
+- Create new release
+- Deploy
+
+prepare:dependencies:
+  stage: Preparation
+  script:
+  - npm ci
+  artifacts:
+    paths:
+    - node_modules
+    expire_in: 1 week
+  except:
+  - release
+  - tags
+
+validate:tests:
+  stage: Validate
+  script:
+  - cp .env.example .env
+  - npm run test
+  dependencies:
+  - prepare:dependencies
+  except:
+  - release
+  - tags
+
+validate:lint:
+  stage: Validate
+  script:
+  - cp .env.example .env
+  - npm run lint
+  dependencies:
+  - prepare:dependencies
+  except:
+  - release
+  - tags
+
+validate:analyse:
+  stage: Validate
+  image: bycedric/ci-sonarcloud
+  script:
+  - sonar-bitbucket
+  except:
+  - release
+  - tags
+
+release:
+  stage: Create new release
+  image: peakfijn/release-react
+  script:
+  - git config --global user.name "Release bot Peakfijn"
+  - git config --global user.email $GIT_EMAIL
+  - git config --global user.user $GIT_USER
+  - git config --global url."https://$GIT_USER:$GIT_PASSWORD@gitlab.com/".insteadOf "https://gitlab.com/"
+  - cp .env.example .env
+  - semantic-release
+  when: manual
+  only:
+  - develop
+  dependencies:
+  - prepare:dependencies
+

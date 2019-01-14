@@ -1,0 +1,28 @@
+# react
+/build
+/src/.next*
+
+# npm / yarn
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# jest
+/.jest
+/test-reports
+
+# project
+.env*
+!.env.example
+!.env.develop
+!.env.master
+
+# editors
+.vscode
+
+# misc
+.DS_Store
+*/.DS_Store
+
+/vendor/

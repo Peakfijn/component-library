@@ -1,0 +1,24 @@
+---
+extends:
+  - stylelint-config-standard
+  - stylelint-config-styled-components
+  - stylelint-config-concentric-order
+processors:
+  - stylelint-processor-styled-components
+rules:
+  indentation: tab
+  order/properties-order: null
+  value-list-max-empty-lines: null
+  max-empty-lines: null
+  declaration-colon-newline-after: null
+  declaration-empty-line-before:
+    - always
+    - except:
+        - after-comment
+        - first-nested
+      ignore:
+        - after-comment
+        - after-declaration
+        - inside-single-line-block
+  selector-descendant-combinator-no-non-space: null
+  comment-empty-line-before: null

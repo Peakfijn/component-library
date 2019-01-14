@@ -1,0 +1,150 @@
+{
+	"name": "peakfijn-component-library",
+	"version": "0.0.1",
+	"main": "build/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/peakfijn/component-library.git"
+	},
+	"private": true,
+	"scripts": {
+		"dev": "PORT=80 node ./src/server.js --watch --watch-polling --watch-poll",
+		"start": "NODE_ENV=production node ./src/server.js",
+		"build": "babel src -d build",
+		"build:watch": "babel src -w -d build",
+		"prepublish": "npm run build",
+		"commit": "git-cz",
+		"release": "semantic-release",
+		"test": "npm run test:security",
+		"test:security": "npm audit; exit 0",
+		"lint": "npm run lint:code && npm run lint:style && npm run lint:commit",
+		"lint:code": "eslint ./src/index.js src --max-warnings 0",
+		"lint:style": "stylelint 'src/**/*.js' --custom-syntax",
+		"lint:commit": "commitlint --from 2b33ca69b6142222cc008bc7bf1c05e4e296d2c8 --to HEAD",
+		"prettier": "prettier --single-quote --trailing-comma es5 --write src/**/**/**/**/*.js !src/.next/**"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.6",
+		"@fortawesome/free-brands-svg-icons": "^5.4.1",
+		"@fortawesome/free-solid-svg-icons": "^5.4.1",
+		"@fortawesome/react-fontawesome": "^0.1.3",
+		"axios": "^0.18.0",
+		"compression": "^1.7.3",
+		"connected-react-router": "^4.4.1",
+		"downshift": "^3.1.4",
+		"express": "^4.16.4",
+		"graphql": "^14.0.2",
+		"history": "^4.7.2",
+		"isomorphic-unfetch": "^3.0.0",
+		"js-base64": "^2.4.9",
+		"lru-cache": "^4.1.3",
+		"moment": "^2.22.2",
+		"next": "^7.0.2",
+		"next-routes": "^1.4.2",
+		"polished": "^2.3.0",
+		"prop-types": "^15.6.1",
+		"raven-js": "^3.26.4",
+		"react": "^16.4.2",
+		"react-app-rewire-babel-loader": "^0.1.1",
+		"react-art": "^16.4.2",
+		"react-datepicker": "^1.7.0",
+		"react-device-detect": "^1.6.1",
+		"react-dom": "^16.4.2",
+		"react-intl": "^2.7.1",
+		"react-redux": "^5.0.7",
+		"react-router-dom": "^4.3.1",
+		"redux": "^4.0.0",
+		"redux-actions": "^2.6.1",
+		"redux-devtools-extension": "^2.13.5",
+		"redux-form": "^7.4.2",
+		"redux-persist": "^5.10.0",
+		"redux-promise-middleware": "^5.1.1",
+		"redux-thunk": "^2.3.0",
+		"styled-components": "^3.4.5"
+	},
+	"devDependencies": {
+		"@peakfijn/config-commitizen": "^0.8.1",
+		"@peakfijn/config-commitlint": "^0.8.0",
+		"@peakfijn/config-eslint": "^0.8.3",
+		"@peakfijn/config-release-react": "^0.8.0",
+		"@peakfijn/config-stylelint": "^0.8.3",
+		"@semantic-release/changelog": "^2.1.2",
+		"@semantic-release/exec": "^2.3.0",
+		"@semantic-release/gitlab": "^3.1.0",
+		"@semantic-release/gitlab-config": "^5.0.0",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.3",
+		"babel-eslint": "^8.2.6",
+		"babel-plugin-styled-components": "^1.8.0",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"babel-preset-stage-1": "^6.24.1",
+		"commitizen": "^2.10.1",
+		"conventional-changelog-peakfijn": "^0.4.3",
+		"cz-changelog-peakfijn": "^0.4.3",
+		"eslint": "5.6.0",
+		"eslint-config-prettier": "^3.0.1",
+		"eslint-plugin-filenames": "^1.2.0",
+		"eslint-plugin-jest": "^21.24.1",
+		"git-cz": "^1.8.0",
+		"jest-junit": "^5.0.0",
+		"prettier": "^1.14.3",
+		"react-test-renderer": "^16.4.2",
+		"semantic-release": "^15.12.4",
+		"semantic-release-git-branches": "^0.2.0",
+		"stylelint": "^9.5.0",
+		"stylelint-config-concentric-order": "^3.4.0",
+		"stylelint-config-standard": "^18.2.0",
+		"stylelint-config-styled-components": "^0.1.1",
+		"stylelint-processor-styled-components": "^1.3.2"
+	},
+	"jest": {
+		"cacheDirectory": ".jest",
+		"coverageDirectory": "test-reports/coverage",
+		"reporters": [
+			"default",
+			"jest-junit"
+		]
+	},
+	"jest-junit": {
+		"suiteName": "React tests",
+		"output": "./test-reports/junit.xml"
+	},
+	"config": {
+		"commitizen": {
+			"path": "@peakfijn/config-commitizen"
+		}
+	},
+	"eslintConfig": {
+		"extends": "eslint-config-peakfijn"
+	},
+	"babel": {
+		"presets": [
+			"es2015",
+			"react",
+			"stage-0"
+		],
+		"plugins": [
+			"babel-plugin-styled-components"
+		]
+	},
+	"engines": {
+		"node": "8.x"
+	},
+	"release": {
+		"extends": "@peakfijn/config-release-react",
+		"plugins": [
+			[
+				"@semantic-release/gitlab"
+			]
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@peakfijn/config-commitlint"
+		]
+	}
+}
