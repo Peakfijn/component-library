@@ -44,11 +44,11 @@
 		"styled-components": "^3.4.5"
 	},
 	"devDependencies": {
-		"@peakfijn/config-commitizen": "^0.8.1",
-		"@peakfijn/config-commitlint": "^0.8.0",
-		"@peakfijn/config-eslint": "^0.8.3",
-		"@peakfijn/config-release-react": "^0.8.0",
-		"@peakfijn/config-stylelint": "^0.8.3",
+		"@peakfijn/config-commitizen": "^1.0.0-rc.2",
+		"@peakfijn/config-commitlint": "^1.0.0-rc.2",
+		"@peakfijn/config-eslint": "^1.0.0-rc.2",
+		"@peakfijn/config-release-react": "^1.0.0-rc.2",
+		"@peakfijn/config-stylelint": "^1.0.0-rc.2",
 		"@semantic-release/changelog": "^2.1.2",
 		"@semantic-release/exec": "^2.3.0",
 		"@semantic-release/gitlab": "^3.1.0",

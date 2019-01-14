@@ -7,6 +7,11 @@ This project is intended for internal use.
 ```terminal
 npm install git+https://gitlab.com/peakfijn/component-library --save
 ```
+Some dependencies that should be implemented in the parent project: 
+* [redux](https://github.com/reduxjs/redux)
+* [redux-form](https://github.com/erikras/redux-form)
+* [react-intl](https://github.com/yahoo/react-intl)
+* [styled-components](https://github.com/styled-components/styled-components) (+ theme -> see `./example.theme.js`)
 
 ## Coding structure
 Make sure you logically group code. Furthermore all styles should be done with `styled-components` and separated from the `JSX` in to its own file (e.g. `styles.js`).
@@ -54,4 +59,4 @@ Some Guidelines:
 * Only add the relevant components to this library.
 * Make sure it builds.
 * Do not use external packages if this is not necessary.
-* If you want to contribute don't forget to add the JS assets to the `src/index.js`.
+* If you want to contribute don't forget to add the JS assets to the `./src/index.js`.
