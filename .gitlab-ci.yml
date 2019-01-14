@@ -21,7 +21,6 @@ prepare:dependencies:
 validate:tests:
   stage: Validate
   script:
-  - cp .env.example .env
   - npm run test
   dependencies:
   - prepare:dependencies
@@ -32,19 +31,9 @@ validate:tests:
 validate:lint:
   stage: Validate
   script:
-  - cp .env.example .env
   - npm run lint
   dependencies:
   - prepare:dependencies
-  except:
-  - release
-  - tags
-
-validate:analyse:
-  stage: Validate
-  image: bycedric/ci-sonarcloud
-  script:
-  - sonar-bitbucket
   except:
   - release
   - tags
