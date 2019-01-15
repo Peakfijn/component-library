@@ -7,7 +7,7 @@ export const Switch = styled.div`
 	display: inline-block;
 	width: ${props => props.theme.componentSize.radio};
 	height: ${props => props.theme.componentSize.radio};
-	background-color: ${props => props.theme.color.background.lightest};
+	background-color: ${props => props.theme.color.background.input};
 	border-radius: ${props => props.theme.componentSize.radio};
 	border: 1px solid ${props => props.theme.color.border.normal};
 	margin-right: ${props => props.theme.gutter.small};
@@ -31,12 +31,12 @@ export const Slider = styled.div`
 
 	/* State: selected */
 	${({ selected, theme }) => selected && `
-		background-color: ${theme.color.background.lightest};
+		background-color: ${theme.color.background.input};
 	` || ''}
 
 	/* State: selected & disabled */
 	${({ selected, disabled, theme }) => selected && disabled && `
-		background-color: ${theme.color.background.lightest};
+		background-color: ${theme.color.background.input};
 		cursor: not-allowed;
 	` || ''}
 `;

@@ -35,7 +35,7 @@ var StyledItemContainer = exports.StyledItemContainer = _styledComponents2.defau
 }, function (props) {
 	return props.theme.borderRadius.small;
 }, function (props) {
-	return props.theme.color.inverseText;
+	return props.theme.background.input;
 });
 
 var StyledSelect = exports.StyledSelect = _styledComponents2.default.button.withConfig({
@@ -46,7 +46,7 @@ var StyledSelect = exports.StyledSelect = _styledComponents2.default.button.with
 }, function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
@@ -61,25 +61,29 @@ var StyledText = exports.StyledText = (0, _styledComponents2.default)(_text2.def
 var StyledList = exports.StyledList = _styledComponents2.default.ul.withConfig({
 	displayName: 'styles__StyledList',
 	componentId: 'sc-1s7jcgb-5'
-})(['width:calc(100% - 2px);padding:0;margin:0;border:1px solid #d4d7db;margin-top:', ';border-radius:', ';background-color:', ';position:absolute;z-index:999;'], function (props) {
+})(['width:calc(100% - 2px);padding:0;margin:0;border:1px solid ', ';margin-top:', ';border-radius:', ';background:', ';position:absolute;overflow:auto;z-index:999;'], function (props) {
+	return props.theme.color.border.normal;
+}, function (props) {
 	return props.theme.gutter.small;
 }, function (props) {
-	return props.theme.borderRadius.small;
+	return props.theme.borderRadius.medium;
 }, function (props) {
-	return props.theme.color.inverseText;
+	return props.theme.color.background.input;
 });
 
 var StyledListItem = exports.StyledListItem = _styledComponents2.default.li.withConfig({
 	displayName: 'styles__StyledListItem',
 	componentId: 'sc-1s7jcgb-6'
-})(['width:100%;padding:', ' 12px;line-height:', ';font-size:', ';text-align:left;display:inline-flex;white-space:nowrap;text-overflow:ellipsis;background-color:', ';border-bottom:1px solid #d4d7db;box-sizing:border-box;&:hover{color:', ';background-color:', ';}&:last-child{border-bottom:0;}'], function (props) {
+})(['width:100%;padding:', ' 12px;line-height:', ';font-size:', ';text-align:left;display:inline-flex;white-space:nowrap;text-overflow:ellipsis;background:', ';border-bottom:1px solid ', ';box-sizing:border-box;cursor:pointer;&:hover{color:', ';background-color:', ';}&:last-child{border-bottom:0;}'], function (props) {
 	return props.theme.gutter.small;
 }, function (props) {
 	return props.theme.gutter.medium;
 }, function (props) {
 	return props.theme.fontSize.medium;
 }, function (props) {
-	return props.theme.color.inverseText;
+	return props.theme.color.background.input;
+}, function (props) {
+	return props.theme.color.border.normal;
 }, function (props) {
 	return props.theme.color.inverseText;
 }, function (props) {

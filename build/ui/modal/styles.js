@@ -33,7 +33,7 @@ var ModalContent = exports.ModalContent = _styledComponents2.default.div.withCon
 })(['border-radius:', ';background:', ';width:100%;', ''], function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (_ref) {
 	var maxWidthBreakpoint = _ref.maxWidthBreakpoint,
 	    breakpoint = _ref.theme.breakpoint;

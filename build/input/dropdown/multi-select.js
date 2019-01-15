@@ -51,16 +51,30 @@ var MultiSelect = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MultiSelect.__proto__ || Object.getPrototypeOf(MultiSelect)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-			intermittentValue: ''
+			intermittentValue: '',
+			additionalOptions: []
 		}, _this.handleFocus = function () {
 			var onFocus = _this.props.input.onFocus;
 
 			onFocus();
 		}, _this.handleBlur = function () {
-			var onBlur = _this.props.input.onBlur;
+			var _this$props = _this.props,
+			    onBlur = _this$props.input.onBlur,
+			    isCreatable = _this$props.isCreatable;
 
-			onBlur();
-			_this.setState({ intermittentValue: '' });
+
+			if (!isCreatable) {
+				onBlur();
+				_this.setState({ intermittentValue: '' });
+			}
+		}, _this.handleCreate = function (value) {
+			_this.handleAddSelectedItem(value);
+			_this.setState({ intermittentValue: '', additionalOptions: [].concat(_toConsumableArray(_this.state.additionalOptions), [{
+					value: value,
+					label: value,
+					name: value,
+					id: 'dynamic-' + value
+				}]) });
 		}, _this.handleChange = function (selectedItem) {
 			var value = _this.props.input.value;
 
@@ -107,11 +121,14 @@ var MultiSelect = function (_Component) {
 			    iconPosition = _props.iconPosition,
 			    id = _props.id,
 			    notFound = _props.notFound,
-			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'iconPosition', 'id', 'notFound']);
+			    isCreatable = _props.isCreatable,
+			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'iconPosition', 'id', 'notFound', 'isCreatable']);
 
-			var intermittentValue = this.state.intermittentValue;
+			var _state = this.state,
+			    additionalOptions = _state.additionalOptions,
+			    intermittentValue = _state.intermittentValue;
 
-
+			var allOptions = [].concat(_toConsumableArray(options), _toConsumableArray(additionalOptions));
 			return _react2.default.createElement(
 				_downshift2.default,
 				{
@@ -146,7 +163,7 @@ var MultiSelect = function (_Component) {
 									icon: icon,
 									iconPosition: iconPosition,
 									disabled: disabled,
-									placeholder: value && value.length > 0 ? options.reduce(function (accumulator, option) {
+									placeholder: value && value.length > 0 ? allOptions.reduce(function (accumulator, option) {
 										return value.includes(option.value) && [option.label].concat(_toConsumableArray(accumulator)) || accumulator;
 									}, []).join(', ') : placeholder,
 									input: {
@@ -170,10 +187,12 @@ var MultiSelect = function (_Component) {
 									isOpen: isOpen || meta.active,
 									getListProps: getMenuProps,
 									getItemProps: getItemProps,
-									options: options,
+									options: allOptions,
 									selectedValue: selectedItem,
 									intermittentValue: intermittentValue,
-									id: id
+									id: id,
+									handleCreate: _this2.handleCreate,
+									isCreatable: isCreatable
 								})
 							)
 						)
@@ -189,6 +208,7 @@ var MultiSelect = function (_Component) {
 MultiSelect.defaultProps = {
 	disabled: false,
 	focussed: false,
+	isCreatable: false,
 	modifier: 'primary',
 	placeholder: 'Select',
 	size: 'medium',
@@ -197,7 +217,8 @@ MultiSelect.defaultProps = {
 	label: null,
 	notFound: 'No result',
 	icon: 'angle-down',
-	meta: {}
+	meta: {},
+	options: []
 };
 
 MultiSelect.propTypes = {
@@ -205,6 +226,7 @@ MultiSelect.propTypes = {
 	id: _propTypes2.default.string.isRequired,
 	title: _propTypes2.default.string.isRequired,
 	disabled: _propTypes2.default.bool,
+	isCreatable: _propTypes2.default.bool,
 	focussed: _propTypes2.default.bool,
 	modifier: _propTypes2.default.string,
 	input: _propTypes2.default.objectOf(_propTypes2.default.any),
@@ -212,8 +234,9 @@ MultiSelect.propTypes = {
 	notFound: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	options: _propTypes2.default.arrayOf(_propTypes2.default.shape({
 		value: _propTypes2.default.string,
-		label: _propTypes2.default.string
-	})).isRequired,
+		label: _propTypes2.default.string,
+		id: _propTypes2.default.string
+	})),
 	iconPosition: _propTypes2.default.oneOf(['left', 'right']),
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any),
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),

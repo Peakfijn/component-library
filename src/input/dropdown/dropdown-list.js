@@ -5,7 +5,19 @@ import { StyledListItem, StyledSelectedListItem, StyledList, Spacer } from './st
 
 
 const DropDownList = (props) => {
-	const { isOpen, options, getListProps, getItemProps, selectedValue, intermittentValue, id, notFound } = props;
+	const {
+		isOpen,
+		options,
+		getListProps,
+		getItemProps,
+		selectedValue,
+		intermittentValue,
+		id,
+		notFound,
+		isCreatable,
+		handleCreate
+	} = props;
+
 	const filteredOptions = options.filter(
 		option => Object.values(option).join().toLowerCase().includes(intermittentValue.toLowerCase())
 	);
@@ -42,6 +54,13 @@ const DropDownList = (props) => {
 					{item.label}
 				</StyledListItem>
 			))}
+			{intermittentValue && isCreatable &&
+				<StyledListItem
+					onClick={() => handleCreate(intermittentValue)}
+				>
+					Create: {intermittentValue}
+				</StyledListItem>
+			}
 		</StyledList>
 	);
 }

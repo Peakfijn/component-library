@@ -30,7 +30,7 @@ var Input = _styledComponents2.default.textarea.withConfig({
 }, function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {

@@ -26,7 +26,10 @@ var DropDownList = function DropDownList(props) {
 	    selectedValue = props.selectedValue,
 	    intermittentValue = props.intermittentValue,
 	    id = props.id,
-	    notFound = props.notFound;
+	    notFound = props.notFound,
+	    isCreatable = props.isCreatable,
+	    handleCreate = props.handleCreate;
+
 
 	var filteredOptions = options.filter(function (option) {
 		return Object.values(option).join().toLowerCase().includes(intermittentValue.toLowerCase());
@@ -68,7 +71,17 @@ var DropDownList = function DropDownList(props) {
 				),
 				item.label
 			);
-		})
+		}),
+		intermittentValue && isCreatable && _react2.default.createElement(
+			_styles.StyledListItem,
+			{
+				onClick: function onClick() {
+					return handleCreate(intermittentValue);
+				}
+			},
+			'Create: ',
+			intermittentValue
+		)
 	);
 };
 

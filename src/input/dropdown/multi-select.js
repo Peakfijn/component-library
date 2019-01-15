@@ -9,6 +9,7 @@ import { StyledText, Wrapper } from './styles';
 class MultiSelect extends Component {
 	state = {
 		intermittentValue: '',
+		additionalOptions: [],
 	};
 
 	handleFocus = () => {
@@ -17,10 +18,26 @@ class MultiSelect extends Component {
 	};
 
 	handleBlur = () => {
-		const { input: { onBlur } } = this.props;
-		onBlur();
-		this.setState({ intermittentValue: '' });
+		const { input: { onBlur }, isCreatable } = this.props;
+
+		if (!isCreatable) {
+			onBlur();
+			this.setState({ intermittentValue: '' });
+		}
 	};
+
+	handleCreate = (value) => {
+		this.handleAddSelectedItem(value);
+		this.setState({ intermittentValue: '', additionalOptions: [
+			...this.state.additionalOptions,
+			{
+				value,
+				label: value,
+				name: value,
+				id: `dynamic-${value}`
+			}
+		] });
+	}
 
 	handleChange = (selectedItem) => {
 		const {
@@ -65,10 +82,14 @@ class MultiSelect extends Component {
 			iconPosition,
 			id,
 			notFound,
+			isCreatable,
 			...other
 		} = this.props;
-		const { intermittentValue } = this.state;
-
+		const { additionalOptions, intermittentValue } = this.state;
+		const allOptions = [
+			...options,
+			...additionalOptions,
+		];
 		return (
 			<Downshift
 				itemToString={i => (!i || i.label == null ? "" : String(i.label))}
@@ -95,7 +116,7 @@ class MultiSelect extends Component {
 								icon={icon}
 								iconPosition={iconPosition}
 								disabled={disabled}
-								placeholder={value && value.length > 0 ? options.reduce((accumulator, option) =>
+								placeholder={value && value.length > 0 ? allOptions.reduce((accumulator, option) =>
 									value.includes(option.value) && [
 										option.label,
 										...accumulator
@@ -122,10 +143,12 @@ class MultiSelect extends Component {
 									isOpen={isOpen || meta.active}
 									getListProps={getMenuProps}
 									getItemProps={getItemProps}
-									options={options}
+									options={allOptions}
 									selectedValue={selectedItem}
 									intermittentValue={intermittentValue}
 									id={id}
+									handleCreate={this.handleCreate}
+									isCreatable={isCreatable}
 								/>
 							</StyledText>
 						</Wrapper>
@@ -139,6 +162,7 @@ class MultiSelect extends Component {
 MultiSelect.defaultProps = {
 	disabled: false,
 	focussed: false,
+	isCreatable: false,
 	modifier: 'primary',
 	placeholder: 'Select',
 	size: 'medium',
@@ -148,6 +172,7 @@ MultiSelect.defaultProps = {
 	notFound: 'No result',
 	icon: 'angle-down',
 	meta: {},
+	options: [],
 };
 
 MultiSelect.propTypes = {
@@ -155,6 +180,7 @@ MultiSelect.propTypes = {
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	disabled: PropTypes.bool,
+	isCreatable: PropTypes.bool,
 	focussed: PropTypes.bool,
 	modifier: PropTypes.string,
 	input: PropTypes.objectOf(PropTypes.any),
@@ -163,7 +189,8 @@ MultiSelect.propTypes = {
 	options: PropTypes.arrayOf(PropTypes.shape({
 		value: PropTypes.string,
 		label: PropTypes.string,
-	})).isRequired,
+		id: PropTypes.string,
+	})),
 	iconPosition: PropTypes.oneOf(['left', 'right']),
 	meta: PropTypes.objectOf(PropTypes.any),
 	label: PropTypes.oneOfType([

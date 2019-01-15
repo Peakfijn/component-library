@@ -17,7 +17,7 @@ export default ({ theme, focussed, selected, disabled, indeterminate }) => `
 
 	/* State: disabled */
 	${disabled && `
-		background-color: ${theme.color.background.disabled};
+		background-color: ${theme.color.background.inputDisabled};
 		cursor: not-allowed;
 	` || ''}
 

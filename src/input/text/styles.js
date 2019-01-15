@@ -10,7 +10,7 @@ const Input = styled.input`
 	outline: none;
 	border: 1px solid ${props => props.theme.color.border.normal};
 	border-radius: ${props => props.theme.borderRadius.medium};
-	background: ${props => props.theme.color.background.lightest};
+	background: ${props => props.theme.color.background.input};
 	width: 100%;
 	color: ${props => props.theme.color.text.normal};
 	stroke: ${props => props.theme.color.text.normal};

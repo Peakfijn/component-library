@@ -36,7 +36,8 @@ var Checkbox = function Checkbox(_ref) {
 	    initialValue = _ref.initialValue,
 	    label = _ref.label,
 	    id = _ref.id,
-	    focussed = _ref.focussed;
+	    focussed = _ref.focussed,
+	    borderRadius = _ref.borderRadius;
 
 	var selected = input ? input.value : initialValue;
 
@@ -56,7 +57,8 @@ var Checkbox = function Checkbox(_ref) {
 					selected: selected,
 					disabled: disabled,
 					focussed: meta.active || focussed,
-					indeterminate: indeterminate
+					indeterminate: indeterminate,
+					borderRadius: borderRadius
 				},
 				(selected || indeterminate) && _react2.default.createElement(
 					_styles.Check,
@@ -74,10 +76,10 @@ var Checkbox = function Checkbox(_ref) {
 					return input.onChange(!selected);
 				} : undefined,
 				onFocus: function onFocus() {
-					return input.onFocus();
+					return input.onFocus && input.onFocus();
 				},
 				onBlur: function onBlur() {
-					return input.onBlur();
+					return input.onBlur && input.onBlur();
 				},
 				disabled: disabled,
 				type: 'checkbox',
@@ -94,7 +96,9 @@ Checkbox.defaultProps = {
 	focussed: false,
 	initialValue: false,
 	id: null,
-	indeterminate: false
+	indeterminate: false,
+	meta: {},
+	borderRadius: null
 };
 
 Checkbox.propTypes = {
@@ -105,7 +109,8 @@ Checkbox.propTypes = {
 	focussed: _propTypes2.default.bool,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
 	input: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
-	indeterminate: _propTypes2.default.bool
+	indeterminate: _propTypes2.default.bool,
+	borderRadius: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full'])
 };
 
 exports.default = Checkbox;

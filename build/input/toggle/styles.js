@@ -52,7 +52,7 @@ var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__Slider',
 	componentId: 'n1lthu-1'
 })(['cursor:pointer;background-color:', ';border-radius:', ';margin:', ';width:', ';height:', ';position:absolute;transition:left 100ms ease-out;', ''], function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.componentSize.slider;
 }, function (props) {

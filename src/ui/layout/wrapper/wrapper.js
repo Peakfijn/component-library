@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import WrapperStyle from './styles';
 
 const Wrapper = props => {
-	const { modifier, children, align, horizontalGutter, verticalGutter, grow } = props;
+	const {
+		modifier,
+		children,
+		align,
+		horizontalGutter,
+		verticalGutter,
+		grow,
+		background
+	} = props;
 
 	return (
 		<WrapperStyle
@@ -11,6 +19,7 @@ const Wrapper = props => {
 			verticalGutter={verticalGutter}
 			align={align}
 			grow={grow}
+			background={background}
 			modifier={modifier}
 		>
 			{children}
@@ -24,13 +33,15 @@ Wrapper.defaultProps = {
 	verticalGutter: null,
 	align: null,
 	grow: null,
+	background: null,
 	children: null,
 }
 
 Wrapper.propTypes = {
-	modifier: PropTypes.oneOf(['flex', 'flex-cell']),
+	modifier: PropTypes.oneOf(['flex', 'flex-cell', 'full', 'bottom-right', 'full-right']),
 	align: PropTypes.oneOf(['flex-start', 'flex-end', 'center']),
 	grow: PropTypes.oneOf(['not-grow']),
+	background: PropTypes.oneOf(['window']),
 	horizontalGutter: PropTypes.string,
 	verticalGutter: PropTypes.string,
 	children: PropTypes.oneOfType([

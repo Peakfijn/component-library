@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import stateStyles from '../styles/switch-state';
+import borderRadiusModifier from '../../ui/button/modifiers/border-radius';
 
 export const Box = styled.div`
 	cursor: pointer;
@@ -9,12 +10,15 @@ export const Box = styled.div`
 	width: ${props => props.theme.componentSize.checkbox};
 	height: ${props => props.theme.componentSize.checkbox};
 	border-radius: ${props => props.theme.borderRadius.medium};
-	background-color: ${props => props.theme.color.background.lightest};
+	background-color: ${props => props.theme.color.background.input};
 	border: 1px solid ${props => props.theme.color.border.normal};
 	margin-right: ${props => props.theme.gutter.small};
 
 	/* States */
 	${stateStyles}
+
+	/* Modifiers: borderRadius */
+	${borderRadiusModifier}
 `;
 
 export const Check = styled.div`

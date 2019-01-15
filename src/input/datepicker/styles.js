@@ -388,7 +388,7 @@ const StyledDatepicker = styled.div`
 	}
 
 	& .react-datepicker__day--keyboard-selected {
-		background-color: ${({ theme }) => theme.color.background.light };
+		background-color: ${({ theme }) => theme.color.background.inputSelected };
 	}
 
 
@@ -647,7 +647,7 @@ export const StyledReactDatePicker = styled(ReactDatePicker)`
 	outline: none;
 	border: 1px solid ${({ theme }) => theme.color.border.normal};
 	border-radius: ${({ theme }) => theme.borderRadius.medium};
-	background: ${({ theme }) => theme.color.background.lightest};
+	background: ${({ theme }) => theme.color.background.input};
 	width: 100%;
 	color: ${({ theme }) => theme.color.text.normal};
 	stroke: ${({ theme }) => theme.color.text.normal};

@@ -30,7 +30,7 @@ export const StyledProgress = styled.div`
 export const Slider = styled.div`
 	cursor: pointer;
 	margin: 0;
-	background-color: ${props => props.theme.color.background.lightest};
+	background-color: ${props => props.theme.color.background.input};
 	border: 1px solid ${props => props.theme.color.grey};
 	border-radius: 16px;
 	width: 16px;

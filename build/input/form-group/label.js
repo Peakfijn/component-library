@@ -13,8 +13,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Label = _styledComponents2.default.label.withConfig({
 	displayName: 'label__Label',
 	componentId: 'sc-12hdu14-0'
-})(['display:block;margin-bottom:', ';'], function (props) {
+})(['display:block;margin-bottom:', ';color:', ';'], function (props) {
 	return props.theme.gutter.medium;
+}, function (props) {
+	return props.theme.color.text.normal;
 });
 
 exports.default = Label;

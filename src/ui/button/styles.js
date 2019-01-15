@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 import buttonSizeModifier from './modifiers/size';
+import fontSizeModifier from './modifiers/font-size';
+import borderRadiusModifier from './modifiers/border-radius';
 
 const themeColor = (key, props) => props.theme.color[key];
 
@@ -57,7 +59,7 @@ const StyledButton = styled.button`
 	) && `
 		background-color: ${themeColors[color]};
 		color: ${themeColors.text.normal};
-		border: 1px solid ${darken(themeColors.adjustColor.small, themeColors[color])};
+		border: 1px solid ${darken(themeColors.adjustColor.tiny, themeColors[color])};
 
 		${(state === 'hover' || state === 'focus' || state === 'active' ) && `
 			background-color: ${lighten(themeColors.adjustColor.tiny, themeColors[color])};
@@ -77,7 +79,7 @@ const StyledButton = styled.button`
 
 	/* Modifier: disabled */
 	${props => props.disabled && `
-		background-color: ${props.theme.color.background.disabled};
+		background-color: ${props.theme.color.background.inputDisabled};
 		color: ${themeColor('grey', props)};
 		border: 1px solid ${themeColor('grey', props)};
 		cursor: not-allowed;
@@ -148,6 +150,12 @@ const StyledButton = styled.button`
 
 	/* Modifiers: size */
 	${buttonSizeModifier}
+
+	/* Modifiers: fontSize */
+	${fontSizeModifier}
+
+	/* Modifiers: borderRadius */
+	${borderRadiusModifier}
 
 	${props => props.noPadding && `
 		padding: 0 !important;

@@ -15,6 +15,7 @@ const Checkbox = ({
 	label,
 	id,
 	focussed,
+	borderRadius,
 })  => {
 	const selected = input ? input.value : initialValue;
 
@@ -30,6 +31,7 @@ const Checkbox = ({
 					disabled={disabled}
 					focussed={meta.active || focussed}
 					indeterminate={indeterminate}
+					borderRadius={borderRadius}
 				>
 					{(selected || indeterminate) && (
 						<Check
@@ -44,8 +46,8 @@ const Checkbox = ({
 				{label}
 				<HiddenInput
 					onClick={!disabled ? (() => input.onChange(!selected)) : undefined}
-					onFocus={() => input.onFocus()}
-					onBlur={() => input.onBlur()}
+					onFocus={() => input.onFocus && input.onFocus()}
+					onBlur={() => input.onBlur && input.onBlur()}
 					disabled={disabled}
 					type="checkbox"
 					selected={selected}
@@ -63,6 +65,8 @@ Checkbox.defaultProps = {
 	initialValue: false,
 	id: null,
 	indeterminate: false,
+	meta: {},
+	borderRadius: null,
 };
 
 Checkbox.propTypes = {
@@ -77,6 +81,7 @@ Checkbox.propTypes = {
 	meta: PropTypes.objectOf(PropTypes.any).isRequired,
 	input: PropTypes.objectOf(PropTypes.any).isRequired,
 	indeterminate: PropTypes.bool,
+	borderRadius: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
 };
 
 export default Checkbox;

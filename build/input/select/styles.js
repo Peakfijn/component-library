@@ -44,7 +44,7 @@ var StyledSelect = exports.StyledSelect = _styledComponents2.default.select.with
 }, function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {

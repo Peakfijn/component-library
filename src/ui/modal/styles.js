@@ -22,7 +22,7 @@ export const ModalContentContainer = styled.div`
 
 export const ModalContent = styled.div`
 	border-radius: ${props => props.theme.borderRadius.medium};
-	background: ${props => props.theme.color.background.lightest};
+	background: ${props => props.theme.color.background.input};
 	width: 100%;
 	${({ maxWidthBreakpoint, theme: { breakpoint } }) => Object.keys(breakpoint).map(
 		key => `

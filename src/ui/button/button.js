@@ -17,6 +17,8 @@ const Button = props => {
 		width,
 		height,
 		noPadding,
+		fontSize,
+		borderRadius,
 	} = props;
 
 	return (
@@ -32,6 +34,8 @@ const Button = props => {
 			width={width}
 			height={height}
 			noPadding={noPadding}
+			fontSize={fontSize}
+			borderRadius={borderRadius}
 		>
 			{loading ? <Icon icon="spinner" size="button" spin /> : children}
 		</StyledButton>
@@ -47,6 +51,8 @@ Button.defaultProps = {
 	children: null,
 	width: null,
 	height: null,
+	fontSize: null,
+	borderRadius: null,
 	color: 'normal',
 	modifier: 'primary',
 	size: 'medium',
@@ -66,6 +72,8 @@ Button.propTypes = {
 	height: PropTypes.string,
 	children: PropTypes.node,
 	onClick: PropTypes.func,
+	fontSize: PropTypes.oneOf(['medium']),
+	borderRadius: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
 };
 
 export default Button;

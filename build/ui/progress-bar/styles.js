@@ -44,7 +44,7 @@ var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__Slider',
 	componentId: 'sc-10aagex-3'
 })(['cursor:pointer;margin:0;background-color:', ';border:1px solid ', ';border-radius:16px;width:16px;height:16px;position:absolute;left:calc(', ' - 10px);top:-5px;'], function (props) {
-	return props.theme.color.background.lightest;
+	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.color.grey;
 }, function (props) {

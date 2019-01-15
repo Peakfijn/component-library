@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var SpacingStyle = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__SpacingStyle',
 	componentId: 'sc-1ebimj7-0'
-})(['box-sizing:border-box;margin-right:auto;margin-left:auto;line-height:initial;', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
+})(['box-sizing:border-box;margin-right:auto;margin-left:auto;line-height:initial;', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
 	var horizontal = _ref.horizontal,
 	    theme = _ref.theme;
 	return horizontal && '\n\t\tpadding-left: ' + theme.gutter['' + horizontal] + ';\n\t\tpadding-right: ' + theme.gutter['' + horizontal] + ';\n\t' || '';
@@ -71,14 +71,10 @@ var SpacingStyle = _styledComponents2.default.div.withConfig({
 	var modifier = _ref14.modifier;
 	return modifier === 'only-left' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
 }, function (_ref15) {
-	var modifier = _ref15.modifier,
-	    theme = _ref15.theme;
-	return modifier === 'modal-header' && '\n\t\tmargin-left: 0;\n\t\tborder-bottom: 1px solid ' + theme.color.border.light + ';\n\t';
+	var modifier = _ref15.modifier;
+	return modifier === 'only-vertical' && '\n\t\tpadding-left: 0 !important;\n\t\tpadding-right: 0 !important;\n\t' || '';
 }, function (_ref16) {
 	var modifier = _ref16.modifier;
-	return modifier === 'only-vertical' && '\n\t\tpadding-left: 0 !important;\n\t\tpadding-right: 0 !important;\n\t' || '';
-}, function (_ref17) {
-	var modifier = _ref17.modifier;
 	return modifier === 'only-horizontal' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
 });
 

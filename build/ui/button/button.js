@@ -34,7 +34,9 @@ var Button = function Button(props) {
 	    onClick = props.onClick,
 	    width = props.width,
 	    height = props.height,
-	    noPadding = props.noPadding;
+	    noPadding = props.noPadding,
+	    fontSize = props.fontSize,
+	    borderRadius = props.borderRadius;
 
 
 	return _react2.default.createElement(
@@ -50,7 +52,9 @@ var Button = function Button(props) {
 			onClick: onClick,
 			width: width,
 			height: height,
-			noPadding: noPadding
+			noPadding: noPadding,
+			fontSize: fontSize,
+			borderRadius: borderRadius
 		},
 		loading ? _react2.default.createElement(_icon2.default, { icon: 'spinner', size: 'button', spin: true }) : children
 	);
@@ -65,6 +69,8 @@ Button.defaultProps = {
 	children: null,
 	width: null,
 	height: null,
+	fontSize: null,
+	borderRadius: null,
 	color: 'normal',
 	modifier: 'primary',
 	size: 'medium',
@@ -83,7 +89,9 @@ Button.propTypes = {
 	width: _propTypes2.default.string,
 	height: _propTypes2.default.string,
 	children: _propTypes2.default.node,
-	onClick: _propTypes2.default.func
+	onClick: _propTypes2.default.func,
+	fontSize: _propTypes2.default.oneOf(['medium']),
+	borderRadius: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full'])
 };
 
 exports.default = Button;

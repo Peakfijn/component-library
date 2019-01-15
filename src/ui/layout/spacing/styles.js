@@ -107,11 +107,6 @@ const SpacingStyle = styled.div`
 		padding-bottom: 0 !important;
 	` || ''}
 
-	${({ modifier, theme }) => modifier === 'modal-header' && `
-		margin-left: 0;
-		border-bottom: 1px solid ${theme.color.border.light};
-	`}
-
 	${({ modifier }) => modifier === 'only-vertical' && `
 		padding-left: 0 !important;
 		padding-right: 0 !important;

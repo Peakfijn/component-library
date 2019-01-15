@@ -76,7 +76,7 @@ var StyledDatepicker = _styledComponents2.default.div.withConfig({
 	return theme.color.brand;
 }, function (_ref15) {
 	var theme = _ref15.theme;
-	return theme.color.background.light;
+	return theme.color.background.inputSelected;
 }, function (_ref16) {
 	var theme = _ref16.theme;
 	return theme.color.brand;
@@ -111,7 +111,7 @@ var StyledReactDatePicker = exports.StyledReactDatePicker = (0, _styledComponent
 	return theme.borderRadius.medium;
 }, function (_ref25) {
 	var theme = _ref25.theme;
-	return theme.color.background.lightest;
+	return theme.color.background.input;
 }, function (_ref26) {
 	var theme = _ref26.theme;
 	return theme.color.text.normal;

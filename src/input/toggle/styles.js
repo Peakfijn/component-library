@@ -30,7 +30,7 @@ export const Switch = styled.div`
 
 export const Slider = styled.div`
 	cursor: pointer;
-	background-color: ${props => props.theme.color.background.lightest};
+	background-color: ${props => props.theme.color.background.input};
 	border-radius: ${props => props.theme.componentSize.slider};
 	margin: ${props => props.theme.gutter.tiny};
 	width: ${props => props.theme.componentSize.slider};
