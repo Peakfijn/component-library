@@ -68,16 +68,20 @@ const DropDownList = (props) => {
 
 DropDownList.defaultProps = {
 	isOpen: false,
+	isCreatable: false,
 	options: [],
 	selectedValue: '',
 	notFound: 'Nothing found...',
 	intermittentValue: null,
+	handleCreate: null,
 };
 
 DropDownList.propTypes = {
 	id: PropTypes.string.isRequired,
 	notFound: PropTypes.string,
+	handleCreate: PropTypes.func,
 	isOpen: PropTypes.bool,
+	isCreatable: PropTypes.bool,
 	options: PropTypes.arrayOf(PropTypes.shape({
 		value: PropTypes.string,
 		label: PropTypes.string,

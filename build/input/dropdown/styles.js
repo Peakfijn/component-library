@@ -30,7 +30,7 @@ var Wrapper = exports.Wrapper = _styledComponents2.default.div.withConfig({
 var StyledItemContainer = exports.StyledItemContainer = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__StyledItemContainer',
 	componentId: 'sc-1s7jcgb-2'
-})(['width:calc(100% - 2px);padding:0;margin:0;border:1px solid #d4d7db;margin-top:', ';border-radius:', ';background-color:', ';position:absolute;z-index:999;'], function (props) {
+})(['width:100%;padding:0;margin:0;border:1px solid #d4d7db;margin-top:', ';border-radius:', ';background-color:', ';position:absolute;z-index:999;'], function (props) {
 	return props.theme.gutter.small;
 }, function (props) {
 	return props.theme.borderRadius.small;

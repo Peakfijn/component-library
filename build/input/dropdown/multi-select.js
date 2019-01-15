@@ -57,24 +57,28 @@ var MultiSelect = function (_Component) {
 			var onFocus = _this.props.input.onFocus;
 
 			onFocus();
-		}, _this.handleBlur = function () {
+		}, _this.handleBlur = function (callBack) {
 			var _this$props = _this.props,
 			    onBlur = _this$props.input.onBlur,
 			    isCreatable = _this$props.isCreatable;
 
 
 			if (!isCreatable) {
-				onBlur();
 				_this.setState({ intermittentValue: '' });
 			}
-		}, _this.handleCreate = function (value) {
-			_this.handleAddSelectedItem(value);
-			_this.setState({ intermittentValue: '', additionalOptions: [].concat(_toConsumableArray(_this.state.additionalOptions), [{
-					value: value,
-					label: value,
-					name: value,
-					id: 'dynamic-' + value
-				}]) });
+			onBlur();
+			setTimeout(callBack, 300);
+		}, _this.handleCreate = function (newValue) {
+			_this.handleAddSelectedItem(newValue);
+			_this.setState({
+				intermittentValue: '',
+				additionalOptions: [].concat(_toConsumableArray(_this.state.additionalOptions), [{
+					value: newValue,
+					label: newValue,
+					name: newValue,
+					id: 'dynamic-' + newValue
+				}])
+			});
 		}, _this.handleChange = function (selectedItem) {
 			var value = _this.props.input.value;
 
@@ -177,8 +181,7 @@ var MultiSelect = function (_Component) {
 											_this2.handleFocus();
 										},
 										onBlur: function onBlur() {
-											closeMenu();
-											_this2.handleBlur();
+											_this2.handleBlur(closeMenu);
 										}
 									}
 								},
@@ -191,7 +194,10 @@ var MultiSelect = function (_Component) {
 									selectedValue: selectedItem,
 									intermittentValue: intermittentValue,
 									id: id,
-									handleCreate: _this2.handleCreate,
+									handleCreate: function handleCreate(value) {
+										_this2.handleCreate(value);
+										openMenu();
+									},
 									isCreatable: isCreatable
 								})
 							)

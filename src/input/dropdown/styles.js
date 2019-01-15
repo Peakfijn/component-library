@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledItemContainer = styled.div`
-	width: calc(100% - 2px);
+	width: 100%;
 	padding: 0;
 	margin: 0;
 	border: 1px solid #d4d7db;

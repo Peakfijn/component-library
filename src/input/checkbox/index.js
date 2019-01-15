@@ -78,7 +78,7 @@ Checkbox.propTypes = {
 	disabled: PropTypes.bool,
 	initialValue: PropTypes.bool,
 	focussed: PropTypes.bool,
-	meta: PropTypes.objectOf(PropTypes.any).isRequired,
+	meta: PropTypes.objectOf(PropTypes.any),
 	input: PropTypes.objectOf(PropTypes.any).isRequired,
 	indeterminate: PropTypes.bool,
 	borderRadius: PropTypes.oneOf(['small', 'medium', 'large', 'full']),

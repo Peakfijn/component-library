@@ -56,6 +56,7 @@ const SpacingStyle = styled.div`
 	${({ maxWidthBreakpoint, theme: { breakpoint } }) => Object.keys(breakpoint).map(
 		key => `
 			${maxWidthBreakpoint === key && `
+				width: 100vw;
 				max-width: ${breakpoint[key]};
 			` || ''}
 		` || ''
@@ -80,6 +81,11 @@ const SpacingStyle = styled.div`
 
 	${({ isWide }) => isWide && `
 		width: 100%;
+	` || ''}
+
+	${({ isInline }) => isInline && `
+		display: inline;
+		width: initial;
 	` || ''}
 
 	/* Modifiers: only specific */

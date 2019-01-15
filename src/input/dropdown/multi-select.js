@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Downshift from "downshift";
 import DropDownList from './dropdown-list';
-
 import { StyledText, Wrapper } from './styles';
-
 
 class MultiSelect extends Component {
 	state = {
@@ -17,26 +15,31 @@ class MultiSelect extends Component {
 		onFocus();
 	};
 
-	handleBlur = () => {
+	handleBlur = (callBack) => {
 		const { input: { onBlur }, isCreatable } = this.props;
 
 		if (!isCreatable) {
-			onBlur();
 			this.setState({ intermittentValue: '' });
 		}
+		onBlur();
+		setTimeout(callBack, 300);
 	};
 
-	handleCreate = (value) => {
-		this.handleAddSelectedItem(value);
-		this.setState({ intermittentValue: '', additionalOptions: [
-			...this.state.additionalOptions,
-			{
-				value,
-				label: value,
-				name: value,
-				id: `dynamic-${value}`
-			}
-		] });
+	handleCreate = (newValue) => {
+		const { additionalOptions } = this.state;
+		this.handleAddSelectedItem(newValue);
+		this.setState({
+			intermittentValue: '',
+			additionalOptions: [
+				...additionalOptions,
+				{
+					value: newValue,
+					label: newValue,
+					name: newValue,
+					id: `dynamic-${newValue}`
+				}
+			]
+		});
 	}
 
 	handleChange = (selectedItem) => {
@@ -133,8 +136,7 @@ class MultiSelect extends Component {
 										this.handleFocus();
 									},
 									onBlur: () => {
-										closeMenu();
-										this.handleBlur();
+										this.handleBlur(closeMenu);
 									}
 								}}
 							>
@@ -147,7 +149,10 @@ class MultiSelect extends Component {
 									selectedValue={selectedItem}
 									intermittentValue={intermittentValue}
 									id={id}
-									handleCreate={this.handleCreate}
+									handleCreate={(newValue) => {
+										this.handleCreate(newValue);
+										openMenu();
+									}}
 									isCreatable={isCreatable}
 								/>
 							</StyledText>

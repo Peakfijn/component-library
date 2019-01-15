@@ -12,12 +12,14 @@ const Spacing = props => {
 		minAtBreakpoint,
 		maxWidthBreakpoint,
 		isWide,
+		isInline,
 	} = props;
 
 	return (
 		<SpacingStyle
 			modifier={modifier}
 			isWide={isWide}
+			isInline={isInline}
 			horizontal={horizontal}
 			vertical={vertical}
 			minAtBreakpoint={minAtBreakpoint}
@@ -37,6 +39,7 @@ Spacing.defaultProps = {
 	maxAtBreakpoint: null,
 	modifier: null,
 	isWide: null,
+	isInline: null,
 	children: null,
 }
 
@@ -45,6 +48,7 @@ Spacing.propTypes = {
 	horizontal: PropTypes.string,
 	vertical: PropTypes.string,
 	isWide: PropTypes.bool,
+	isInline: PropTypes.bool,
 	maxWidthBreakpoint: PropTypes.string,
 	minAtBreakpoint: PropTypes.shape({
 		small: PropTypes.shape({
