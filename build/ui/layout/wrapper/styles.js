@@ -15,8 +15,12 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 	componentId: 'sc-1cdz4ht-0'
 })(['', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
 	var modifier = _ref.modifier,
-	    align = _ref.align;
-	return modifier === 'flex' && '\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\t\talign-items: start;\n\t\tfont-size=\n\n\t\t' + (align && '\n\t\t\talign-items: ' + align + ';\n\t\t' || '') + '\n\t';
+	    align = _ref.align,
+	    wrap = _ref.wrap,
+	    breakpoint = _ref.theme.breakpoint;
+	return modifier === 'flex' && '\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\n\t\t' + (align && '\n\t\t\talign-items: ' + align + ';\n\t\t' || '') + '\n\n\t\t' + (wrap && '\n\t\t\tflex-wrap: wrap;\n\t\t\t> * {\n\t\t\t\tflex-grow: 0;\n\t\t\t}\n\n\t\t\t' + (Object.keys(wrap).map(function (key) {
+		return '\n\t\t\t\t@media (max-width: ' + breakpoint[key] + ') {\n\t\t\t\t\t> * {\n\t\t\t\t\t\tflex-basis: ' + wrap[key] + ';\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t' || '';
+	}).reverse().join(' ') || '') + '\n\t\t' || '') + '\n\t';
 }, function (_ref2) {
 	var modifier = _ref2.modifier,
 	    grow = _ref2.grow;
@@ -38,11 +42,11 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 }, function (_ref7) {
 	var horizontalGutter = _ref7.horizontalGutter,
 	    theme = _ref7.theme;
-	return horizontalGutter && '\n\t\t> * {\n\t\t\tmargin-left: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t\tmargin-right: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t}\n\t\t> *:first-child {\n\t\t\tmargin-left: 0;\n\t\t}\n\t\t> *:last-child {\n\t\t\tmargin-right: 0;\n\t\t}\n\t' || '';
+	return horizontalGutter && '\n\t\t> * {\n\t\t\tpadding-left: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t\tpadding-right: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t}\n\t' || '';
 }, function (_ref8) {
 	var verticalGutter = _ref8.verticalGutter,
 	    theme = _ref8.theme;
-	return verticalGutter && '\n\t\t> * {\n\t\t\tmargin-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tmargin-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t\t> *:first-child {\n\t\t\tmargin-top: 0;\n\t\t}\n\t\t> *:last-child {\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t' || '';
+	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t' || '';
 });
 
 exports.default = WrapperStyle;

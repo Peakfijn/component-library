@@ -26,6 +26,10 @@ const StyledButton = styled.button`
 		width: 100%;
 	`}
 
+	${({ modifier }) => modifier === 'no-margin' && `
+	margin-bottom: 0;
+` || ''}
+
 	/* Modifier: color primary */
 	${({ color, theme: { color: themeColors }, state }) => (
 		color === "primary" ||

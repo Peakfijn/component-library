@@ -35,7 +35,7 @@ var applyForState = function applyForState(state, props) {
 var StyledButton = _styledComponents2.default.button.withConfig({
 	displayName: 'styles__StyledButton',
 	componentId: 'sc-1shn4a8-0'
-})(['box-sizing:border-box;display:inline-block;margin-bottom:', ';outline:none;border:1px solid transparent;border-radius:', ';cursor:pointer;width:', ';text-transform:none;text-decoration:none;font-family:inherit;', ' ', ' ', ' ', ' ', ';', ' ', ' ', ' ', ' ', ' ', ''], function (props) {
+})(['box-sizing:border-box;display:inline-block;margin-bottom:', ';outline:none;border:1px solid transparent;border-radius:', ';cursor:pointer;width:', ';text-transform:none;text-decoration:none;font-family:inherit;', ' ', ' ', ' ', ' ', ' ', ';', ' ', ' ', ' ', ' ', ' ', ''], function (props) {
 	return props.theme.gutter.medium;
 }, function (props) {
 	return props.theme.borderRadius.medium;
@@ -44,14 +44,17 @@ var StyledButton = _styledComponents2.default.button.withConfig({
 }, function (props) {
 	return props.modifier === 'full' && '\n\t\twidth: 100%;\n\t';
 }, function (_ref) {
-	var color = _ref.color,
-	    themeColors = _ref.theme.color,
-	    state = _ref.state;
-	return (color === "primary" || color === "success" || color === "danger" || color === "info") && '\n\t\tbackground-color: ' + themeColors[color] + ';\n\t\tcolor: ' + themeColors.text.inverted + ';\n\t\tborder: 1px solid ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t' || '';
+	var modifier = _ref.modifier;
+	return modifier === 'no-margin' && '\n\tmargin-bottom: 0;\n' || '';
 }, function (_ref2) {
 	var color = _ref2.color,
 	    themeColors = _ref2.theme.color,
 	    state = _ref2.state;
+	return (color === "primary" || color === "success" || color === "danger" || color === "info") && '\n\t\tbackground-color: ' + themeColors[color] + ';\n\t\tcolor: ' + themeColors.text.inverted + ';\n\t\tborder: 1px solid ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t' || '';
+}, function (_ref3) {
+	var color = _ref3.color,
+	    themeColors = _ref3.theme.color,
+	    state = _ref3.state;
 	return (color === 'secondary' || color === 'normal') && '\n\t\tbackground-color: ' + themeColors[color] + ';\n\t\tcolor: ' + themeColors.text.normal + ';\n\t\tborder: 1px solid ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t' || '';
 }, function (props) {
 	return props.disabled && '\n\t\tbackground-color: ' + props.theme.color.background.inputDisabled + ';\n\t\tcolor: ' + themeColor('grey', props) + ';\n\t\tborder: 1px solid ' + themeColor('grey', props) + ';\n\t\tcursor: not-allowed;\n\t' || '';

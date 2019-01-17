@@ -26,6 +26,7 @@ var Wrapper = function Wrapper(props) {
 	    verticalGutter = props.verticalGutter,
 	    grow = props.grow,
 	    background = props.background,
+	    wrap = props.wrap,
 	    className = props.className;
 
 
@@ -37,6 +38,7 @@ var Wrapper = function Wrapper(props) {
 			align: align,
 			grow: grow,
 			background: background,
+			wrap: wrap,
 			modifier: modifier,
 			className: className
 		},
@@ -48,9 +50,10 @@ Wrapper.defaultProps = {
 	modifier: null,
 	horizontalGutter: null,
 	verticalGutter: null,
-	align: null,
+	align: 'start',
 	grow: null,
 	background: null,
+	wrap: null,
 	children: null,
 	className: null
 };
@@ -58,9 +61,15 @@ Wrapper.defaultProps = {
 Wrapper.propTypes = {
 	className: _propTypes2.default.string,
 	modifier: _propTypes2.default.oneOf(['flex', 'flex-cell', 'full', 'bottom-right', 'full-right']),
-	align: _propTypes2.default.oneOf(['flex-start', 'flex-end', 'center']),
+	align: _propTypes2.default.oneOf(['start', 'flex-start', 'flex-end', 'center']),
 	grow: _propTypes2.default.oneOf(['not-grow']),
 	background: _propTypes2.default.oneOf(['window']),
+	wrap: _propTypes2.default.shape({
+		small: _propTypes2.default.string,
+		medium: _propTypes2.default.string,
+		large: _propTypes2.default.string,
+		huge: _propTypes2.default.string
+	}),
 	horizontalGutter: _propTypes2.default.string,
 	verticalGutter: _propTypes2.default.string,
 	children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node])

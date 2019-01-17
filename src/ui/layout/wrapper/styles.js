@@ -1,15 +1,28 @@
 import styled from 'styled-components';
 
 const WrapperStyle = styled.div`
-	${({ modifier, align }) => modifier === 'flex' && `
+	${({ modifier, align, wrap, theme: { breakpoint } }) => modifier === 'flex' && `
 		display: flex;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		align-items: start;
-		font-size=
 
 		${align && `
 			align-items: ${align};
+		` || ''}
+
+		${wrap && `
+			flex-wrap: wrap;
+			> * {
+				flex-grow: 0;
+			}
+
+			${Object.keys(wrap).map(key => `
+				@media (max-width: ${breakpoint[key]}) {
+					> * {
+						flex-basis: ${wrap[key]};
+					}
+				}
+			` || '').reverse().join(' ') || ''}
 		` || ''}
 	`}
 
@@ -54,27 +67,15 @@ const WrapperStyle = styled.div`
 
 	${({ horizontalGutter, theme }) => horizontalGutter && `
 		> * {
-			margin-left: ${theme.gutter[`${horizontalGutter}`]};
-			margin-right: ${theme.gutter[`${horizontalGutter}`]};
-		}
-		> *:first-child {
-			margin-left: 0;
-		}
-		> *:last-child {
-			margin-right: 0;
+			padding-left: ${theme.gutter[`${horizontalGutter}`]};
+			padding-right: ${theme.gutter[`${horizontalGutter}`]};
 		}
 	` || ''}
 
 	${({ verticalGutter, theme }) => verticalGutter && `
 		> * {
-			margin-top: ${theme.gutter[`${verticalGutter}`]};
-			margin-bottom: ${theme.gutter[`${verticalGutter}`]};
-		}
-		> *:first-child {
-			margin-top: 0;
-		}
-		> *:last-child {
-			margin-bottom: 0;
+			padding-top: ${theme.gutter[`${verticalGutter}`]};
+			padding-bottom: ${theme.gutter[`${verticalGutter}`]};
 		}
 	` || ''}
 `;

@@ -4,7 +4,7 @@ export default {
 		medium: '720px',
 		large: '960px',
 		huge: '1160px',
-		full: '100%',
+		full: '100vw',
 	},
 	gutter: {
 		none: '0',

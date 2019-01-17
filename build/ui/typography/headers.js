@@ -19,7 +19,7 @@ var boldModifier = function boldModifier(_ref) {
 var H1 = exports.H1 = _styledComponents2.default.h1.withConfig({
 	displayName: 'headers__H1',
 	componentId: 'sc-19r2wxv-0'
-})(['margin-top:0;margin-bottom:', ';', ' color:', ';font-size:', ';font-weight:normal;', ' ', ''], function (props) {
+})(['text-decoration:none;margin-top:0;margin-bottom:', ';', ' color:', ';font-size:', ';font-weight:normal;', ' ', ''], function (props) {
 	return props.theme.gutter.huge;
 }, function (_ref2) {
 	var _ref2$theme = _ref2.theme,
@@ -32,13 +32,13 @@ var H1 = exports.H1 = _styledComponents2.default.h1.withConfig({
 	return props.theme.fontSize.gigantic;
 }, boldModifier, function (_ref3) {
 	var modifier = _ref3.modifier;
-	return modifier === 'modal-header' && '\n\t\tmargin: 0;\n\t' || '';
+	return modifier === 'no-margin' && '\n\t\tmargin-bottom: 0;\n\t' || '';
 });
 
 var H2 = exports.H2 = _styledComponents2.default.h2.withConfig({
 	displayName: 'headers__H2',
 	componentId: 'sc-19r2wxv-1'
-})(['margin-top:0;margin-bottom:', ';', ' color:', ';font-size:', ';font-weight:normal;', ''], function (props) {
+})(['text-decoration:none;margin-top:0;margin-bottom:', ';', ' color:', ' !important;font-size:', ';font-weight:normal;', ' ', ''], function (props) {
 	return props.theme.gutter.medium;
 }, function (_ref4) {
 	var _ref4$theme = _ref4.theme,
@@ -49,20 +49,26 @@ var H2 = exports.H2 = _styledComponents2.default.h2.withConfig({
 	return props.theme.color.text.normal;
 }, function (props) {
 	return props.theme.fontSize.huge;
-}, boldModifier);
+}, boldModifier, function (_ref5) {
+	var modifier = _ref5.modifier;
+	return modifier === 'no-margin' && '\n\t\tmargin-bottom: 0;\n\t' || '';
+});
 
 var H3 = exports.H3 = _styledComponents2.default.h3.withConfig({
 	displayName: 'headers__H3',
 	componentId: 'sc-19r2wxv-2'
-})(['margin-top:0;margin-bottom:', ';', ' color:', ';font-size:', ';font-weight:normal;', ''], function (props) {
+})(['text-decoration:none;margin-top:0;margin-bottom:', ';', ' color:', ';font-size:', ';font-weight:normal;', ' ', ''], function (props) {
 	return props.theme.gutter.small;
-}, function (_ref5) {
-	var _ref5$theme = _ref5.theme,
-	    fontSize = _ref5$theme.fontSize,
-	    lineHeightMultiplier = _ref5$theme.lineHeightMultiplier;
+}, function (_ref6) {
+	var _ref6$theme = _ref6.theme,
+	    fontSize = _ref6$theme.fontSize,
+	    lineHeightMultiplier = _ref6$theme.lineHeightMultiplier;
 	return '\n\t\tline-height: calc(' + fontSize.large + ' ' + lineHeightMultiplier.h3 + ');\n\t';
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
 	return props.theme.fontSize.large;
-}, boldModifier);
+}, boldModifier, function (_ref7) {
+	var modifier = _ref7.modifier;
+	return modifier === 'no-margin' && '\n\t\tmargin-bottom: 0;\n\t' || '';
+});
