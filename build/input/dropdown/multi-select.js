@@ -69,10 +69,12 @@ var MultiSelect = function (_Component) {
 			onBlur();
 			setTimeout(callBack, 300);
 		}, _this.handleCreate = function (newValue) {
+			var additionalOptions = _this.state.additionalOptions;
+
 			_this.handleAddSelectedItem(newValue);
 			_this.setState({
 				intermittentValue: '',
-				additionalOptions: [].concat(_toConsumableArray(_this.state.additionalOptions), [{
+				additionalOptions: [].concat(_toConsumableArray(additionalOptions), [{
 					value: newValue,
 					label: newValue,
 					name: newValue,
@@ -194,8 +196,8 @@ var MultiSelect = function (_Component) {
 									selectedValue: selectedItem,
 									intermittentValue: intermittentValue,
 									id: id,
-									handleCreate: function handleCreate(value) {
-										_this2.handleCreate(value);
+									handleCreate: function handleCreate(newValue) {
+										_this2.handleCreate(newValue);
 										openMenu();
 									},
 									isCreatable: isCreatable
