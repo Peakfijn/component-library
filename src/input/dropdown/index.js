@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Downshift from "downshift";
 import DropDownList from './dropdown-list';
 
-import { StyledText, Wrapper } from './styles';
-
+import { Wrapper } from './styles';
+import Text from '../text';
 
 class Dropdown extends Component {
 	state = {
@@ -53,7 +53,7 @@ class Dropdown extends Component {
 				}) => (
 					<div>
 						<Wrapper className={className}>
-							<StyledText
+							<Text
 								id={id}
 								fullWidth
 								meta={meta}
@@ -89,7 +89,7 @@ class Dropdown extends Component {
 									intermittentValue={intermittentValue}
 									id={id}
 								/>
-							</StyledText>
+							</Text>
 						</Wrapper>
 					</div>
 				)}

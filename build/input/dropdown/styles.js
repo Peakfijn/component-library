@@ -3,15 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.StyledSelectedListItem = exports.StyledListItem = exports.StyledList = exports.StyledText = exports.StyledSelect = exports.StyledItemContainer = exports.Wrapper = exports.Spacer = undefined;
+exports.StyledSelectedListItem = exports.StyledListItem = exports.StyledList = exports.StyledSelect = exports.StyledItemContainer = exports.Wrapper = exports.Spacer = undefined;
 
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _text = require('../text');
-
-var _text2 = _interopRequireDefault(_text);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,14 +49,9 @@ var StyledSelect = exports.StyledSelect = _styledComponents2.default.button.with
 	return props.theme.color.text.normal;
 });
 
-var StyledText = exports.StyledText = (0, _styledComponents2.default)(_text2.default).withConfig({
-	displayName: 'styles__StyledText',
-	componentId: 'sc-1s7jcgb-4'
-})(['padding:12px;width:100%;']);
-
 var StyledList = exports.StyledList = _styledComponents2.default.ul.withConfig({
 	displayName: 'styles__StyledList',
-	componentId: 'sc-1s7jcgb-5'
+	componentId: 'sc-1s7jcgb-4'
 })(['width:calc(100% - 2px);padding:0;margin:0;border:1px solid ', ';margin-top:', ';border-radius:', ';background:', ';position:absolute;overflow:auto;z-index:999;'], function (props) {
 	return props.theme.color.border.normal;
 }, function (props) {
@@ -73,7 +64,7 @@ var StyledList = exports.StyledList = _styledComponents2.default.ul.withConfig({
 
 var StyledListItem = exports.StyledListItem = _styledComponents2.default.li.withConfig({
 	displayName: 'styles__StyledListItem',
-	componentId: 'sc-1s7jcgb-6'
+	componentId: 'sc-1s7jcgb-5'
 })(['width:100%;padding:', ' 12px;line-height:', ';font-size:', ';text-align:left;display:inline-flex;white-space:nowrap;text-overflow:ellipsis;background:', ';border-bottom:1px solid ', ';box-sizing:border-box;cursor:pointer;&:hover{color:', ';background-color:', ';}&:last-child{border-bottom:0;}'], function (props) {
 	return props.theme.gutter.small;
 }, function (props) {
@@ -92,7 +83,7 @@ var StyledListItem = exports.StyledListItem = _styledComponents2.default.li.with
 
 var StyledSelectedListItem = exports.StyledSelectedListItem = (0, _styledComponents2.default)(StyledListItem).withConfig({
 	displayName: 'styles__StyledSelectedListItem',
-	componentId: 'sc-1s7jcgb-7'
+	componentId: 'sc-1s7jcgb-6'
 })(['color:', ';background-color:', ';'], function (props) {
 	return props.theme.color.inverseText;
 }, function (props) {

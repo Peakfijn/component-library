@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Downshift from "downshift";
 import DropDownList from './dropdown-list';
-import { StyledText, Wrapper } from './styles';
+import { Wrapper } from './styles';
+import Text from '../text';
 
 class MultiSelect extends Component {
 	state = {
@@ -111,7 +112,7 @@ class MultiSelect extends Component {
 				}) => (
 					<div>
 						<Wrapper>
-							<StyledText
+							<Text
 								id={id}
 								fullWidth
 								meta={meta}
@@ -157,7 +158,7 @@ class MultiSelect extends Component {
 									}}
 									isCreatable={isCreatable}
 								/>
-							</StyledText>
+							</Text>
 						</Wrapper>
 					</div>
 				)}

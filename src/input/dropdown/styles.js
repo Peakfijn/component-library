@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Text from '../text';
 
 export const Spacer = styled.div`
 	padding-right: ${props => props.theme.gutter.medium};
@@ -30,11 +29,6 @@ export const StyledSelect = styled.button`
 	width: 100%;
 	color: ${props => props.theme.color.text.normal};
 	stroke: ${props => props.theme.color.text.normal};
-`;
-
-export const StyledText = styled(Text)`
-	padding: 12px;
-	width: 100%;
 `;
 
 export const StyledList = styled.ul`

@@ -24,6 +24,10 @@ var _dropdownList2 = _interopRequireDefault(_dropdownList);
 
 var _styles = require('./styles');
 
+var _text = require('../text');
+
+var _text2 = _interopRequireDefault(_text);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -160,7 +164,7 @@ var MultiSelect = function (_Component) {
 							_styles.Wrapper,
 							null,
 							_react2.default.createElement(
-								_styles.StyledText,
+								_text2.default,
 								{
 									id: id,
 									fullWidth: true,
