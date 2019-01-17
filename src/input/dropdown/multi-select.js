@@ -86,6 +86,7 @@ class MultiSelect extends Component {
 			id,
 			notFound,
 			isCreatable,
+			className,
 			...other
 		} = this.props;
 		const { additionalOptions, intermittentValue } = this.state;
@@ -95,6 +96,7 @@ class MultiSelect extends Component {
 		];
 		return (
 			<Downshift
+				className={className}
 				itemToString={i => (!i || i.label == null ? "" : String(i.label))}
 				selectedItem={value}
 				onChange={this.handleChange}
@@ -178,9 +180,11 @@ MultiSelect.defaultProps = {
 	icon: 'angle-down',
 	meta: {},
 	options: [],
+	className: null,
 };
 
 MultiSelect.propTypes = {
+	className: PropTypes.string,
 	placeholder: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,

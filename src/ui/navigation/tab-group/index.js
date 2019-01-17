@@ -5,11 +5,12 @@ import StyledTabGroup from './styles';
 
 const TabGroup = props => {
 	const {
-		children
+		children,
+		className,
 	} = props;
 
 	return (
-		<StyledTabGroup>
+		<StyledTabGroup className={className}>
 			{ children }
 		</StyledTabGroup>
 	);
@@ -17,9 +18,11 @@ const TabGroup = props => {
 
 TabGroup.defaultProps = {
 	children: null,
+	className: null,
 };
 
 TabGroup.propTypes = {
+	className: PropTypes.string,
 	children: PropTypes.node,
 };
 

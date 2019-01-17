@@ -9,7 +9,7 @@ import { Icon } from '../../ui';
 import ErrorMessage from './error-message'
 
 const FormGroup = props => {
-	const { label, meta = {}, children, id, icon, iconPosition } = props;
+	const { label, meta = {}, children, id, icon, iconPosition, className } = props;
 
 	const errorMessage = meta.submitFailed && (
 		<ErrorMessage
@@ -19,7 +19,7 @@ const FormGroup = props => {
 	);
 
 	return (
-		<Label htmlFor={id}>
+		<Label htmlFor={id} className={className}>
 			{label &&
 				<LabelContent>{label && label.id ? <FormattedMessage {...label} /> : label}</LabelContent>
 			}
@@ -37,9 +37,11 @@ FormGroup.defaultProps = {
 	children: null,
 	iconPosition: null,
 	icon: null,
+	className: null,
 };
 
 FormGroup.propTypes = {
+	className: PropTypes.string,
 	children: PropTypes.node,
 	id: PropTypes.string.isRequired,
 	iconPosition: PropTypes.string,

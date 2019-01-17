@@ -21,12 +21,13 @@ var Badge = function Badge(props) {
 	    children = props.children,
 	    color = props.color,
 	    textColor = props.textColor,
-	    size = props.size;
+	    size = props.size,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
 		_styles.StyledContainer,
-		null,
+		{ className: className },
 		children,
 		_react2.default.createElement(
 			_styles.StyledCircle,
@@ -40,10 +41,12 @@ Badge.defaultProps = {
 	textColor: 'inverted',
 	size: 'medium',
 	color: 'info',
-	children: null
+	children: null,
+	className: null
 };
 
 Badge.propTypes = {
+	className: _propTypes2.default.string,
 	count: _propTypes2.default.number.isRequired,
 	children: _propTypes2.default.node,
 	color: _propTypes2.default.string,

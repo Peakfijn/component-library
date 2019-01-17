@@ -8,7 +8,7 @@ import {
 } from './styles';
 
 const Modal = props =>  {
-	const { children, isOpen, toggleModal, footerContent } = props;
+	const { children, isOpen, toggleModal, footerContent, className } = props;
 
 	const onBackGroundClick = (e) => {
 		if (e.target === e.currentTarget) {
@@ -18,7 +18,7 @@ const Modal = props =>  {
 
 	return (
 		isOpen ?
-			<ModalContainer>
+			<ModalContainer className={className}>
 				<ModalContentContainer onClick={onBackGroundClick}>
 					<ModalContent maxWidthBreakpoint="large">
 						{children}
@@ -33,9 +33,11 @@ const Modal = props =>  {
 
 Modal.defaultProps = {
 	footerContent: null,
+	className: null,
 }
 
 Modal.propTypes = {
+	className: PropTypes.string,
 	children: PropTypes.node.isRequired,
 	footerContent: PropTypes.node,
 	isOpen: PropTypes.bool.isRequired,

@@ -8,10 +8,11 @@ const Bar = props => {
 		modifier,
 		color,
 		title,
+		className,
 	} = props;
 
 	return (
-		<div {...props}>
+		<div {...props} className={className}>
 			{(modifier === 'header' || modifier === "verbose") && (
 				<StyledHeader>
 					<span>{title}</span>
@@ -35,9 +36,11 @@ Bar.defaultProps = {
 	size: null,
 	color: null,
 	title: '',
+	className: null,
 };
 
 Bar.propTypes = {
+	className: PropTypes.string,
 	progress: PropTypes.number,
 	type: PropTypes.string,
 	title: PropTypes.string,

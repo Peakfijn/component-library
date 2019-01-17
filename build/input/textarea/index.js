@@ -43,7 +43,8 @@ var TextArea = function TextArea(props) {
 	    size = props.size,
 	    icon = props.icon,
 	    iconPosition = props.iconPosition,
-	    focussed = props.focussed;
+	    focussed = props.focussed,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
@@ -53,7 +54,8 @@ var TextArea = function TextArea(props) {
 			icon: icon,
 			id: id,
 			iconPosition: iconPosition,
-			meta: meta
+			meta: meta,
+			className: className
 		},
 		_react2.default.createElement(_styles2.default, _extends({
 			id: id,
@@ -91,10 +93,12 @@ TextArea.defaultProps = {
 	size: "medium",
 	iconPosition: "right",
 	initialValue: '',
-	icon: null
+	icon: null,
+	className: null
 };
 
 TextArea.propTypes = {
+	className: _propTypes2.default.string,
 	placeholder: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object, _propTypes2.default.number, _propTypes2.default.shape({
 		id: _propTypes2.default.string.isRequired,
 		defaultMessage: _propTypes2.default.string.isRequired

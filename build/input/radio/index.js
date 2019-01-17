@@ -35,13 +35,15 @@ var Radio = function Radio(_ref) {
 	    label = _ref.label,
 	    id = _ref.id,
 	    focussed = _ref.focussed,
-	    toggleValue = _ref.toggleValue;
+	    toggleValue = _ref.toggleValue,
+	    className = _ref.className;
 
 	var selected = input.value === toggleValue;
 
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
+			className: className,
 			id: id,
 			meta: meta,
 			disabled: disabled
@@ -84,10 +86,12 @@ Radio.defaultProps = {
 	label: null,
 	disabled: false,
 	focussed: false,
-	id: null
+	id: null,
+	className: null
 };
 
 Radio.propTypes = {
+	className: _propTypes2.default.string,
 	id: _propTypes2.default.string,
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	toggleValue: _propTypes2.default.string.isRequired,

@@ -16,6 +16,7 @@ const Select = ({
 	id,
 	icon,
 	meta,
+	className,
 }) => (
 	<FormGroup
 		label={label}
@@ -23,6 +24,7 @@ const Select = ({
 		iconPosition={iconPosition}
 		icon={icon}
 		meta={meta}
+		className={className}
 	>
 		<StyledSelect
 			disabled={disabled}
@@ -57,9 +59,11 @@ Select.defaultProps = {
 	input: {},
 	initialValue: '',
 	meta: {},
+	className: null,
 };
 
 Select.propTypes = {
+	className: PropTypes.string,
 	input: PropTypes.objectOf(PropTypes.any),
 	initialValue: PropTypes.string,
 	meta: PropTypes.objectOf(PropTypes.any),

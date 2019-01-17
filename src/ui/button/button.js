@@ -19,6 +19,7 @@ const Button = props => {
 		noPadding,
 		fontSize,
 		borderRadius,
+		className,
 	} = props;
 
 	return (
@@ -36,6 +37,7 @@ const Button = props => {
 			noPadding={noPadding}
 			fontSize={fontSize}
 			borderRadius={borderRadius}
+			className={className}
 		>
 			{loading ? <Icon icon="spinner" size="button" spin /> : children}
 		</StyledButton>
@@ -57,9 +59,11 @@ Button.defaultProps = {
 	modifier: 'primary',
 	size: 'medium',
 	onClick: () => {},
+	className: null,
 };
 
 Button.propTypes = {
+	className: PropTypes.string,
 	type: PropTypes.string,
 	disabled: PropTypes.bool,
 	loading: PropTypes.bool,

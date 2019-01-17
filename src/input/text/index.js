@@ -24,6 +24,7 @@ const Text = props => {
 		label,
 		focussed,
 		children,
+		className,
 	} = props;
 
 	return (
@@ -33,6 +34,7 @@ const Text = props => {
 			iconPosition={iconPosition}
 			icon={icon}
 			meta={meta}
+			className={className}
 		>
 			<Input
 				id={id}
@@ -81,9 +83,11 @@ Text.defaultProps = {
 	iconPosition: "right",
 	children: null,
 	initialValue: '',
+	className: null,
 };
 
 Text.propTypes = {
+	className: PropTypes.string,
 	placeholder: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.object,

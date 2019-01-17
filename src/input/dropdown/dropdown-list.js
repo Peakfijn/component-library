@@ -15,7 +15,8 @@ const DropDownList = (props) => {
 		id,
 		notFound,
 		isCreatable,
-		handleCreate
+		handleCreate,
+		className,
 	} = props;
 
 	const filteredOptions = options.filter(
@@ -23,7 +24,7 @@ const DropDownList = (props) => {
 	);
 
 	return (
-		<StyledList hidden={!isOpen} {...getListProps()}>
+		<StyledList hidden={!isOpen} {...getListProps()} className={className}>
 			{filteredOptions.length === 0 &&
 				<StyledListItem>
 					{notFound}
@@ -74,9 +75,11 @@ DropDownList.defaultProps = {
 	notFound: 'Nothing found...',
 	intermittentValue: null,
 	handleCreate: null,
+	className: null,
 };
 
 DropDownList.propTypes = {
+	className: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	notFound: PropTypes.string,
 	handleCreate: PropTypes.func,

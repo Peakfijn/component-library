@@ -21,21 +21,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Tab = function Tab(props) {
 	var title = props.title,
 	    isActive = props.isActive,
-	    onClick = props.onClick;
+	    onClick = props.onClick,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
-		{ isActive: isActive, onClick: onClick },
+		{ isActive: isActive, onClick: onClick, className: className },
 		title
 	);
 };
 
 Tab.defaultProps = {
-	isActive: false
+	isActive: false,
+	className: null
 };
 
 Tab.propTypes = {
+	className: _propTypes2.default.string,
 	title: _propTypes2.default.string.isRequired,
 	isActive: _propTypes2.default.bool,
 	onClick: _propTypes2.default.func.isRequired

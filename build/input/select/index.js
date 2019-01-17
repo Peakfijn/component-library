@@ -34,7 +34,8 @@ var Select = function Select(_ref) {
 	    label = _ref.label,
 	    id = _ref.id,
 	    icon = _ref.icon,
-	    meta = _ref.meta;
+	    meta = _ref.meta,
+	    className = _ref.className;
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
@@ -42,7 +43,8 @@ var Select = function Select(_ref) {
 			id: id,
 			iconPosition: iconPosition,
 			icon: icon,
-			meta: meta
+			meta: meta,
+			className: className
 		},
 		_react2.default.createElement(
 			_styles.StyledSelect,
@@ -83,10 +85,12 @@ Select.defaultProps = {
 	label: null,
 	input: {},
 	initialValue: '',
-	meta: {}
+	meta: {},
+	className: null
 };
 
 Select.propTypes = {
+	className: _propTypes2.default.string,
 	input: _propTypes2.default.objectOf(_propTypes2.default.any),
 	initialValue: _propTypes2.default.string,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any),

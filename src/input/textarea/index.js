@@ -22,7 +22,8 @@ const TextArea = (props) => {
 		size,
 		icon,
 		iconPosition,
-		focussed
+		focussed,
+		className,
 	} = props;
 
 
@@ -33,6 +34,7 @@ const TextArea = (props) => {
 			id={id}
 			iconPosition={iconPosition}
 			meta={meta}
+			className={className}
 		>
 			<Input
 				id={id}
@@ -77,9 +79,11 @@ TextArea.defaultProps = {
 	iconPosition: "right",
 	initialValue: '',
 	icon: null,
+	className: null,
 };
 
 TextArea.propTypes = {
+	className: PropTypes.string,
 	placeholder: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.object,

@@ -37,7 +37,8 @@ var Checkbox = function Checkbox(_ref) {
 	    label = _ref.label,
 	    id = _ref.id,
 	    focussed = _ref.focussed,
-	    borderRadius = _ref.borderRadius;
+	    borderRadius = _ref.borderRadius,
+	    className = _ref.className;
 
 	var selected = input ? input.value : initialValue;
 
@@ -46,7 +47,8 @@ var Checkbox = function Checkbox(_ref) {
 		{
 			id: id,
 			meta: meta,
-			disabled: disabled
+			disabled: disabled,
+			className: className
 		},
 		_react2.default.createElement(
 			_switchWrapper2.default,
@@ -92,6 +94,7 @@ var Checkbox = function Checkbox(_ref) {
 
 Checkbox.defaultProps = {
 	label: null,
+	className: null,
 	disabled: false,
 	focussed: false,
 	initialValue: false,
@@ -102,6 +105,7 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+	className: _propTypes2.default.string,
 	id: _propTypes2.default.string,
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	disabled: _propTypes2.default.bool,

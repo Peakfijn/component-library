@@ -21,7 +21,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Icon = function Icon(props) {
 	var icon = props.icon,
 	    spin = props.spin,
-	    modifier = props.modifier;
+	    modifier = props.modifier,
+	    className = props.className;
 
 	if (!icon) {
 		return null;
@@ -30,19 +31,18 @@ var Icon = function Icon(props) {
 	return _react2.default.createElement(_styles2.default, {
 		icon: icon,
 		spin: spin,
-		modifier: modifier
+		modifier: modifier,
+		className: className
 	});
 };
 Icon.defaultProps = {
-	modifier: null
-};
-
-Icon.defaultProps = {
+	modifier: null,
 	spin: false,
-	modifier: ''
+	className: null
 };
 
 Icon.propTypes = {
+	className: _propTypes2.default.string,
 	icon: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.objectOf(_propTypes2.default.any)]).isRequired,
 	spin: _propTypes2.default.bool,
 	modifier: _propTypes2.default.string

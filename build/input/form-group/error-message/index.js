@@ -24,7 +24,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ErrorMessage = function ErrorMessage(props) {
 	var message = props.message,
-	    isValid = props.isValid;
+	    isValid = props.isValid,
+	    className = props.className;
 
 
 	if (!message || message === '') {
@@ -33,17 +34,19 @@ var ErrorMessage = function ErrorMessage(props) {
 
 	return _react2.default.createElement(
 		_styles2.default,
-		{ isValid: isValid },
+		{ isValid: isValid, className: className },
 		_react2.default.createElement(_ui.Icon, { icon: 'times-circle', modifier: 'error' }),
 		message.id ? _react2.default.createElement(_reactIntl.FormattedMessage, message) : message
 	);
 };
 
 ErrorMessage.defaultProps = {
-	isValid: false
+	isValid: false,
+	className: null
 };
 
 ErrorMessage.propTypes = {
+	className: _propTypes2.default.string,
 	isValid: _propTypes2.default.bool,
 	message: _propTypes2.default.string.isRequired
 };

@@ -35,7 +35,8 @@ var Toggle = function Toggle(_ref) {
 	    initialValue = _ref.initialValue,
 	    label = _ref.label,
 	    id = _ref.id,
-	    focussed = _ref.focussed;
+	    focussed = _ref.focussed,
+	    className = _ref.className;
 
 	var selected = input ? input.value : initialValue;
 
@@ -44,7 +45,8 @@ var Toggle = function Toggle(_ref) {
 		{
 			id: id,
 			meta: meta,
-			disabled: disabled
+			disabled: disabled,
+			className: className
 		},
 		_react2.default.createElement(
 			_switchWrapper2.default,
@@ -83,10 +85,12 @@ Toggle.defaultProps = {
 	disabled: false,
 	focussed: false,
 	initialValue: false,
-	id: null
+	id: null,
+	className: null
 };
 
 Toggle.propTypes = {
+	className: _propTypes2.default.string,
 	id: _propTypes2.default.string,
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	focussed: _propTypes2.default.bool,

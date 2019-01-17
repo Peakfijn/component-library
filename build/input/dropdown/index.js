@@ -79,7 +79,8 @@ var Dropdown = function (_Component) {
 			    iconPosition = _props.iconPosition,
 			    id = _props.id,
 			    notFound = _props.notFound,
-			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'focussed', 'iconPosition', 'id', 'notFound']);
+			    className = _props.className,
+			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'focussed', 'iconPosition', 'id', 'notFound', 'className']);
 
 			var intermittentValue = this.state.intermittentValue;
 
@@ -87,6 +88,7 @@ var Dropdown = function (_Component) {
 			return _react2.default.createElement(
 				_downshift2.default,
 				{
+					className: className,
 					itemToString: function itemToString(i) {
 						return !i || i.label == null ? "" : String(i.label);
 					},
@@ -106,7 +108,7 @@ var Dropdown = function (_Component) {
 						null,
 						_react2.default.createElement(
 							_styles.Wrapper,
-							null,
+							{ className: className },
 							_react2.default.createElement(
 								_styles.StyledText,
 								{
@@ -167,10 +169,12 @@ Dropdown.defaultProps = {
 	label: null,
 	notFound: 'No result',
 	icon: 'angle-down',
-	meta: {}
+	meta: {},
+	className: null
 };
 
 Dropdown.propTypes = {
+	className: _propTypes2.default.string,
 	placeholder: _propTypes2.default.string,
 	id: _propTypes2.default.string.isRequired,
 	title: _propTypes2.default.string.isRequired,

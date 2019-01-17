@@ -9,10 +9,11 @@ const Badge = props => {
 		color,
 		textColor,
 		size,
+		className,
 	} = props;
 
 	return (
-		<StyledContainer>
+		<StyledContainer className={className}>
 			{children}
 			<StyledCircle color={color} textColor={textColor} size={size}>{count}</StyledCircle>
 		</StyledContainer>
@@ -25,9 +26,11 @@ Badge.defaultProps = {
 	size: 'medium',
 	color: 'info',
 	children: null,
+	className: null,
 };
 
 Badge.propTypes = {
+	className: PropTypes.string,
 	count: PropTypes.number.isRequired,
 	children: PropTypes.node,
 	color: PropTypes.string,

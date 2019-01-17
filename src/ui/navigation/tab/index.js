@@ -7,12 +7,13 @@ const Tab = props => {
 	const {
 		title,
 		isActive,
-		onClick
+		onClick,
+		className,
 	} = props;
 
 
 	return (
-		<StyledTab isActive={isActive} onClick={onClick}>
+		<StyledTab isActive={isActive} onClick={onClick} className={className}>
 			{title}
 		</StyledTab>
 	);
@@ -20,9 +21,11 @@ const Tab = props => {
 
 Tab.defaultProps = {
 	isActive: false,
+	className: null,
 };
 
 Tab.propTypes = {
+	className: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	isActive: PropTypes.bool,
 	onClick: PropTypes.func.isRequired,

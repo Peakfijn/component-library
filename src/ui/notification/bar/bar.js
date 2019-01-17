@@ -16,11 +16,13 @@ const Bar = props => {
 		children,
 		onLeftClick,
 		onRightClick,
+		className,
 	} = props;
 
 	return (
 		<StyledBar
 			type={type}
+			className={className}
 			{...props}
 		>
 			<Button modifier="invisible" onClick={onLeftClick}>
@@ -40,9 +42,11 @@ const Bar = props => {
 Bar.defaultProps = {
 	onLeftClick: null,
 	onRightClick: null,
+	className: null,
 };
 
 Bar.propTypes = {
+	className: PropTypes.string,
 	onLeftClick: PropTypes.func,
 	onRightClick: PropTypes.func,
 	type: PropTypes.string.isRequired,

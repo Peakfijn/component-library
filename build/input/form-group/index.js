@@ -41,7 +41,8 @@ var FormGroup = function FormGroup(props) {
 	    children = props.children,
 	    id = props.id,
 	    icon = props.icon,
-	    iconPosition = props.iconPosition;
+	    iconPosition = props.iconPosition,
+	    className = props.className;
 
 
 	var errorMessage = meta.submitFailed && _react2.default.createElement(_errorMessage2.default, {
@@ -51,7 +52,7 @@ var FormGroup = function FormGroup(props) {
 
 	return _react2.default.createElement(
 		_label2.default,
-		{ htmlFor: id },
+		{ htmlFor: id, className: className },
 		label && _react2.default.createElement(
 			_labelContent2.default,
 			null,
@@ -71,10 +72,12 @@ FormGroup.defaultProps = {
 	label: null,
 	children: null,
 	iconPosition: null,
-	icon: null
+	icon: null,
+	className: null
 };
 
 FormGroup.propTypes = {
+	className: _propTypes2.default.string,
 	children: _propTypes2.default.node,
 	id: _propTypes2.default.string.isRequired,
 	iconPosition: _propTypes2.default.string,

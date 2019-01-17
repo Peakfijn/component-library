@@ -13,6 +13,7 @@ const Toggle = ({
 	label,
 	id,
 	focussed,
+	className,
 }) => {
 	const selected = input ? input.value : initialValue;
 
@@ -21,6 +22,7 @@ const Toggle = ({
 			id={id}
 			meta={meta}
 			disabled={disabled}
+			className={className}
 		>
 			<Wrapper>
 				<Switch
@@ -51,9 +53,11 @@ Toggle.defaultProps = {
 	focussed: false,
 	initialValue: false,
 	id: null,
+	className: null,
 };
 
 Toggle.propTypes = {
+	className: PropTypes.string,
 	id: PropTypes.string,
 	label: PropTypes.oneOfType([
 		PropTypes.string,

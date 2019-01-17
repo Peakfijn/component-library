@@ -25,7 +25,8 @@ var Wrapper = function Wrapper(props) {
 	    horizontalGutter = props.horizontalGutter,
 	    verticalGutter = props.verticalGutter,
 	    grow = props.grow,
-	    background = props.background;
+	    background = props.background,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
@@ -36,7 +37,8 @@ var Wrapper = function Wrapper(props) {
 			align: align,
 			grow: grow,
 			background: background,
-			modifier: modifier
+			modifier: modifier,
+			className: className
 		},
 		children
 	);
@@ -49,10 +51,12 @@ Wrapper.defaultProps = {
 	align: null,
 	grow: null,
 	background: null,
-	children: null
+	children: null,
+	className: null
 };
 
 Wrapper.propTypes = {
+	className: _propTypes2.default.string,
 	modifier: _propTypes2.default.oneOf(['flex', 'flex-cell', 'full', 'bottom-right', 'full-right']),
 	align: _propTypes2.default.oneOf(['flex-start', 'flex-end', 'center']),
 	grow: _propTypes2.default.oneOf(['not-grow']),

@@ -28,7 +28,8 @@ var DropDownList = function DropDownList(props) {
 	    id = props.id,
 	    notFound = props.notFound,
 	    isCreatable = props.isCreatable,
-	    handleCreate = props.handleCreate;
+	    handleCreate = props.handleCreate,
+	    className = props.className;
 
 
 	var filteredOptions = options.filter(function (option) {
@@ -37,7 +38,7 @@ var DropDownList = function DropDownList(props) {
 
 	return _react2.default.createElement(
 		_styles.StyledList,
-		_extends({ hidden: !isOpen }, getListProps()),
+		_extends({ hidden: !isOpen }, getListProps(), { className: className }),
 		filteredOptions.length === 0 && _react2.default.createElement(
 			_styles.StyledListItem,
 			null,
@@ -92,10 +93,12 @@ DropDownList.defaultProps = {
 	selectedValue: '',
 	notFound: 'Nothing found...',
 	intermittentValue: null,
-	handleCreate: null
+	handleCreate: null,
+	className: null
 };
 
 DropDownList.propTypes = {
+	className: _propTypes2.default.string,
 	id: _propTypes2.default.string.isRequired,
 	notFound: _propTypes2.default.string,
 	handleCreate: _propTypes2.default.func,

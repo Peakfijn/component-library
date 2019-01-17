@@ -20,7 +20,8 @@ var Modal = function Modal(props) {
 	var children = props.children,
 	    isOpen = props.isOpen,
 	    toggleModal = props.toggleModal,
-	    footerContent = props.footerContent;
+	    footerContent = props.footerContent,
+	    className = props.className;
 
 
 	var onBackGroundClick = function onBackGroundClick(e) {
@@ -31,7 +32,7 @@ var Modal = function Modal(props) {
 
 	return isOpen ? _react2.default.createElement(
 		_styles.ModalContainer,
-		null,
+		{ className: className },
 		_react2.default.createElement(
 			_styles.ModalContentContainer,
 			{ onClick: onBackGroundClick },
@@ -50,10 +51,12 @@ var Modal = function Modal(props) {
 };
 
 Modal.defaultProps = {
-	footerContent: null
+	footerContent: null,
+	className: null
 };
 
 Modal.propTypes = {
+	className: _propTypes2.default.string,
 	children: _propTypes2.default.node.isRequired,
 	footerContent: _propTypes2.default.node,
 	isOpen: _propTypes2.default.bool.isRequired,

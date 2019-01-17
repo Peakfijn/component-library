@@ -9,6 +9,7 @@ const ErrorMessage = props => {
 	const {
 		message,
 		isValid,
+		className,
 	} = props;
 
 	if (!message || message === '') {
@@ -16,7 +17,7 @@ const ErrorMessage = props => {
 	}
 
 	return (
-		<StyledMessage isValid={isValid}>
+		<StyledMessage isValid={isValid} className={className}>
 			<Icon icon="times-circle" modifier="error" />
 			{message.id ? <FormattedMessage {...message} /> : message}
 		</StyledMessage>
@@ -25,9 +26,11 @@ const ErrorMessage = props => {
 
 ErrorMessage.defaultProps = {
 	isValid: false,
+	className: null,
 };
 
 ErrorMessage.propTypes = {
+	className: PropTypes.string,
 	isValid: PropTypes.bool,
 	message: PropTypes.string.isRequired,
 };

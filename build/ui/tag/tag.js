@@ -22,12 +22,13 @@ var Label = function Label(props) {
 	var color = props.color,
 	    textColor = props.textColor,
 	    children = props.children,
-	    size = props.size;
+	    size = props.size,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
-		{ color: color, textColor: textColor, size: size },
+		{ color: color, textColor: textColor, size: size, className: className },
 		children
 	);
 };
@@ -35,10 +36,12 @@ var Label = function Label(props) {
 Label.defaultProps = {
 	textColor: 'normal',
 	size: 'medium',
-	children: null
+	children: null,
+	className: null
 };
 
 Label.propTypes = {
+	className: _propTypes2.default.string,
 	color: _propTypes2.default.string.isRequired,
 	size: _propTypes2.default.string,
 	textColor: _propTypes2.default.string,

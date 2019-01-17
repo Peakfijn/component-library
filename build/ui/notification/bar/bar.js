@@ -33,13 +33,15 @@ var Bar = function Bar(props) {
 	var type = props.type,
 	    children = props.children,
 	    onLeftClick = props.onLeftClick,
-	    onRightClick = props.onRightClick;
+	    onRightClick = props.onRightClick,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
 		_extends({
-			type: type
+			type: type,
+			className: className
 		}, props),
 		_react2.default.createElement(
 			_.Button,
@@ -61,10 +63,12 @@ var Bar = function Bar(props) {
 
 Bar.defaultProps = {
 	onLeftClick: null,
-	onRightClick: null
+	onRightClick: null,
+	className: null
 };
 
 Bar.propTypes = {
+	className: _propTypes2.default.string,
 	onLeftClick: _propTypes2.default.func,
 	onRightClick: _propTypes2.default.func,
 	type: _propTypes2.default.string.isRequired,

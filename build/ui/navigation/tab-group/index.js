@@ -19,21 +19,24 @@ var _styles2 = _interopRequireDefault(_styles);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TabGroup = function TabGroup(props) {
-	var children = props.children;
+	var children = props.children,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
-		null,
+		{ className: className },
 		children
 	);
 };
 
 TabGroup.defaultProps = {
-	children: null
+	children: null,
+	className: null
 };
 
 TabGroup.propTypes = {
+	className: _propTypes2.default.string,
 	children: _propTypes2.default.node
 };
 

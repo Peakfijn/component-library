@@ -16,6 +16,7 @@ const Checkbox = ({
 	id,
 	focussed,
 	borderRadius,
+	className
 })  => {
 	const selected = input ? input.value : initialValue;
 
@@ -24,6 +25,7 @@ const Checkbox = ({
 			id={id}
 			meta={meta}
 			disabled={disabled}
+			className={className}
 		>
 			<Wrapper>
 				<Box
@@ -60,6 +62,7 @@ const Checkbox = ({
 
 Checkbox.defaultProps = {
 	label: null,
+	className: null,
 	disabled: false,
 	focussed: false,
 	initialValue: false,
@@ -70,6 +73,7 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+	className: PropTypes.string,
 	id: PropTypes.string,
 	label: PropTypes.oneOfType([
 		PropTypes.string,

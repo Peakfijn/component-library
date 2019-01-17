@@ -14,11 +14,13 @@ const Radio = ({
 	id,
 	focussed,
 	toggleValue,
+	className,
 }) => {
 	const selected = input.value === toggleValue;
 
 	return (
 		<FormGroup
+			className={className}
 			id={id}
 			meta={meta}
 			disabled={disabled}
@@ -53,9 +55,11 @@ Radio.defaultProps = {
 	disabled: false,
 	focussed: false,
 	id: null,
+	className: null,
 };
 
 Radio.propTypes = {
+	className: PropTypes.string,
 	id: PropTypes.string,
 	label: PropTypes.oneOfType([
 		PropTypes.string,

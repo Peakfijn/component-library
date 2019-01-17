@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import InputIcon from './styles';
 
 const Icon = props => {
-	const { icon, spin, modifier } = props;
+	const { icon, spin, modifier, className } = props;
 	if (!icon) {
 		return null;
 	}
@@ -13,19 +13,18 @@ const Icon = props => {
 			icon={icon}
 			spin={spin}
 			modifier={modifier}
+			className={className}
 		/>
 	);
 }
 Icon.defaultProps = {
-	modifier: null
-}
-
-Icon.defaultProps = {
+	modifier: null,
 	spin: false,
-	modifier: '',
+	className: null,
 }
 
 Icon.propTypes = {
+	className: PropTypes.string,
 	icon: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.objectOf(PropTypes.any),

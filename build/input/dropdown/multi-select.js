@@ -128,7 +128,8 @@ var MultiSelect = function (_Component) {
 			    id = _props.id,
 			    notFound = _props.notFound,
 			    isCreatable = _props.isCreatable,
-			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'iconPosition', 'id', 'notFound', 'isCreatable']);
+			    className = _props.className,
+			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'iconPosition', 'id', 'notFound', 'isCreatable', 'className']);
 
 			var _state = this.state,
 			    additionalOptions = _state.additionalOptions,
@@ -138,6 +139,7 @@ var MultiSelect = function (_Component) {
 			return _react2.default.createElement(
 				_downshift2.default,
 				{
+					className: className,
 					itemToString: function itemToString(i) {
 						return !i || i.label == null ? "" : String(i.label);
 					},
@@ -226,10 +228,12 @@ MultiSelect.defaultProps = {
 	notFound: 'No result',
 	icon: 'angle-down',
 	meta: {},
-	options: []
+	options: [],
+	className: null
 };
 
 MultiSelect.propTypes = {
+	className: _propTypes2.default.string,
 	placeholder: _propTypes2.default.string,
 	id: _propTypes2.default.string.isRequired,
 	title: _propTypes2.default.string.isRequired,

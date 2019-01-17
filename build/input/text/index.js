@@ -42,7 +42,8 @@ var Text = function Text(props) {
 	    iconPosition = props.iconPosition,
 	    label = props.label,
 	    focussed = props.focussed,
-	    children = props.children;
+	    children = props.children,
+	    className = props.className;
 
 
 	return _react2.default.createElement(
@@ -52,7 +53,8 @@ var Text = function Text(props) {
 			id: id,
 			iconPosition: iconPosition,
 			icon: icon,
-			meta: meta
+			meta: meta,
+			className: className
 		},
 		_react2.default.createElement(_styles2.default, {
 			id: id,
@@ -95,10 +97,12 @@ Text.defaultProps = {
 	size: "medium",
 	iconPosition: "right",
 	children: null,
-	initialValue: ''
+	initialValue: '',
+	className: null
 };
 
 Text.propTypes = {
+	className: _propTypes2.default.string,
 	placeholder: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object, _propTypes2.default.number, _propTypes2.default.shape({
 		id: _propTypes2.default.string.isRequired,
 		defaultMessage: _propTypes2.default.string.isRequired

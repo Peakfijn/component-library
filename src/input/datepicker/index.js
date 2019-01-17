@@ -35,6 +35,7 @@ class Datepicker extends Component {
 			iconPosition,
 			icon,
 			placeholder,
+			className,
 		} = this.props;
 		if (!isMobile && !isTablet && !(isIE && browserVersion <= 11)) {
 			return (
@@ -44,6 +45,7 @@ class Datepicker extends Component {
 					iconPosition={iconPosition}
 					icon={icon}
 					meta={meta}
+					className={className}
 				>
 					<StyledDatepicker>
 						<StyledReactDatePicker
@@ -84,9 +86,11 @@ Datepicker.defaultProps = {
 	label: null,
 	size: "medium",
 	notation: 'DD-MM-YYYY',
+	className: null,
 }
 
 Datepicker.propTypes = {
+	className: PropTypes.string,
 	meta: PropTypes.objectOf(PropTypes.any),
 	input: PropTypes.objectOf(PropTypes.any),
 	id: PropTypes.string.isRequired,

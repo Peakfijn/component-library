@@ -31,6 +31,7 @@ class Dropdown extends Component {
 			iconPosition,
 			id,
 			notFound,
+			className,
 			...other
 		} = this.props;
 
@@ -38,6 +39,7 @@ class Dropdown extends Component {
 
 		return (
 			<Downshift
+				className={className}
 				itemToString={i => (!i || i.label == null ? "" : String(i.label))}
 				selectedItem={value}
 				onChange={this.handleChange}
@@ -50,7 +52,7 @@ class Dropdown extends Component {
 					selectedItem
 				}) => (
 					<div>
-						<Wrapper>
+						<Wrapper className={className}>
 							<StyledText
 								id={id}
 								fullWidth
@@ -108,9 +110,11 @@ Dropdown.defaultProps = {
 	notFound: 'No result',
 	icon: 'angle-down',
 	meta: {},
+	className: null,
 };
 
 Dropdown.propTypes = {
+	className: PropTypes.string,
 	placeholder: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
