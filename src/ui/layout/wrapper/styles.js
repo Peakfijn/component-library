@@ -80,11 +80,19 @@ const WrapperStyle = styled.div`
 			background: ${theme.color.background[`${background}`]};
 	` || ''}
 
-	${({ horizontalGutter, theme }) => horizontalGutter && `
+	${({ horizontalGutter, theme, grow }) => horizontalGutter && `
 		> * {
 			padding-left: ${theme.gutter[`${horizontalGutter}`]};
 			padding-right: ${theme.gutter[`${horizontalGutter}`]};
 		}
+		${grow === "fluid" && `
+			> *:first-child {
+				padding-left: 0;
+			}
+			> *:last-child {
+				padding-right: 0;
+			}
+		` || ''}
 	` || ''}
 
 	${({ verticalGutter, theme }) => verticalGutter && `
@@ -92,6 +100,14 @@ const WrapperStyle = styled.div`
 			padding-top: ${theme.gutter[`${verticalGutter}`]};
 			padding-bottom: ${theme.gutter[`${verticalGutter}`]};
 		}
+		${grow === "fluid" && `
+			> *:first-child {
+				padding-top: 0;
+			}
+			> *:last-child {
+				padding-bottom: 0;
+			}
+		` || ''}
 	` || ''}
 `;
 

@@ -62,7 +62,7 @@ Wrapper.propTypes = {
 	className: _propTypes2.default.string,
 	modifier: _propTypes2.default.oneOf(['flex', 'flex-column', 'flex-cell', 'full', 'bottom-right', 'full-right']),
 	align: _propTypes2.default.oneOf(['start', 'flex-start', 'flex-end', 'center']),
-	grow: _propTypes2.default.oneOf(['not-grow']),
+	grow: _propTypes2.default.oneOf(['not-grow', 'fluid']),
 	background: _propTypes2.default.oneOf(['window']),
 	wrap: _propTypes2.default.shape({
 		small: _propTypes2.default.string,
