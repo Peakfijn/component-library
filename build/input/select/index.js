@@ -61,7 +61,7 @@ var Select = function Select(_ref) {
 				{ value: '', disabled: true },
 				placeholder
 			),
-			options.map(function (item) {
+			options.length > 0 && options.map(function (item) {
 				return _react2.default.createElement(
 					'option',
 					{
@@ -85,6 +85,7 @@ Select.defaultProps = {
 	label: null,
 	input: {},
 	initialValue: '',
+	options: {},
 	meta: {},
 	className: null
 };
@@ -108,7 +109,7 @@ Select.propTypes = {
 	options: _propTypes2.default.arrayOf(_propTypes2.default.shape({
 		value: _propTypes2.default.string,
 		label: _propTypes2.default.string
-	})).isRequired
+	}))
 };
 
 exports.default = Select;

@@ -36,7 +36,7 @@ const Select = ({
 			{...input}
 		>
 			{placeholder && <option value="" disabled>{placeholder}</option>}
-			{options.map(item =>
+			{options.length > 0 && options.map(item =>
 				<option
 					key={`select-option-${id}-${item.value}`}
 					value={item.value}
@@ -58,6 +58,7 @@ Select.defaultProps = {
 	label: null,
 	input: {},
 	initialValue: '',
+	options: {},
 	meta: {},
 	className: null,
 };
@@ -89,7 +90,7 @@ Select.propTypes = {
 	options: PropTypes.arrayOf(PropTypes.shape({
 		value: PropTypes.string,
 		label: PropTypes.string,
-	})).isRequired,
+	})),
 };
 
 export default Select;
