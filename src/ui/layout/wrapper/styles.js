@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
 const WrapperStyle = styled.div`
-	${({ modifier, align, wrap, theme: { breakpoint } }) => modifier === 'flex' && `
+	${({ modifier, align, wrap, theme: { breakpoint } }) => (modifier === 'flex' || modifier === "flex-column") && `
 		display: flex;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		width: 100%;
+
+		${modifier === "flex-column" && `
+			flex-direction: column;
+			height: 100vh;
+			overflow: hidden;
+		` || ''}
 
 		${align && `
 			align-items: ${align};
@@ -32,9 +39,16 @@ const WrapperStyle = styled.div`
 		text-overflow: ellipsis;
 		box-sizing: border-box;
 		word-wrap: break-word;
+		width: 100%;
 
 		${grow && grow === "not-grow" && `
 			flex-grow: 0;
+			flex-shrink: 0;
+		` || ''}
+		${grow && grow === "auto" && `
+			overflow: auto;
+			flex-grow: 1;
+			flex-shrink: 1;
 		` || ''}
 	` || ''}
 

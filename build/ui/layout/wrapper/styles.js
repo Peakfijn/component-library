@@ -18,13 +18,13 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 	    align = _ref.align,
 	    wrap = _ref.wrap,
 	    breakpoint = _ref.theme.breakpoint;
-	return modifier === 'flex' && '\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\n\t\t' + (align && '\n\t\t\talign-items: ' + align + ';\n\t\t' || '') + '\n\n\t\t' + (wrap && '\n\t\t\tflex-wrap: wrap;\n\t\t\t> * {\n\t\t\t\tflex-grow: 0;\n\t\t\t}\n\n\t\t\t' + (Object.keys(wrap).map(function (key) {
+	return (modifier === 'flex' || modifier === "flex-column") && '\n\t\tdisplay: flex;\n\t\twhite-space: nowrap;\n\t\ttext-overflow: ellipsis;\n\t\twidth: 100%;\n\n\t\t' + (modifier === "flex-column" && '\n\t\t\tflex-direction: column;\n\t\t\theight: 100vh;\n\t\t\toverflow: hidden;\n\t\t' || '') + '\n\n\t\t' + (align && '\n\t\t\talign-items: ' + align + ';\n\t\t' || '') + '\n\n\t\t' + (wrap && '\n\t\t\tflex-wrap: wrap;\n\t\t\t> * {\n\t\t\t\tflex-grow: 0;\n\t\t\t}\n\n\t\t\t' + (Object.keys(wrap).map(function (key) {
 		return '\n\t\t\t\t@media (max-width: ' + breakpoint[key] + ') {\n\t\t\t\t\t> * {\n\t\t\t\t\t\tflex-basis: ' + wrap[key] + ';\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t' || '';
 	}).reverse().join(' ') || '') + '\n\t\t' || '') + '\n\t';
 }, function (_ref2) {
 	var modifier = _ref2.modifier,
 	    grow = _ref2.grow;
-	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t' || '') + '\n\t' || '';
+	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\t\twidth: 100%;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\toverflow: auto;\n\t\t\tflex-grow: 1;\n\t\t\tflex-shrink: 1;\n\t\t' || '') + '\n\t' || '';
 }, function (_ref3) {
 	var modifier = _ref3.modifier;
 	return modifier === 'full' && '\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: fixed;\n\t\toverflow: auto;\n\t' || '';
