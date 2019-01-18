@@ -13,6 +13,7 @@ const WrapperStyle = styled.div`
 			overflow: hidden;
 		` || ''}
 
+
 		${align && `
 			align-items: ${align};
 		` || ''}
@@ -20,13 +21,13 @@ const WrapperStyle = styled.div`
 		${wrap && `
 			flex-wrap: wrap;
 			> * {
-				flex-grow: 0;
+				flex-grow: 0 !important;
 			}
 
 			${Object.keys(wrap).map(key => `
 				@media (max-width: ${breakpoint[key]}) {
 					> * {
-						flex-basis: ${wrap[key]};
+						flex-basis: ${wrap[key]} !important;
 					}
 				}
 			` || '').reverse().join(' ') || ''}
