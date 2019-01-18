@@ -46,7 +46,8 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 	return horizontalGutter && '\n\t\t> * {\n\t\t\tpadding-left: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t\tpadding-right: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-left: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-right: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
 }, function (_ref8) {
 	var verticalGutter = _ref8.verticalGutter,
-	    theme = _ref8.theme;
+	    theme = _ref8.theme,
+	    grow = _ref8.grow;
 	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-top: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-bottom: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
 });
 

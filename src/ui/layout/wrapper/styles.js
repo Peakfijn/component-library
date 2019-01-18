@@ -95,7 +95,7 @@ const WrapperStyle = styled.div`
 		` || ''}
 	` || ''}
 
-	${({ verticalGutter, theme }) => verticalGutter && `
+	${({ verticalGutter, theme, grow }) => verticalGutter && `
 		> * {
 			padding-top: ${theme.gutter[`${verticalGutter}`]};
 			padding-bottom: ${theme.gutter[`${verticalGutter}`]};
