@@ -84,8 +84,8 @@ const StyledButton = styled.button`
 	/* Modifier: disabled */
 	${props => props.disabled && `
 		background-color: ${props.theme.color.background.inputDisabled};
-		color: ${themeColor('grey', props)};
-		border: 1px solid ${themeColor('grey', props)};
+		color: ${props.theme.color.text.disabled};
+		border: 1px solid ${lighten(props.theme.color.adjustColor.tiny, props.theme.color.background.inputDisabled)};
 		cursor: not-allowed;
 	` || ''}
 
