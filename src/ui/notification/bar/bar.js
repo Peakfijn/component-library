@@ -25,9 +25,11 @@ const Bar = props => {
 			className={className}
 			{...props}
 		>
-			<Button modifier="invisible" onClick={onLeftClick}>
-				<Icon icon={notificationIcon[type].icon} />
-			</Button>
+			{notificationIcon[type] && notificationIcon[type].icon && (
+				<Button modifier="invisible" onClick={onLeftClick}>
+					<Icon icon={notificationIcon[type].icon} />
+				</Button>
+			)}
 
 			 <span>{children}</span>
 
