@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const WrapperStyle = styled.div`
-	${({ modifier, align, justify, wrap, theme: { breakpoint } }) => (modifier === 'flex' || modifier === "flex-column") && `
+	${({ modifier, align, justify, wrap, theme: { breakpoint } }) => (
+		modifier === 'flex' ||
+		modifier === "flex-column") && `
 		display: flex;
 		white-space: nowrap;
 		text-overflow: ellipsis;
