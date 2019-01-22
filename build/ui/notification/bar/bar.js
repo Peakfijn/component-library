@@ -43,7 +43,7 @@ var Bar = function Bar(props) {
 			type: type,
 			className: className
 		}, props),
-		_react2.default.createElement(
+		notificationIcon[type] && notificationIcon[type].icon && _react2.default.createElement(
 			_.Button,
 			{ modifier: 'invisible', onClick: onLeftClick },
 			_react2.default.createElement(_.Icon, { icon: notificationIcon[type].icon })
