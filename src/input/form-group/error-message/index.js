@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import { Icon } from '../../../ui';
 
 import StyledMessage from './styles';
@@ -19,7 +18,7 @@ const ErrorMessage = props => {
 	return (
 		<StyledMessage isValid={isValid} className={className}>
 			<Icon icon="times-circle" modifier="error" />
-			{message.id ? <FormattedMessage {...message} /> : message}
+			{message}
 		</StyledMessage>
 	);
 };

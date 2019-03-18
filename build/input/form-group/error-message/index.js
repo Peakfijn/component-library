@@ -12,8 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactIntl = require('react-intl');
-
 var _ui = require('../../../ui');
 
 var _styles = require('./styles');
@@ -36,7 +34,7 @@ var ErrorMessage = function ErrorMessage(props) {
 		_styles2.default,
 		{ isValid: isValid, className: className },
 		_react2.default.createElement(_ui.Icon, { icon: 'times-circle', modifier: 'error' }),
-		message.id ? _react2.default.createElement(_reactIntl.FormattedMessage, message) : message
+		message
 	);
 };
 

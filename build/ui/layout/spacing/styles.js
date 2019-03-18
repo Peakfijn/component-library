@@ -13,14 +13,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var SpacingStyle = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__SpacingStyle',
 	componentId: 'sc-1ebimj7-0'
-})(['box-sizing:border-box;margin-right:auto;margin-left:auto;line-height:initial;', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
+})(['box-sizing:border-box;margin-right:auto;margin-left:auto;line-height:initial;', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
 	var horizontal = _ref.horizontal,
-	    theme = _ref.theme;
-	return horizontal && '\n\t\tpadding-left: ' + theme.gutter['' + horizontal] + ';\n\t\tpadding-right: ' + theme.gutter['' + horizontal] + ';\n\t' || '';
+	    gutter = _ref.theme.gutter;
+	return horizontal && '\n\t\tpadding-left: ' + gutter['' + horizontal] + ';\n\t\tpadding-right: ' + gutter['' + horizontal] + ';\n\t' || '';
 }, function (_ref2) {
 	var vertical = _ref2.vertical,
-	    theme = _ref2.theme;
-	return vertical && '\n\t\tpadding-top: ' + theme.gutter['' + vertical] + ';\n\t\tpadding-bottom: ' + theme.gutter['' + vertical] + ';\n\t' || '';
+	    gutter = _ref2.theme.gutter;
+	return vertical && '\n\t\tpadding-top: ' + gutter['' + vertical] + ';\n\t\tpadding-bottom: ' + gutter['' + vertical] + ';\n\t' || '';
 }, function (_ref3) {
 	var minAtBreakpoint = _ref3.minAtBreakpoint,
 	    _ref3$theme = _ref3.theme,
@@ -62,22 +62,25 @@ var SpacingStyle = _styledComponents2.default.div.withConfig({
 	var isInline = _ref11.isInline;
 	return isInline && '\n\t\tdisplay: inline;\n\t\twidth: initial;\n\t' || '';
 }, function (_ref12) {
-	var modifier = _ref12.modifier;
-	return modifier === 'only-top' && '\n\t\tpadding-right: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
+	var unsetMargin = _ref12.unsetMargin;
+	return unsetMargin && '\n\t\tmargin-right: unset;\n\t\tmargin-left: unset;\n\t' || '';
 }, function (_ref13) {
 	var modifier = _ref13.modifier;
-	return modifier === 'only-right' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
+	return modifier === 'only-top' && '\n\t\tpadding-right: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
 }, function (_ref14) {
 	var modifier = _ref14.modifier;
-	return modifier === 'only-bottom' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
+	return modifier === 'only-right' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
 }, function (_ref15) {
 	var modifier = _ref15.modifier;
-	return modifier === 'only-left' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
+	return modifier === 'only-bottom' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tpadding-left: 0 !important;\n\t' || '';
 }, function (_ref16) {
 	var modifier = _ref16.modifier;
-	return modifier === 'only-vertical' && '\n\t\tpadding-left: 0 !important;\n\t\tpadding-right: 0 !important;\n\t' || '';
+	return modifier === 'only-left' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-right: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
 }, function (_ref17) {
 	var modifier = _ref17.modifier;
+	return modifier === 'only-vertical' && '\n\t\tpadding-left: 0 !important;\n\t\tpadding-right: 0 !important;\n\t' || '';
+}, function (_ref18) {
+	var modifier = _ref18.modifier;
 	return modifier === 'only-horizontal' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
 });
 

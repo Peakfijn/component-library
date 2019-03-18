@@ -22,6 +22,7 @@ var Wrapper = function Wrapper(props) {
 	var modifier = props.modifier,
 	    children = props.children,
 	    align = props.align,
+	    justify = props.justify,
 	    horizontalGutter = props.horizontalGutter,
 	    verticalGutter = props.verticalGutter,
 	    grow = props.grow,
@@ -36,6 +37,7 @@ var Wrapper = function Wrapper(props) {
 			horizontalGutter: horizontalGutter,
 			verticalGutter: verticalGutter,
 			align: align,
+			justify: justify,
 			grow: grow,
 			background: background,
 			wrap: wrap,
@@ -51,6 +53,7 @@ Wrapper.defaultProps = {
 	horizontalGutter: null,
 	verticalGutter: null,
 	align: 'start',
+	justify: 'normal',
 	grow: null,
 	background: null,
 	wrap: null,
@@ -60,8 +63,9 @@ Wrapper.defaultProps = {
 
 Wrapper.propTypes = {
 	className: _propTypes2.default.string,
-	modifier: _propTypes2.default.oneOf(['flex', 'flex-column', 'flex-cell', 'full', 'bottom-right', 'full-right']),
+	modifier: _propTypes2.default.oneOf(['flex', 'flex-column', 'flex-column-full', 'flex-cell', 'full', 'bottom-right', 'full-right']),
 	align: _propTypes2.default.oneOf(['start', 'flex-start', 'flex-end', 'center']),
+	justify: _propTypes2.default.oneOf(['center', 'start', 'end', 'flex-start', 'flex-end', 'left', 'right', 'baseline', 'first baseline', 'last baseline', 'normal', 'space-between', 'space-around', 'space-evenly', 'stretch', 'inherit', 'initial', 'unset']),
 	grow: _propTypes2.default.oneOf(['not-grow', 'fluid']),
 	background: _propTypes2.default.oneOf(['window']),
 	wrap: _propTypes2.default.shape({

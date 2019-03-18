@@ -28,7 +28,8 @@ var Spacing = function Spacing(props) {
 	    maxWidthBreakpoint = props.maxWidthBreakpoint,
 	    isWide = props.isWide,
 	    isInline = props.isInline,
-	    className = props.className;
+	    className = props.className,
+	    unsetMargin = props.unsetMargin;
 
 
 	return _react2.default.createElement(
@@ -37,6 +38,7 @@ var Spacing = function Spacing(props) {
 			modifier: modifier,
 			isWide: isWide,
 			isInline: isInline,
+			unsetMargin: unsetMargin,
 			horizontal: horizontal,
 			vertical: vertical,
 			minAtBreakpoint: minAtBreakpoint,
@@ -58,10 +60,12 @@ Spacing.defaultProps = {
 	isWide: null,
 	isInline: null,
 	children: null,
-	className: null
+	className: null,
+	unsetMargin: false
 };
 
 Spacing.propTypes = {
+	unsetMargin: _propTypes2.default.bool,
 	className: _propTypes2.default.string,
 	modifier: _propTypes2.default.string,
 	horizontal: _propTypes2.default.string,

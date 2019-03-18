@@ -22,9 +22,11 @@ const Modal = props =>  {
 				<ModalContentContainer onClick={onBackGroundClick}>
 					<ModalContent maxWidthBreakpoint="large">
 						{children}
-						<ModalFooter>
-							{footerContent}
-						</ModalFooter>
+						{footerContent && (
+							<ModalFooter>
+								{footerContent}
+							</ModalFooter>
+						)}
 					</ModalContent>
 				</ModalContentContainer>
 			</ModalContainer> : null
