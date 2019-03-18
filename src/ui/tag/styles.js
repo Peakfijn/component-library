@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import defaultProps from '../../defaultProps';
 
 import buttonSizeModifier from '../button/modifiers/size';
 
-const StyledLabel = styled.span`
+const Tag = styled.span`
 	box-sizing: border-box;
 	outline: none;
 	border-radius: ${props => props.theme.borderRadius.medium};
@@ -17,4 +18,6 @@ const StyledLabel = styled.span`
 	${buttonSizeModifier}
 `;
 
-export default StyledLabel;
+Tag.defaultProps = defaultProps;
+
+export default Tag;

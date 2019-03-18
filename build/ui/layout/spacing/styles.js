@@ -8,6 +8,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SpacingStyle = _styledComponents2.default.div.withConfig({
@@ -80,5 +84,7 @@ var SpacingStyle = _styledComponents2.default.div.withConfig({
 	var modifier = _ref17.modifier;
 	return modifier === 'only-horizontal' && '\n\t\tpadding-top: 0 !important;\n\t\tpadding-bottom: 0 !important;\n\t' || '';
 });
+
+SpacingStyle.defaultProps = _defaultProps2.default;
 
 exports.default = SpacingStyle;

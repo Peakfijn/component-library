@@ -3,6 +3,7 @@ import { darken, lighten } from 'polished';
 import buttonSizeModifier from './modifiers/size';
 import fontSizeModifier from './modifiers/font-size';
 import borderRadiusModifier from './modifiers/border-radius';
+import defaultProps from '../../defaultProps';
 
 const themeColor = (key, props) => props.theme.color[key];
 
@@ -165,5 +166,7 @@ const StyledButton = styled.button`
 		padding: 0 !important;
 	` || ''}
 `;
+
+StyledButton.defaultProps = defaultProps;
 
 export default StyledButton;

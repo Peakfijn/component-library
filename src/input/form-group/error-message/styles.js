@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../../defaultProps';
 
 const StyledMessage = styled.p`
 	margin-top: ${props => props.theme.gutter.small};
@@ -10,5 +11,7 @@ const StyledMessage = styled.p`
 		color: ${theme.color.danger};
 	` || ''}
 `;
+
+StyledMessage.defaultProps = defaultProps;
 
 export default StyledMessage;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../defaultProps';
 
 export const Paragraph = styled.p`
 	margin-top: ${props => props.theme.gutter.small};
@@ -24,3 +25,6 @@ export const Caption = styled.p`
 		color: ${theme.color.text.normal};
 	` || ''}
 `;
+
+Paragraph.defaultProps = defaultProps;
+Caption.defaultProps = defaultProps;

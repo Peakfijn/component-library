@@ -10,6 +10,10 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _reactFontawesome = require('@fortawesome/react-fontawesome');
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var InputIcon = (0, _styledComponents2.default)(_reactFontawesome.FontAwesomeIcon).withConfig({
@@ -40,5 +44,7 @@ var InputIcon = (0, _styledComponents2.default)(_reactFontawesome.FontAwesomeIco
 }, function (props) {
 	return props.width && '\n\t\twidth: ' + props.width + ';\n\t' || '';
 });
+
+InputIcon.defaultProps = _defaultProps2.default;
 
 exports.default = InputIcon;

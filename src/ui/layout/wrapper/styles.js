@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../../defaultProps';
 
 const WrapperStyle = styled.div`
 	${({ modifier, align, wrap, theme: { breakpoint } }) => (modifier === 'flex' || modifier === "flex-column") && `
@@ -111,5 +112,7 @@ const WrapperStyle = styled.div`
 		` || ''}
 	` || ''}
 `;
+
+WrapperStyle.defaultProps = defaultProps;
 
 export default WrapperStyle;

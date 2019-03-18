@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import validationStyles from '../styles/validation';
 import stateStyles from '../styles/state';
 import iconAdjustmentStyles from '../styles/icon-adjustment';
+import defaultProps from '../../defaultProps';
 
 const Input = styled.textarea`
 	box-sizing: border-box;
@@ -27,5 +28,7 @@ const Input = styled.textarea`
 	${iconAdjustmentStyles}
 	${validationStyles}
 `;
+
+Input.defaultProps = defaultProps;
 
 export default Input;

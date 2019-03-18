@@ -12,6 +12,10 @@ var _borderRadius = require('../button/modifiers/border-radius');
 
 var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var InputIcon = _styledComponents2.default.img.withConfig({
@@ -25,5 +29,7 @@ var InputIcon = _styledComponents2.default.img.withConfig({
 	var fit = _ref.fit;
 	return fit && '\n\t\t\tobject-fit: ' + fit + ';\n\t' || '';
 }, _borderRadius2.default);
+
+InputIcon.defaultProps = _defaultProps2.default;
 
 exports.default = InputIcon;

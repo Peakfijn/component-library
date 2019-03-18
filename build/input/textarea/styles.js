@@ -20,6 +20,10 @@ var _iconAdjustment = require('../styles/icon-adjustment');
 
 var _iconAdjustment2 = _interopRequireDefault(_iconAdjustment);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Input = _styledComponents2.default.textarea.withConfig({
@@ -40,5 +44,7 @@ var Input = _styledComponents2.default.textarea.withConfig({
 	    theme = _ref.theme;
 	return size === "medium" && '\n\t\tpadding: ' + theme.gutter.small + ';\n\t\tline-height: 1rem;\n\t\tfont-size: ' + theme.fontSize.medium + ';\n\t' || '';
 }, _iconAdjustment2.default, _validation2.default);
+
+Input.defaultProps = _defaultProps2.default;
 
 exports.default = Input;

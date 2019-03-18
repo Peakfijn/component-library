@@ -8,6 +8,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var WrapperStyle = _styledComponents2.default.div.withConfig({
@@ -24,7 +28,7 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 }, function (_ref2) {
 	var modifier = _ref2.modifier,
 	    grow = _ref2.grow;
-	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\t\twidth: 100%;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\toverflow: auto;\n\t\t\tflex-grow: 1;\n\t\t\tflex-shrink: 1;\n\t\t' || '') + '\n\t' || '';
+	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tword-break: break-all;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\t\twidth: 100%;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\toverflow: auto;\n\t\t\tflex-grow: 1;\n\t\t\tflex-shrink: 1;\n\t\t' || '') + '\n\t' || '';
 }, function (_ref3) {
 	var modifier = _ref3.modifier;
 	return modifier === 'full' && '\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: fixed;\n\t\toverflow: auto;\n\t' || '';
@@ -50,5 +54,7 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 	    grow = _ref8.grow;
 	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-top: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-bottom: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
 });
+
+WrapperStyle.defaultProps = _defaultProps2.default;
 
 exports.default = WrapperStyle;

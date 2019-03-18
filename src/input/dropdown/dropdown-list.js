@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { StyledListItem, StyledSelectedListItem, StyledList, Spacer } from './styles';
 
-
 const DropDownList = (props) => {
 	const {
 		isOpen,

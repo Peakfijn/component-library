@@ -24,6 +24,10 @@ var _iconAdjustment = require('../styles/icon-adjustment');
 
 var _iconAdjustment2 = _interopRequireDefault(_iconAdjustment);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Input = _styledComponents2.default.input.withConfig({
@@ -40,5 +44,7 @@ var Input = _styledComponents2.default.input.withConfig({
 }, function (props) {
 	return props.theme.color.text.normal;
 }, _state2.default, _size2.default, _iconAdjustment2.default, _validation2.default);
+
+Input.defaultProps = _defaultProps2.default;
 
 exports.default = Input;

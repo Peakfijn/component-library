@@ -15,6 +15,10 @@ var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
 var _polished = require('polished');
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 var _validation = require('../styles/validation');
 
 var _validation2 = _interopRequireDefault(_validation);
@@ -123,5 +127,8 @@ var StyledReactDatePicker = exports.StyledReactDatePicker = (0, _styledComponent
 	    theme = _ref28.theme;
 	return size === "medium" && '\n\t\tline-height: 2rem;\n\t\theight: 2rem;\n\t\tpadding-right: ' + theme.gutter.small + ';\n\t\tpadding-left: ' + theme.gutter.small + ';\n\t\tfont-size: ' + theme.fontSize.medium + ';\n\t' || '';
 }, _iconAdjustment2.default, _validation2.default);
+
+StyledReactDatePicker.defaultProps = _defaultProps2.default;
+StyledDatepicker.defaultProps = _defaultProps2.default;
 
 exports.default = StyledDatepicker;

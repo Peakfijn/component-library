@@ -1,7 +1,8 @@
 
 import styled from 'styled-components';
+import defaultProps from '../../defaultProps';
 
-export default styled.input`
+const HiddenInput = styled.input`
 	width: 1px;
 	height: 1px;
 	background: transparent;
@@ -10,3 +11,7 @@ export default styled.input`
 	position: absolute;
 	opacity: 0;
 `;
+
+styled.defaultProps = defaultProps;
+
+export default HiddenInput;

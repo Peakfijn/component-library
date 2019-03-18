@@ -22,6 +22,10 @@ var _borderRadius = require('./modifiers/border-radius');
 
 var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var themeColor = function themeColor(key, props) {
@@ -67,5 +71,7 @@ var StyledButton = _styledComponents2.default.button.withConfig({
 }, _size2.default, _fontSize2.default, _borderRadius2.default, function (props) {
 	return props.noPadding && '\n\t\tpadding: 0 !important;\n\t' || '';
 });
+
+StyledButton.defaultProps = _defaultProps2.default;
 
 exports.default = StyledButton;

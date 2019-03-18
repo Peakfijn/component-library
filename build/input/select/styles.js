@@ -25,6 +25,10 @@ var _iconAdjustment = require('../styles/icon-adjustment');
 
 var _iconAdjustment2 = _interopRequireDefault(_iconAdjustment);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledHeader = exports.StyledHeader = _styledComponents2.default.h4.withConfig({
@@ -50,3 +54,6 @@ var StyledSelect = exports.StyledSelect = _styledComponents2.default.select.with
 }, function (props) {
 	return props.theme.color.text.normal;
 }, _state2.default, _size2.default, _iconAdjustment2.default, _validation2.default);
+
+StyledHeader.defaultProps = _defaultProps2.default;
+StyledSelect.defaultProps = _defaultProps2.default;

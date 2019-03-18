@@ -13,6 +13,10 @@ var _button = require('../button');
 
 var _button2 = _interopRequireDefault(_button);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ModalContainer = exports.ModalContainer = _styledComponents2.default.div.withConfig({
@@ -66,3 +70,10 @@ var ModalButton = exports.ModalButton = (0, _styledComponents2.default)(_button2
 })(['margin:', ';'], function (props) {
 	return props.theme.gutter.small;
 });
+
+ModalContainer.defaultProps = _defaultProps2.default;
+ModalContentContainer.defaultProps = _defaultProps2.default;
+ModalContent.defaultProps = _defaultProps2.default;
+TitleContainer.defaultProps = _defaultProps2.default;
+ModalFooter.defaultProps = _defaultProps2.default;
+ModalButton.defaultProps = _defaultProps2.default;

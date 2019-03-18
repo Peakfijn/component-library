@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../../defaultProps';
 
 const StyledTab = styled.div`
 	margin: 0 ${props => props.theme.gutter.large};
@@ -23,5 +24,7 @@ const StyledTab = styled.div`
 		color: ${props => props.theme.color.text.normal};
 	}
 `;
+
+StyledTab.defaultProps = defaultProps;
 
 export default StyledTab;

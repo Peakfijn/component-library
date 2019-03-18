@@ -15,6 +15,10 @@ var _switchState = require('../styles/switch-state');
 
 var _switchState2 = _interopRequireDefault(_switchState);
 
+var _defaultProps = require('../../defaultProps');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Switch = exports.Switch = _styledComponents2.default.div.withConfig({
@@ -66,3 +70,6 @@ var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
 	    theme = _ref5.theme;
 	return selected && '\n\t\tleft: calc(' + theme.componentSize.toggle.width + ' - ' + theme.componentSize.slider + ');\n\t' || '';
 });
+
+Switch.defaultProps = _defaultProps2.default;
+Slider.defaultProps = _defaultProps2.default;

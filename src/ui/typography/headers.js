@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../defaultProps';
 
 const boldModifier = ({ isBold }) => isBold && (`
 	font-weight: bold;
@@ -55,3 +56,7 @@ export const H3 = styled.h3`
 		margin-bottom: 0;
 	` || ''}
 `;
+
+H1.defaultProps = defaultProps;
+H2.defaultProps = defaultProps;
+H3.defaultProps = defaultProps;
