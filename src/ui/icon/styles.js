@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 const InputIcon = styled(FontAwesomeIcon)`
 	color: inherit;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const Paragraph = styled.p`
 	margin-top: ${props => props.theme.gutter.small};

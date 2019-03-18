@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const StyledHeader = styled.div`
 	text-transform: none;

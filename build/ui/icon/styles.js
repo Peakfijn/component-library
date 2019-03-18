@@ -10,7 +10,7 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _reactFontawesome = require('@fortawesome/react-fontawesome');
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

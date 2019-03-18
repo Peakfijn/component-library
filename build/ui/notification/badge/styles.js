@@ -13,7 +13,7 @@ var _styles = require('../../tag/styles');
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _defaultProps = require('../../../defaultProps');
+var _defaultProps = require('../../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 
 import stateStyles from '../styles/switch-state';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const Switch = styled.div`
 	cursor: pointer;

@@ -15,7 +15,7 @@ var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
 var _polished = require('polished');
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

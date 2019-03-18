@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultProps from '../../../defaultProps';
+import defaultProps from '../../../default-props';
 
 const StyledTab = styled.div`
 	margin: 0 ${props => props.theme.gutter.large};

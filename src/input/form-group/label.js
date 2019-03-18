@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 const Label = styled.label`
 	display: block;

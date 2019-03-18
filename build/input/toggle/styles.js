@@ -15,7 +15,7 @@ var _switchState = require('../styles/switch-state');
 
 var _switchState2 = _interopRequireDefault(_switchState);
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Tag from '../../tag/styles';
 
-import defaultProps from '../../../defaultProps';
+import defaultProps from '../../../default-props';
 
 export const StyledContainer = styled.span`
 	font-size: ${props => props.theme.fontSize.medium};

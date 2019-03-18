@@ -12,7 +12,7 @@ var _borderRadius = require('../button/modifiers/border-radius');
 
 var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

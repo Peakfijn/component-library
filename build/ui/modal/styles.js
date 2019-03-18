@@ -13,7 +13,7 @@ var _button = require('../button');
 
 var _button2 = _interopRequireDefault(_button);
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

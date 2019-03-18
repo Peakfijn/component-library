@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Button from '../button';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const ModalContainer = styled.div`
 	position: fixed;

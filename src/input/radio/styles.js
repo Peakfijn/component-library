@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import stateStyles from '../styles/switch-state';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const Switch = styled.div`
 	cursor: pointer;

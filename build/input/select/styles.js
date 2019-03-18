@@ -25,7 +25,7 @@ var _iconAdjustment = require('../styles/icon-adjustment');
 
 var _iconAdjustment2 = _interopRequireDefault(_iconAdjustment);
 
-var _defaultProps = require('../../defaultProps');
+var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 

@@ -3,7 +3,7 @@ import validationStyles from '../styles/validation';
 import stateStyles from '../styles/state';
 import sizeStyles from '../styles/size';
 import iconAdjustmentStyles from '../styles/icon-adjustment';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 const Input = styled.input`
 	box-sizing: border-box;

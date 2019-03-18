@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const Spacer = styled.div`
 	padding-right: ${props => props.theme.gutter.medium};

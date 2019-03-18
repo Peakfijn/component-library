@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import stateStyles from '../styles/switch-state';
 import borderRadiusModifier from '../../ui/button/modifiers/border-radius';
-import defaultProps from '../../defaultProps';
+import defaultProps from '../../default-props';
 
 export const Box = styled.div`
 	cursor: pointer;
