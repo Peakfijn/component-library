@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../../default-props';
 
 const SpacingStyle = styled.div`
 	box-sizing: border-box;
@@ -123,5 +124,7 @@ const SpacingStyle = styled.div`
 		padding-bottom: 0 !important;
 	` || ''}
 `;
+
+SpacingStyle.defaultProps = defaultProps;
 
 export default SpacingStyle;

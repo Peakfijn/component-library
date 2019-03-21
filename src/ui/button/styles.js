@@ -3,6 +3,7 @@ import { darken, lighten } from 'polished';
 import buttonSizeModifier from './modifiers/size';
 import fontSizeModifier from './modifiers/font-size';
 import borderRadiusModifier from './modifiers/border-radius';
+import defaultProps from '../../default-props';
 
 const themeColor = (key, props) => props.theme.color[key];
 
@@ -84,8 +85,8 @@ const StyledButton = styled.button`
 	/* Modifier: disabled */
 	${props => props.disabled && `
 		background-color: ${props.theme.color.background.inputDisabled};
-		color: ${themeColor('grey', props)};
-		border: 1px solid ${themeColor('grey', props)};
+		color: ${props.theme.color.text.disabled};
+		border: 1px solid ${lighten(props.theme.color.adjustColor.tiny, props.theme.color.background.inputDisabled)};
 		cursor: not-allowed;
 	` || ''}
 
@@ -165,5 +166,7 @@ const StyledButton = styled.button`
 		padding: 0 !important;
 	` || ''}
 `;
+
+StyledButton.defaultProps = defaultProps;
 
 export default StyledButton;

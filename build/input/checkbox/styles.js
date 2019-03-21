@@ -17,6 +17,10 @@ var _borderRadius = require('../../ui/button/modifiers/border-radius');
 
 var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
+var _defaultProps = require('../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Box = exports.Box = _styledComponents2.default.div.withConfig({
@@ -45,3 +49,6 @@ var Check = exports.Check = _styledComponents2.default.div.withConfig({
 	var disabled = _ref.disabled;
 	return disabled && '\n\t\tcursor: not-allowed;\n\t' || '';
 });
+
+Box.defaultProps = _defaultProps2.default;
+Check.defaultProps = _defaultProps2.default;

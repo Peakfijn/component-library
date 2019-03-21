@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import defaultProps from '../../default-props';
+
 export const StyledHeader = styled.div`
 	text-transform: none;
 	text-decoration: none;
@@ -39,3 +41,8 @@ export const Slider = styled.div`
 	left: calc(${props => props.progress} - 10px);
 	top: -5px;
 `;
+
+StyledHeader.defaultProps = defaultProps;
+StyledBar.defaultProps = defaultProps;
+StyledProgress.defaultProps = defaultProps;
+Slider.defaultProps = defaultProps;

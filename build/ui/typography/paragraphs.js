@@ -9,6 +9,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Paragraph = exports.Paragraph = _styledComponents2.default.p.withConfig({
@@ -51,3 +55,6 @@ var Caption = exports.Caption = _styledComponents2.default.p.withConfig({
 	    theme = _ref3.theme;
 	return modifier === 'dark' && '\n\t\tcolor: ' + theme.color.text.normal + ';\n\t' || '';
 });
+
+Paragraph.defaultProps = _defaultProps2.default;
+Caption.defaultProps = _defaultProps2.default;

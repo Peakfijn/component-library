@@ -8,6 +8,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Label = _styledComponents2.default.label.withConfig({
@@ -18,5 +22,7 @@ var Label = _styledComponents2.default.label.withConfig({
 }, function (props) {
 	return props.theme.color.text.normal;
 });
+
+Label.defaultProps = _defaultProps2.default;
 
 exports.default = Label;

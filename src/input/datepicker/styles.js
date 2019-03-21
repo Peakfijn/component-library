@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ReactDatePicker from 'react-datepicker';
 import { lighten } from 'polished';
 
+import defaultProps from '../../default-props';
 import validationStyles from '../styles/validation';
 import stateStyles from '../styles/state';
 import iconAdjustmentStyles from '../styles/icon-adjustment';
@@ -669,5 +670,8 @@ export const StyledReactDatePicker = styled(ReactDatePicker)`
 	${iconAdjustmentStyles}
 	${validationStyles}
 `;
+
+StyledReactDatePicker.defaultProps = defaultProps;
+StyledDatepicker.defaultProps = defaultProps;
 
 export default StyledDatepicker;

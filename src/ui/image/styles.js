@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import borderRadiusModifier from '../button/modifiers/border-radius';
+import defaultProps from '../../default-props';
 
 const InputIcon = styled.img`
 	color: inherit;
@@ -19,5 +20,7 @@ const InputIcon = styled.img`
 	/* Modifiers: borderRadius */
 	${borderRadiusModifier}
 `;
+
+InputIcon.defaultProps = defaultProps;
 
 export default InputIcon;

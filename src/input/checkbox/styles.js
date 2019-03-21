@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import stateStyles from '../styles/switch-state';
 import borderRadiusModifier from '../../ui/button/modifiers/border-radius';
+import defaultProps from '../../default-props';
 
 export const Box = styled.div`
 	cursor: pointer;
@@ -31,3 +32,6 @@ export const Check = styled.div`
 		cursor: not-allowed;
 	` || ''}
 `;
+
+Box.defaultProps = defaultProps;
+Check.defaultProps = defaultProps;

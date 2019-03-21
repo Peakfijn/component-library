@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultProps from '../../default-props';
 
 export const Spacer = styled.div`
 	padding-right: ${props => props.theme.gutter.medium};
@@ -72,3 +73,11 @@ export const StyledSelectedListItem = styled(StyledListItem)`
 	color: ${props => props.theme.color.inverseText};
 	background-color: ${props => props.theme.color.brand};
 `;
+
+Spacer.defaultProps = defaultProps;
+Wrapper.defaultProps = defaultProps;
+StyledItemContainer.defaultProps = defaultProps;
+StyledSelect.defaultProps = defaultProps;
+StyledList.defaultProps = defaultProps;
+StyledListItem.defaultProps = defaultProps;
+StyledSelectedListItem.defaultProps = defaultProps;

@@ -9,6 +9,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledHeader = exports.StyledHeader = _styledComponents2.default.div.withConfig({
@@ -50,3 +54,8 @@ var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
 }, function (props) {
 	return props.progress;
 });
+
+StyledHeader.defaultProps = _defaultProps2.default;
+StyledBar.defaultProps = _defaultProps2.default;
+StyledProgress.defaultProps = _defaultProps2.default;
+Slider.defaultProps = _defaultProps2.default;

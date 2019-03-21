@@ -22,6 +22,10 @@ var _borderRadius = require('./modifiers/border-radius');
 
 var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
+var _defaultProps = require('../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var themeColor = function themeColor(key, props) {
@@ -57,7 +61,7 @@ var StyledButton = _styledComponents2.default.button.withConfig({
 	    state = _ref3.state;
 	return (color === 'secondary' || color === 'normal') && '\n\t\tbackground-color: ' + themeColors[color] + ';\n\t\tcolor: ' + themeColors.text.normal + ';\n\t\tborder: 1px solid ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t' || '') + '\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.lighten)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tbackground-color: ' + (0, _polished.darken)(themeColors.adjustColor.tiny, themeColors[color]) + ';\n\t\t}\n\t' || '';
 }, function (props) {
-	return props.disabled && '\n\t\tbackground-color: ' + props.theme.color.background.inputDisabled + ';\n\t\tcolor: ' + themeColor('grey', props) + ';\n\t\tborder: 1px solid ' + themeColor('grey', props) + ';\n\t\tcursor: not-allowed;\n\t' || '';
+	return props.disabled && '\n\t\tbackground-color: ' + props.theme.color.background.inputDisabled + ';\n\t\tcolor: ' + props.theme.color.text.disabled + ';\n\t\tborder: 1px solid ' + (0, _polished.lighten)(props.theme.color.adjustColor.tiny, props.theme.color.background.inputDisabled) + ';\n\t\tcursor: not-allowed;\n\t' || '';
 }, function (props) {
 	return props.modifier === 'invisible' && '\n\t\tbackground-color: transparent;\n\t\tcolor: inherit;\n\t\tpadding: 0 ' + props.theme.gutter.medium + ';\n\t\tline-height: ' + props.theme.gutter.medium + ';\n\t\tborder: 1px solid transparent;\n\t\tmargin: 0;\n\t\t&:hover:enabled,\n\t\t&:focus:enabled\t{\n\t\t\tbackground-color: transparent;\n\t\t}\n\t\t&:active:enabled\t{\n\t\t\tbackground-color: transparent;\n\t\t}\n\t' || '';
 }, function (props) {
@@ -67,5 +71,7 @@ var StyledButton = _styledComponents2.default.button.withConfig({
 }, _size2.default, _fontSize2.default, _borderRadius2.default, function (props) {
 	return props.noPadding && '\n\t\tpadding: 0 !important;\n\t' || '';
 });
+
+StyledButton.defaultProps = _defaultProps2.default;
 
 exports.default = StyledButton;

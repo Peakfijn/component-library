@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../button';
+import defaultProps from '../../default-props';
 
 export const ModalContainer = styled.div`
 	position: fixed;
@@ -52,3 +53,10 @@ export const ModalFooter = styled.div`
 export const ModalButton = styled(Button)`
 	margin: ${props => props.theme.gutter.small};
 `;
+
+ModalContainer.defaultProps = defaultProps;
+ModalContentContainer.defaultProps = defaultProps;
+ModalContent.defaultProps = defaultProps;
+TitleContainer.defaultProps = defaultProps;
+ModalFooter.defaultProps = defaultProps;
+ModalButton.defaultProps = defaultProps;

@@ -3,6 +3,7 @@ import validationStyles from '../styles/validation';
 import stateStyles from '../styles/state';
 import sizeStyles from '../styles/size';
 import iconAdjustmentStyles from '../styles/icon-adjustment';
+import defaultProps from '../../default-props';
 
 export const StyledHeader = styled.h4`
 	margin-bottom: ${props => props.theme.gutter.small};
@@ -29,3 +30,6 @@ export const StyledSelect = styled.select`
 	${iconAdjustmentStyles}
 	${validationStyles}
 `;
+
+StyledHeader.defaultProps = defaultProps;
+StyledSelect.defaultProps = defaultProps;

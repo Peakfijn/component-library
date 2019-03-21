@@ -8,6 +8,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _defaultProps = require('../../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledMessage = _styledComponents2.default.p.withConfig({
@@ -22,5 +26,7 @@ var StyledMessage = _styledComponents2.default.p.withConfig({
 	    theme = _ref.theme;
 	return !isValidate && '\n\t\tcolor: ' + theme.color.danger + ';\n\t' || '';
 });
+
+StyledMessage.defaultProps = _defaultProps2.default;
 
 exports.default = StyledMessage;

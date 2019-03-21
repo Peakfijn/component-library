@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import defaultProps from '../../../default-props';
+
 const StyledBar = styled.div`
 	box-sizing: border-box;
 	border-radius: ${props => props.theme.borderRadius.medium};
@@ -43,5 +45,7 @@ const StyledBar = styled.div`
 		padding: ${props => props.theme.gutter.medium} 0;
 	}
 `;
+
+StyledBar.defaultProps = defaultProps;
 
 export default StyledBar;

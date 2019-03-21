@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Tag from '../../tag/styles';
 
+import defaultProps from '../../../default-props';
+
 export const StyledContainer = styled.span`
 	font-size: ${props => props.theme.fontSize.medium};
 	margin-bottom: ${props => props.theme.gutter.small};
@@ -13,3 +15,6 @@ export const StyledCircle = styled(Tag)`
 	z-index: 1;
 	border-radius: 50px;
 `;
+
+StyledContainer.defaultProps = defaultProps;
+StyledCircle.defaultProps = defaultProps;

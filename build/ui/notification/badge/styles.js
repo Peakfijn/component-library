@@ -13,6 +13,10 @@ var _styles = require('../../tag/styles');
 
 var _styles2 = _interopRequireDefault(_styles);
 
+var _defaultProps = require('../../../default-props');
+
+var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledContainer = exports.StyledContainer = _styledComponents2.default.span.withConfig({
@@ -30,3 +34,6 @@ var StyledCircle = exports.StyledCircle = (0, _styledComponents2.default)(_style
 })(['position:absolute;transform:translate(-', ',-50%);z-index:1;border-radius:50px;'], function (props) {
 	return props.theme.gutter.large;
 });
+
+StyledContainer.defaultProps = _defaultProps2.default;
+StyledCircle.defaultProps = _defaultProps2.default;

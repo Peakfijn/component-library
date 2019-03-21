@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 
 import stateStyles from '../styles/switch-state';
+import defaultProps from '../../default-props';
 
 export const Switch = styled.div`
 	cursor: pointer;
@@ -43,3 +44,6 @@ export const Slider = styled.div`
 		left: calc(${theme.componentSize.toggle.width} - ${theme.componentSize.slider});
 	` || ''}
 `;
+
+Switch.defaultProps = defaultProps;
+Slider.defaultProps = defaultProps;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import stateStyles from '../styles/switch-state';
+import defaultProps from '../../default-props';
 
 export const Switch = styled.div`
 	cursor: pointer;
@@ -40,3 +41,6 @@ export const Slider = styled.div`
 		cursor: not-allowed;
 	` || ''}
 `;
+
+Switch.defaultProps = defaultProps;
+Slider.defaultProps = defaultProps;

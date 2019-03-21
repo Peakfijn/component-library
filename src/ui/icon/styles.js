@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import defaultProps from '../../default-props';
 
 const InputIcon = styled(FontAwesomeIcon)`
 	color: inherit;
@@ -42,5 +43,7 @@ const InputIcon = styled(FontAwesomeIcon)`
 		width: ${props.width};
 	` || ''}
 `;
+
+InputIcon.defaultProps = defaultProps;
 
 export default InputIcon;
