@@ -40,7 +40,7 @@ var Modal = function Modal(props) {
 				_styles.ModalContent,
 				{ maxWidthBreakpoint: 'large' },
 				children,
-				_react2.default.createElement(
+				footerContent && _react2.default.createElement(
 					_styles.ModalFooter,
 					null,
 					footerContent

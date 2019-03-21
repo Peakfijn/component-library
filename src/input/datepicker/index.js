@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {isIE, browserVersion, isMobile, isTablet } from 'react-device-detect';
+import { isIE, browserVersion, isMobile, isTablet } from 'react-device-detect';
 import moment from 'moment';
 
 import FormGroup from '../form-group';

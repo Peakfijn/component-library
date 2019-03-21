@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import FormGroup from '../form-group';
 import Input from './styles';
 
 const Text = props => {
 	const {
 		placeholder,
-		intl,
 		input,
 		type,
 		disabled,
@@ -38,11 +36,7 @@ const Text = props => {
 		>
 			<Input
 				id={id}
-				placeholder={
-					placeholder && placeholder.id
-						? intl.formatMessage(placeholder)
-						: placeholder
-				}
+				placeholder={placeholder}
 				onBlur={input.onBlur}
 				onFocus={input.onFocus}
 				onChange={input.onChange}
@@ -111,7 +105,6 @@ Text.propTypes = {
 	size: PropTypes.oneOf(['medium']),
 	autocomplete: PropTypes.string,
 	maxLength: PropTypes.number,
-	intl: intlShape.isRequired,
 	disabled: PropTypes.bool,
 	focussed: PropTypes.bool,
 	min: PropTypes.number,
@@ -119,4 +112,4 @@ Text.propTypes = {
 	children: PropTypes.node,
 };
 
-export default injectIntl(Text);
+export default Text;

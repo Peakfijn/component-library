@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import FormGroup from '../form-group';
 import Input from './styles';
 
 const TextArea = (props) => {
 	const {
 		placeholder,
-		intl,
 		input,
 		type,
 		disabled,
@@ -38,11 +36,7 @@ const TextArea = (props) => {
 		>
 			<Input
 				id={id}
-				placeholder={
-					placeholder && placeholder.id
-						? intl.formatMessage(placeholder)
-						: placeholder
-				}
+				placeholder={placeholder}
 				{...input}
 				size={size}
 				name={input.name}
@@ -107,11 +101,10 @@ TextArea.propTypes = {
 	autocomplete: PropTypes.string,
 	initialValue: PropTypes.string,
 	maxLength: PropTypes.number,
-	intl: intlShape.isRequired,
 	focussed: PropTypes.bool,
 	disabled: PropTypes.bool,
 	min: PropTypes.number,
 	max: PropTypes.number,
 };
 
-export default injectIntl(TextArea);
+export default TextArea;

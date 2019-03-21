@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import Label from './label';
 import LabelContent from './label-content';
 import FormGroupContent from './content';
@@ -21,7 +20,7 @@ const FormGroup = props => {
 	return (
 		<Label htmlFor={id} className={className}>
 			{label &&
-				<LabelContent>{label && label.id ? <FormattedMessage {...label} /> : label}</LabelContent>
+				<LabelContent>{label}</LabelContent>
 			}
 			<FormGroupContent>
 				{children}

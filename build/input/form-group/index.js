@@ -12,8 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactIntl = require('react-intl');
-
 var _label = require('./label');
 
 var _label2 = _interopRequireDefault(_label);
@@ -56,7 +54,7 @@ var FormGroup = function FormGroup(props) {
 		label && _react2.default.createElement(
 			_labelContent2.default,
 			null,
-			label && label.id ? _react2.default.createElement(_reactIntl.FormattedMessage, label) : label
+			label
 		),
 		_react2.default.createElement(
 			_content2.default,

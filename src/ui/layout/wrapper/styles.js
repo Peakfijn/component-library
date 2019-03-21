@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import defaultProps from '../../../default-props';
 
 const WrapperStyle = styled.div`
-	${({ modifier, align, justify, wrap, theme: { breakpoint } }) => (
-		modifier === 'flex' ||
-		modifier === "flex-column") && `
+	${({ modifier, align, justify, wrap, theme: { breakpoint } }) =>
+		(modifier === 'flex' || modifier === "flex-column" || modifier === "flex-column-full") && `
 		display: flex;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -12,10 +11,13 @@ const WrapperStyle = styled.div`
 
 		${modifier === "flex-column" && `
 			flex-direction: column;
+		` || ''}
+
+		${modifier === "flex-column-full" && `
+			flex-direction: column;
 			height: 100vh;
 			overflow: hidden;
 		` || ''}
-
 
 		${align && `
 			align-items: ${align};

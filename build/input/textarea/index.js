@@ -14,8 +14,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactIntl = require('react-intl');
-
 var _formGroup = require('../form-group');
 
 var _formGroup2 = _interopRequireDefault(_formGroup);
@@ -28,7 +26,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var TextArea = function TextArea(props) {
 	var placeholder = props.placeholder,
-	    intl = props.intl,
 	    input = props.input,
 	    type = props.type,
 	    disabled = props.disabled,
@@ -59,7 +56,7 @@ var TextArea = function TextArea(props) {
 		},
 		_react2.default.createElement(_styles2.default, _extends({
 			id: id,
-			placeholder: placeholder && placeholder.id ? intl.formatMessage(placeholder) : placeholder
+			placeholder: placeholder
 		}, input, {
 			size: size,
 			name: input.name,
@@ -114,11 +111,10 @@ TextArea.propTypes = {
 	autocomplete: _propTypes2.default.string,
 	initialValue: _propTypes2.default.string,
 	maxLength: _propTypes2.default.number,
-	intl: _reactIntl.intlShape.isRequired,
 	focussed: _propTypes2.default.bool,
 	disabled: _propTypes2.default.bool,
 	min: _propTypes2.default.number,
 	max: _propTypes2.default.number
 };
 
-exports.default = (0, _reactIntl.injectIntl)(TextArea);
+exports.default = TextArea;

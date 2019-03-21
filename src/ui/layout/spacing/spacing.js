@@ -14,6 +14,7 @@ const Spacing = props => {
 		isWide,
 		isInline,
 		className,
+		unsetMargin,
 	} = props;
 
 	return (
@@ -21,6 +22,7 @@ const Spacing = props => {
 			modifier={modifier}
 			isWide={isWide}
 			isInline={isInline}
+			unsetMargin={unsetMargin}
 			horizontal={horizontal}
 			vertical={vertical}
 			minAtBreakpoint={minAtBreakpoint}
@@ -44,9 +46,11 @@ Spacing.defaultProps = {
 	isInline: null,
 	children: null,
 	className: null,
+	unsetMargin: false,
 }
 
 Spacing.propTypes = {
+	unsetMargin: PropTypes.bool,
 	className: PropTypes.string,
 	modifier: PropTypes.string,
 	horizontal: PropTypes.string,

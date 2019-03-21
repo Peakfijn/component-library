@@ -12,8 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactIntl = require('react-intl');
-
 var _formGroup = require('../form-group');
 
 var _formGroup2 = _interopRequireDefault(_formGroup);
@@ -26,7 +24,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Text = function Text(props) {
 	var placeholder = props.placeholder,
-	    intl = props.intl,
 	    input = props.input,
 	    type = props.type,
 	    disabled = props.disabled,
@@ -58,7 +55,7 @@ var Text = function Text(props) {
 		},
 		_react2.default.createElement(_styles2.default, {
 			id: id,
-			placeholder: placeholder && placeholder.id ? intl.formatMessage(placeholder) : placeholder,
+			placeholder: placeholder,
 			onBlur: input.onBlur,
 			onFocus: input.onFocus,
 			onChange: input.onChange,
@@ -118,7 +115,6 @@ Text.propTypes = {
 	size: _propTypes2.default.oneOf(['medium']),
 	autocomplete: _propTypes2.default.string,
 	maxLength: _propTypes2.default.number,
-	intl: _reactIntl.intlShape.isRequired,
 	disabled: _propTypes2.default.bool,
 	focussed: _propTypes2.default.bool,
 	min: _propTypes2.default.number,
@@ -126,4 +122,4 @@ Text.propTypes = {
 	children: _propTypes2.default.node
 };
 
-exports.default = (0, _reactIntl.injectIntl)(Text);
+exports.default = Text;

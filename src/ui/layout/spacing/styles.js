@@ -8,15 +8,15 @@ const SpacingStyle = styled.div`
 	line-height: initial;
 
 	/* Modifiers: horizontal gutter width */
-	${({ horizontal, theme }) => horizontal && `
-		padding-left: ${theme.gutter[`${horizontal}`]};
-		padding-right: ${theme.gutter[`${horizontal}`]};
+	${({ horizontal, theme: { gutter } }) => horizontal && `
+		padding-left: ${gutter[`${horizontal}`]};
+		padding-right: ${gutter[`${horizontal}`]};
 	` || ''}
 
 	/* Modifiers: vertical gutter width */
-	${({ vertical, theme }) => vertical && `
-		padding-top: ${theme.gutter[`${vertical}`]};
-		padding-bottom: ${theme.gutter[`${vertical}`]};
+	${({ vertical, theme: { gutter } }) => vertical && `
+		padding-top: ${gutter[`${vertical}`]};
+		padding-bottom: ${gutter[`${vertical}`]};
 	` || ''}
 
 	/* Modifiers: at minimum breakpoint apply spacing */
@@ -87,6 +87,11 @@ const SpacingStyle = styled.div`
 	${({ isInline }) => isInline && `
 		display: inline;
 		width: initial;
+	` || ''}
+
+	${({ unsetMargin }) => unsetMargin && `
+		margin-right: unset;
+		margin-left: unset;
 	` || ''}
 
 	/* Modifiers: only specific */
