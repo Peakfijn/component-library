@@ -46,7 +46,6 @@ release:
   - git config --global user.email $GIT_EMAIL
   - git config --global user.user $GIT_USER
   - git config --global url."https://$GIT_USER:$GIT_PASSWORD@gitlab.com/".insteadOf "https://gitlab.com/"
-  - cp .env.example .env
   - semantic-release
   when: manual
   only:
