@@ -65,6 +65,8 @@ var Datepicker = function (_Component) {
 			    notation = _this$props.notation;
 
 
+			console.log(event);
+
 			if (event && (0, _moment2.default)(event, notation).isValid) {
 				onChange((0, _moment2.default)(event, notation));
 			}
@@ -129,7 +131,7 @@ var Datepicker = function (_Component) {
 				onChange: function onChange(event) {
 					return _this2.handleChange(event.target.value);
 				},
-				value: value && value.format(notation),
+				value: value && (value.format ? value.format(notation) : value),
 				placeholder: notation
 			}, this.props));
 		}
