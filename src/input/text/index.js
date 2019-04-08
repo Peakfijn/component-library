@@ -32,7 +32,6 @@ const Text = props => {
 		value,
 		error,
 	} = props;
-	console.log('Testing123 - log error:', error);
 	return (
 		<FormGroup
 			error={error}
@@ -71,6 +70,7 @@ const Text = props => {
 
 Text.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,

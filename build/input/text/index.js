@@ -50,7 +50,6 @@ var Text = function Text(props) {
 	    value = props.value,
 	    error = props.error;
 
-	console.log('Testing123 - log error:', error);
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
@@ -89,6 +88,7 @@ var Text = function Text(props) {
 
 Text.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,
