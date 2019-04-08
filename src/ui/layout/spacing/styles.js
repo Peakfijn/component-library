@@ -57,7 +57,7 @@ const SpacingStyle = styled.div`
 	${({ maxWidthBreakpoint, theme: { breakpoint } }) => Object.keys(breakpoint).map(
 		key => `
 			${maxWidthBreakpoint === key && `
-				width: 100vw;
+				width: 100%;
 				max-width: ${breakpoint[key]};
 			` || ''}
 		` || ''

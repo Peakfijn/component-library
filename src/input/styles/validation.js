@@ -1,5 +1,5 @@
-export default ({ isValidate, isSubmitted, theme }) => `
-	${!isValidate && isSubmitted && `
+export default ({ error, theme }) => `
+	${error && `
 		border-color: ${theme.color.danger};
 	` || ''}
 `;

@@ -45,7 +45,7 @@ var SpacingStyle = _styledComponents2.default.div.withConfig({
 	var maxWidthBreakpoint = _ref5.maxWidthBreakpoint,
 	    breakpoint = _ref5.theme.breakpoint;
 	return Object.keys(breakpoint).map(function (key) {
-		return '\n\t\t\t' + (maxWidthBreakpoint === key && '\n\t\t\t\twidth: 100vw;\n\t\t\t\tmax-width: ' + breakpoint[key] + ';\n\t\t\t' || '') + '\n\t\t' || '';
+		return '\n\t\t\t' + (maxWidthBreakpoint === key && '\n\t\t\t\twidth: 100%;\n\t\t\t\tmax-width: ' + breakpoint[key] + ';\n\t\t\t' || '') + '\n\t\t' || '';
 	}) || '';
 }, function (_ref6) {
 	var modifier = _ref6.modifier;
