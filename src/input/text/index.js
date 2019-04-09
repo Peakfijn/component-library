@@ -23,10 +23,18 @@ const Text = props => {
 		focussed,
 		children,
 		className,
+		field,
+		onBlur,
+		onFocus,
+		onChange,
+		onClick,
+		name,
+		value,
+		error,
 	} = props;
-
 	return (
 		<FormGroup
+			error={error}
 			label={label}
 			id={id}
 			iconPosition={iconPosition}
@@ -37,21 +45,20 @@ const Text = props => {
 			<Input
 				id={id}
 				placeholder={placeholder}
-				onBlur={input.onBlur}
-				onFocus={input.onFocus}
-				onChange={input.onChange}
-				onClick={input.onClick}
+				onBlur={field.onBlur || input.onBlur || onBlur}
+				onFocus={field.onFocus || input.onFocus || onFocus}
+				onChange={field.onChange || input.onChange || onChange}
+				onClick={field.onClick || input.onClick || onClick}
 				size={size}
-				name={input.name}
+				name={field.name || input.name || name}
 				type={type}
 				min={min}
 				max={max}
 				disabled={disabled}
 				maxLength={maxLength}
 				autoComplete={autocomplete}
-				value={input.value || initialValue}
-				isValidate={meta.valid}
-				isSubmitted={meta.submitFailed}
+				value={field.value || input.value || value || initialValue}
+				error={error || !meta.valid && meta.submitFailed}
 				icon={icon}
 				iconPosition={iconPosition}
 				focussed={focussed}
@@ -63,6 +70,7 @@ const Text = props => {
 
 Text.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,
@@ -78,6 +86,13 @@ Text.defaultProps = {
 	children: null,
 	initialValue: '',
 	className: null,
+	onBlur: ()=> {},
+	onFocus: ()=> {},
+	onChange: ()=> {},
+	onClick: ()=> {},
+	name: null,
+	value: null,
+	error: null,
 };
 
 Text.propTypes = {
@@ -93,6 +108,7 @@ Text.propTypes = {
 	]).isRequired,
 	meta: PropTypes.objectOf(PropTypes.any),
 	input: PropTypes.objectOf(PropTypes.any),
+	field: PropTypes.objectOf(PropTypes.any),
 	label: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.node,
@@ -110,6 +126,13 @@ Text.propTypes = {
 	min: PropTypes.number,
 	max: PropTypes.number,
 	children: PropTypes.node,
+	onBlur: PropTypes.func,
+	onFocus: PropTypes.func,
+	onChange: PropTypes.func,
+	onClick: PropTypes.func,
+	name: PropTypes.string,
+	value: PropTypes.string,
+	error: PropTypes.string,
 };
 
 export default Text;

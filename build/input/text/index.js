@@ -40,12 +40,20 @@ var Text = function Text(props) {
 	    label = props.label,
 	    focussed = props.focussed,
 	    children = props.children,
-	    className = props.className;
-
+	    className = props.className,
+	    field = props.field,
+	    onBlur = props.onBlur,
+	    onFocus = props.onFocus,
+	    onChange = props.onChange,
+	    onClick = props.onClick,
+	    name = props.name,
+	    value = props.value,
+	    error = props.error;
 
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
+			error: error,
 			label: label,
 			id: id,
 			iconPosition: iconPosition,
@@ -56,21 +64,20 @@ var Text = function Text(props) {
 		_react2.default.createElement(_styles2.default, {
 			id: id,
 			placeholder: placeholder,
-			onBlur: input.onBlur,
-			onFocus: input.onFocus,
-			onChange: input.onChange,
-			onClick: input.onClick,
+			onBlur: field.onBlur || input.onBlur || onBlur,
+			onFocus: field.onFocus || input.onFocus || onFocus,
+			onChange: field.onChange || input.onChange || onChange,
+			onClick: field.onClick || input.onClick || onClick,
 			size: size,
-			name: input.name,
+			name: field.name || input.name || name,
 			type: type,
 			min: min,
 			max: max,
 			disabled: disabled,
 			maxLength: maxLength,
 			autoComplete: autocomplete,
-			value: input.value || initialValue,
-			isValidate: meta.valid,
-			isSubmitted: meta.submitFailed,
+			value: field.value || input.value || value || initialValue,
+			error: error || !meta.valid && meta.submitFailed,
 			icon: icon,
 			iconPosition: iconPosition,
 			focussed: focussed
@@ -81,6 +88,7 @@ var Text = function Text(props) {
 
 Text.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,
@@ -95,7 +103,14 @@ Text.defaultProps = {
 	iconPosition: "right",
 	children: null,
 	initialValue: '',
-	className: null
+	className: null,
+	onBlur: function onBlur() {},
+	onFocus: function onFocus() {},
+	onChange: function onChange() {},
+	onClick: function onClick() {},
+	name: null,
+	value: null,
+	error: null
 };
 
 Text.propTypes = {
@@ -106,6 +121,7 @@ Text.propTypes = {
 	})]).isRequired,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any),
 	input: _propTypes2.default.objectOf(_propTypes2.default.any),
+	field: _propTypes2.default.objectOf(_propTypes2.default.any),
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	type: _propTypes2.default.string,
 	initialValue: _propTypes2.default.string,
@@ -119,7 +135,14 @@ Text.propTypes = {
 	focussed: _propTypes2.default.bool,
 	min: _propTypes2.default.number,
 	max: _propTypes2.default.number,
-	children: _propTypes2.default.node
+	children: _propTypes2.default.node,
+	onBlur: _propTypes2.default.func,
+	onFocus: _propTypes2.default.func,
+	onChange: _propTypes2.default.func,
+	onClick: _propTypes2.default.func,
+	name: _propTypes2.default.string,
+	value: _propTypes2.default.string,
+	error: _propTypes2.default.string
 };
 
 exports.default = Text;

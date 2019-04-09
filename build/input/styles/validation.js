@@ -5,8 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (_ref) {
-	var isValidate = _ref.isValidate,
-	    isSubmitted = _ref.isSubmitted,
+	var error = _ref.error,
 	    theme = _ref.theme;
-	return '\n\t' + (!isValidate && isSubmitted && '\n\t\tborder-color: ' + theme.color.danger + ';\n\t' || '') + '\n';
+	return '\n\t' + (error && '\n\t\tborder-color: ' + theme.color.danger + ';\n\t' || '') + '\n';
 };

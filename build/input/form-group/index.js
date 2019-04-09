@@ -34,6 +34,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var FormGroup = function FormGroup(props) {
 	var label = props.label,
+	    error = props.error,
 	    _props$meta = props.meta,
 	    meta = _props$meta === undefined ? {} : _props$meta,
 	    children = props.children,
@@ -43,9 +44,9 @@ var FormGroup = function FormGroup(props) {
 	    className = props.className;
 
 
-	var errorMessage = meta.submitFailed && _react2.default.createElement(_errorMessage2.default, {
-		message: meta.error,
-		isValid: !meta.valid
+	var errorMessage = (error || meta.submitFailed) && _react2.default.createElement(_errorMessage2.default, {
+		message: error || meta.error,
+		isValid: error || !meta.valid
 	});
 
 	return _react2.default.createElement(
@@ -71,7 +72,8 @@ FormGroup.defaultProps = {
 	children: null,
 	iconPosition: null,
 	icon: null,
-	className: null
+	className: null,
+	error: null
 };
 
 FormGroup.propTypes = {
@@ -79,6 +81,7 @@ FormGroup.propTypes = {
 	children: _propTypes2.default.node,
 	id: _propTypes2.default.string.isRequired,
 	iconPosition: _propTypes2.default.string,
+	error: _propTypes2.default.string,
 	icon: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired
