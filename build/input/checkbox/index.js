@@ -38,13 +38,17 @@ var Checkbox = function Checkbox(_ref) {
 	    id = _ref.id,
 	    focussed = _ref.focussed,
 	    borderRadius = _ref.borderRadius,
-	    className = _ref.className;
+	    className = _ref.className,
+	    field = _ref.field,
+	    error = _ref.error;
 
-	var selected = input ? input.value : initialValue;
+	console.log('Testing123 - log field:', field);
+	var selected = field.value || (input ? input.value : initialValue);
 
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
+			error: error,
 			id: id,
 			meta: meta,
 			disabled: disabled,
@@ -74,15 +78,8 @@ var Checkbox = function Checkbox(_ref) {
 			),
 			label,
 			_react2.default.createElement(_hiddenInput2.default, {
-				onClick: !disabled ? function () {
-					return input.onChange(!selected);
-				} : undefined,
-				onFocus: function onFocus() {
-					return input.onFocus && input.onFocus();
-				},
-				onBlur: function onBlur() {
-					return input.onBlur && input.onBlur();
-				},
+				onBlur: field.onBlur || input.onBlur,
+				onChange: field.onChange || input.onChange,
 				disabled: disabled,
 				type: 'checkbox',
 				selected: selected,
@@ -93,6 +90,8 @@ var Checkbox = function Checkbox(_ref) {
 };
 
 Checkbox.defaultProps = {
+	field: {},
+	error: null,
 	label: null,
 	className: null,
 	disabled: false,
@@ -105,6 +104,8 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+	field: _propTypes2.default.objectOf(_propTypes2.default.any),
+	error: _propTypes2.default.string,
 	className: _propTypes2.default.string,
 	id: _propTypes2.default.string,
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
