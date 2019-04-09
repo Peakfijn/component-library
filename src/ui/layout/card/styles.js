@@ -5,9 +5,9 @@ import defaultProps from '../../../default-props';
 const CardContent = styled(Wrapper)`
 	overflow: auto;
 	${props => `
-		background-color: ${props.theme.color.background.window};
-		border: 1px solid ${props.theme.color.border.light};
-		border-radius: ${props.theme.borderRadius.large};
+		background-color: ${props.theme.color.background[props.background]};
+		border: 1px solid ${props.theme.color.border[props.borderColor]};
+		border-radius: ${props.theme.borderRadius[props.borderRadius]};
 	`}
 `;
 
