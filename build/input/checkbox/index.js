@@ -42,7 +42,6 @@ var Checkbox = function Checkbox(_ref) {
 	    field = _ref.field,
 	    error = _ref.error;
 
-	console.log('Testing123 - log field:', field);
 	var selected = field.value || (input ? input.value : initialValue);
 
 	return _react2.default.createElement(

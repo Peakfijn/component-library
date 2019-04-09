@@ -20,7 +20,6 @@ const Checkbox = ({
 	field,
 	error,
 })  => {
-	console.log('Testing123 - log field:', field);
 	const selected = field.value || (input ? input.value : initialValue);
 
 	return (
