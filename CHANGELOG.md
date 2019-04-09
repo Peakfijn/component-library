@@ -1,3 +1,15 @@
+# [1.1.0](https://gitlab.com/peakfijn/component-library/compare/1.0.0...1.1.0) (2019-04-09)
+
+
+### Bug fixes
+
+* resovled some linting errors ([7bae390](https://gitlab.com/peakfijn/component-library/commit/7bae390))
+
+
+### New features
+
+* prepared the text input for formik ([4957255](https://gitlab.com/peakfijn/component-library/commit/4957255))
+
 # 1.0.0 (2019-03-21)
 
 
