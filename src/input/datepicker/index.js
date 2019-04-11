@@ -70,7 +70,7 @@ class Datepicker extends Component {
 			<Text
 				type="date"
 				onChange={event => this.handleChange(event.target.value)}
-				value={value && value.format(notation)}
+				value={value && (value.format ? value.format(notation) : value)}
 				placeholder={notation}
 				{...this.props}
 			/>
