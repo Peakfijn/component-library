@@ -6,6 +6,7 @@ export default {
 			large: '960px',
 			huge: '1160px',
 			full: '100%',
+			fullViewport: '100vw'
 		},
 		gutter: {
 			none: '0',
