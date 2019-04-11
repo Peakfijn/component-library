@@ -65,8 +65,6 @@ var Datepicker = function (_Component) {
 			    notation = _this$props.notation;
 
 
-			console.log(event);
-
 			if (event && (0, _moment2.default)(event, notation).isValid) {
 				onChange((0, _moment2.default)(event, notation));
 			}
