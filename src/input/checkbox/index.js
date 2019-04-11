@@ -16,12 +16,15 @@ const Checkbox = ({
 	id,
 	focussed,
 	borderRadius,
-	className
+	className,
+	field,
+	error,
 })  => {
-	const selected = input ? input.value : initialValue;
+	const selected = field.value || (input ? input.value : initialValue);
 
 	return (
 		<FormGroup
+			error={error}
 			id={id}
 			meta={meta}
 			disabled={disabled}
@@ -47,9 +50,8 @@ const Checkbox = ({
 				</Box>
 				{label}
 				<HiddenInput
-					onClick={!disabled ? (() => input.onChange(!selected)) : undefined}
-					onFocus={() => input.onFocus && input.onFocus()}
-					onBlur={() => input.onBlur && input.onBlur()}
+					onBlur={field.onBlur || input.onBlur}
+					onChange={field.onChange || input.onChange}
 					disabled={disabled}
 					type="checkbox"
 					selected={selected}
@@ -61,6 +63,8 @@ const Checkbox = ({
 }
 
 Checkbox.defaultProps = {
+	field: {},
+	error: null,
 	label: null,
 	className: null,
 	disabled: false,
@@ -73,6 +77,8 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+	field: PropTypes.objectOf(PropTypes.any),
+	error: PropTypes.string,
 	className: PropTypes.string,
 	id: PropTypes.string,
 	label: PropTypes.oneOfType([
