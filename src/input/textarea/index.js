@@ -29,6 +29,7 @@ const TextArea = (props) => {
 
 	return (
 		<FormGroup
+			error={error}
 			label={label}
 			icon={icon}
 			id={id}
@@ -55,6 +56,7 @@ const TextArea = (props) => {
 				iconPosition={iconPosition}
 				{...input}
 				{...field}
+				error={error || !meta.valid && meta.submitFailed}
 			/>
 		</FormGroup>
 	)

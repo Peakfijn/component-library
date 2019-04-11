@@ -49,6 +49,7 @@ var TextArea = function TextArea(props) {
 	return _react2.default.createElement(
 		_formGroup2.default,
 		{
+			error: error,
 			label: label,
 			icon: icon,
 			id: id,
@@ -73,7 +74,9 @@ var TextArea = function TextArea(props) {
 			isSubmitted: meta.submitFailed,
 			icon: icon,
 			iconPosition: iconPosition
-		}, input, field))
+		}, input, field, {
+			error: error || !meta.valid && meta.submitFailed
+		}))
 	);
 };
 
