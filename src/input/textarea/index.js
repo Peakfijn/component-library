@@ -22,6 +22,8 @@ const TextArea = (props) => {
 		iconPosition,
 		focussed,
 		className,
+		field,
+		error,
 	} = props;
 
 
@@ -37,7 +39,6 @@ const TextArea = (props) => {
 			<Input
 				id={id}
 				placeholder={placeholder}
-				{...input}
 				size={size}
 				name={input.name}
 				type={type}
@@ -52,6 +53,8 @@ const TextArea = (props) => {
 				isSubmitted={meta.submitFailed}
 				icon={icon}
 				iconPosition={iconPosition}
+				{...input}
+				{...field}
 			/>
 		</FormGroup>
 	)
@@ -60,6 +63,7 @@ const TextArea = (props) => {
 
 TextArea.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,
@@ -74,6 +78,7 @@ TextArea.defaultProps = {
 	initialValue: '',
 	icon: null,
 	className: null,
+	error: null,
 };
 
 TextArea.propTypes = {
@@ -94,6 +99,7 @@ TextArea.propTypes = {
 	id: PropTypes.string.isRequired,
 	meta: PropTypes.objectOf(PropTypes.any),
 	input: PropTypes.objectOf(PropTypes.any),
+	field: PropTypes.objectOf(PropTypes.any),
 	type: PropTypes.string,
 	icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	iconPosition: PropTypes.oneOf(['left', 'right']),
@@ -105,6 +111,7 @@ TextArea.propTypes = {
 	disabled: PropTypes.bool,
 	min: PropTypes.number,
 	max: PropTypes.number,
+	error: PropTypes.string,
 };
 
 export default TextArea;

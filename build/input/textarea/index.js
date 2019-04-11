@@ -41,7 +41,9 @@ var TextArea = function TextArea(props) {
 	    icon = props.icon,
 	    iconPosition = props.iconPosition,
 	    focussed = props.focussed,
-	    className = props.className;
+	    className = props.className,
+	    field = props.field,
+	    error = props.error;
 
 
 	return _react2.default.createElement(
@@ -56,8 +58,7 @@ var TextArea = function TextArea(props) {
 		},
 		_react2.default.createElement(_styles2.default, _extends({
 			id: id,
-			placeholder: placeholder
-		}, input, {
+			placeholder: placeholder,
 			size: size,
 			name: input.name,
 			type: type,
@@ -72,12 +73,13 @@ var TextArea = function TextArea(props) {
 			isSubmitted: meta.submitFailed,
 			icon: icon,
 			iconPosition: iconPosition
-		}))
+		}, input, field))
 	);
 };
 
 TextArea.defaultProps = {
 	input: {},
+	field: {},
 	label: null,
 	type: 'text',
 	disabled: false,
@@ -91,7 +93,8 @@ TextArea.defaultProps = {
 	iconPosition: "right",
 	initialValue: '',
 	icon: null,
-	className: null
+	className: null,
+	error: null
 };
 
 TextArea.propTypes = {
@@ -104,6 +107,7 @@ TextArea.propTypes = {
 	id: _propTypes2.default.string.isRequired,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any),
 	input: _propTypes2.default.objectOf(_propTypes2.default.any),
+	field: _propTypes2.default.objectOf(_propTypes2.default.any),
 	type: _propTypes2.default.string,
 	icon: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	iconPosition: _propTypes2.default.oneOf(['left', 'right']),
@@ -114,7 +118,8 @@ TextArea.propTypes = {
 	focussed: _propTypes2.default.bool,
 	disabled: _propTypes2.default.bool,
 	min: _propTypes2.default.number,
-	max: _propTypes2.default.number
+	max: _propTypes2.default.number,
+	error: _propTypes2.default.string
 };
 
 exports.default = TextArea;
