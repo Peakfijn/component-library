@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = require('react');
@@ -17,28 +17,28 @@ var _styles = require('./styles.js');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HorizontalDivider = function HorizontalDivider(props) {
-  var colour = props.colour,
-      fontSize = props.fontSize,
-      borderSize = props.borderSize;
+	var colour = props.colour,
+	    fontSize = props.fontSize,
+	    borderSize = props.borderSize;
 
 
-  return _react2.default.createElement(
-    _styles.HorizontalDividerStyled,
-    null,
-    _react2.default.createElement(_styles.DividerStyled, { colour: colour, fontSize: fontSize, borderSize: borderSize })
-  );
+	return _react2.default.createElement(
+		_styles.HorizontalDividerStyled,
+		null,
+		_react2.default.createElement(_styles.DividerStyled, { colour: colour, fontSize: fontSize, borderSize: borderSize })
+	);
 };
 
 HorizontalDivider.defaultProps = {
-  colour: 'normal',
-  fontSize: 'medium',
-  borderSize: 1
+	colour: 'normal',
+	fontSize: 'medium',
+	borderSize: 1
 };
 
 HorizontalDivider.propTypes = {
-  colour: _propTypes2.default.string,
-  fontSize: _propTypes2.default.string,
-  borderSize: _propTypes2.default.number
+	colour: _propTypes2.default.string,
+	fontSize: _propTypes2.default.string,
+	borderSize: _propTypes2.default.number
 };
 
 exports.default = HorizontalDivider;

@@ -4,7 +4,7 @@ import defaultProps from '../../default-props';
 export const HorizontalDividerStyled = styled.span`
 	display: block;
 	height: 100%;
-  text-align: center;
+	text-align: center;
 `;
 export const DividerStyled = styled.span`
 	width: 1px;
