@@ -49,4 +49,13 @@ Object.defineProperty(exports, 'Separator', {
   }
 });
 
+var _horizontalDivider = require('./horizontal-divider');
+
+Object.defineProperty(exports, 'HorizontalDivider', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_horizontalDivider).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
