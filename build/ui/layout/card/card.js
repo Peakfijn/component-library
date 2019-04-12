@@ -19,16 +19,32 @@ var _styles2 = _interopRequireDefault(_styles);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Card = function Card(_ref) {
-	var children = _ref.children;
+	var children = _ref.children,
+	    borderRadius = _ref.borderRadius,
+	    borderColor = _ref.borderColor,
+	    background = _ref.background;
 	return _react2.default.createElement(
 		_styles2.default,
-		null,
+		{
+			borderRadius: borderRadius,
+			borderColor: borderColor,
+			background: background
+		},
 		children
 	);
 };
 
 Card.propTypes = {
-	children: _propTypes2.default.node.isRequired
+	children: _propTypes2.default.node.isRequired,
+	borderRadius: _propTypes2.default.string,
+	borderColor: _propTypes2.default.string,
+	background: _propTypes2.default.string
+};
+
+Card.defaultProps = {
+	borderRadius: 'large',
+	borderColor: 'light',
+	background: 'window'
 };
 
 exports.default = Card;

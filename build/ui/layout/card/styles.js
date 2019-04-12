@@ -20,7 +20,7 @@ var CardContent = (0, _styledComponents2.default)(_index.Wrapper).withConfig({
 	displayName: 'styles__CardContent',
 	componentId: 'upoqsr-0'
 })(['overflow:auto;', ''], function (props) {
-	return '\n\t\tbackground-color: ' + props.theme.color.background.window + ';\n\t\tborder: 1px solid ' + props.theme.color.border.light + ';\n\t\tborder-radius: ' + props.theme.borderRadius.large + ';\n\t';
+	return '\n\t\tbackground-color: ' + props.theme.color.background[props.background] + ';\n\t\tborder: 1px solid ' + props.theme.color.border[props.borderColor] + ';\n\t\tborder-radius: ' + props.theme.borderRadius[props.borderRadius] + ';\n\t';
 });
 
 CardContent.defaultProps = _defaultProps2.default;
