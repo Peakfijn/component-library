@@ -14,8 +14,6 @@ export const DividerStyled = styled.span`
 	height: ${({ theme, fontSize }) => theme.fontSize[fontSize]};
 	margin: auto;
 `;
-	// font-size: ${({ theme, fontSize }) => theme.color.fontSize[fontSize]};
-	// color: ${({ theme, colour }) => theme.color.text[colour]};
 
 HorizontalDividerStyled.defaultProps = defaultProps;
 DividerStyled.defaultProps = defaultProps;

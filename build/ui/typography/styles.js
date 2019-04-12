@@ -34,8 +34,6 @@ var DividerStyled = exports.DividerStyled = _styledComponents2.default.span.with
 	    fontSize = _ref3.fontSize;
 	return theme.fontSize[fontSize];
 });
-// font-size: ${({ theme, fontSize }) => theme.color.fontSize[fontSize]};
-// color: ${({ theme, colour }) => theme.color.text[colour]};
 
 HorizontalDividerStyled.defaultProps = _defaultProps2.default;
 DividerStyled.defaultProps = _defaultProps2.default;
