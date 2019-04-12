@@ -1,3 +1,26 @@
+# [1.2.0](https://gitlab.com/peakfijn/component-library/compare/1.1.0...1.2.0) (2019-04-12)
+
+
+### Bug fixes
+
+* fixed some vulnerabilities with audit fix ([54764f8](https://gitlab.com/peakfijn/component-library/commit/54764f8))
+* moved card css properties to its own properties ([0f4a191](https://gitlab.com/peakfijn/component-library/commit/0f4a191))
+* resolved error in textarea as well ([4c84ecd](https://gitlab.com/peakfijn/component-library/commit/4c84ecd))
+
+
+### New features
+
+* added breakpoint to target full viewport ([a7bd4e7](https://gitlab.com/peakfijn/component-library/commit/a7bd4e7))
+* created card component ([9915acf](https://gitlab.com/peakfijn/component-library/commit/9915acf))
+* implemented formik field prop in textarea ([c6bc39e](https://gitlab.com/peakfijn/component-library/commit/c6bc39e))
+* integrated formik props in checkbox ([71cbbb8](https://gitlab.com/peakfijn/component-library/commit/71cbbb8))
+
+
+### Other chores
+
+* merged master in to develop ([10d7db8](https://gitlab.com/peakfijn/component-library/commit/10d7db8))
+* removed accedental console.log ([7ec46ae](https://gitlab.com/peakfijn/component-library/commit/7ec46ae))
+
 # [1.1.0](https://gitlab.com/peakfijn/component-library/compare/1.0.0...1.1.0) (2019-04-09)
 
 
