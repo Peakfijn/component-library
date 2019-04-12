@@ -11,7 +11,7 @@ export const StyledContainer = styled.span`
 
 export const StyledCircle = styled(Tag)`
 	position: absolute;
-	transform: translate(-${props => props.theme.gutter.large}, -50%);
+	transform: translate(-50%, -50%);
 	z-index: 1;
 	border-radius: 50px;
 `;
