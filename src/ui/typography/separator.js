@@ -6,7 +6,6 @@ const Separator = styled.hr`
 	border: none;
 	border-top: 1px solid ${props => props.theme.color.border.light};
 	width: inherit;
-	width: 0;
 	min-width: ${props => props.theme.gutter.humongous};
 `;
 
