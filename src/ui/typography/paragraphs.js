@@ -16,7 +16,7 @@ export const Caption = styled.p`
 	margin-top: ${props => props.theme.gutter.large};
 	margin-bottom: ${props => props.theme.gutter.medium};
 	line-height: ${props => props.theme.fontSize.small};
-	color: ${props => props.theme.color.text.light};
+	color: ${({ color, theme }) => color ? theme.color.text[color] : theme.color.text.light};
 	font-size: ${props => props.theme.fontSize.tiny};
 	${({ isUpperCase }) => isUpperCase && `
 		text-transform: uppercase;

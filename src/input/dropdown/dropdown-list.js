@@ -31,7 +31,7 @@ const DropDownList = (props) => {
 			}
 			{filteredOptions.map((item, index) => ((typeof selectedValue === 'string' ?
 				selectedValue === item.value :
-				selectedValue.includes(item.value)
+				selectedValue && selectedValue.includes(item.value)
 			) ?
 				<StyledSelectedListItem
 					{...getItemProps({

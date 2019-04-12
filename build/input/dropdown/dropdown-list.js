@@ -45,7 +45,7 @@ var DropDownList = function DropDownList(props) {
 			notFound
 		),
 		filteredOptions.map(function (item, index) {
-			return (typeof selectedValue === 'string' ? selectedValue === item.value : selectedValue.includes(item.value)) ? _react2.default.createElement(
+			return (typeof selectedValue === 'string' ? selectedValue === item.value : selectedValue && selectedValue.includes(item.value)) ? _react2.default.createElement(
 				_styles.StyledSelectedListItem,
 				getItemProps({
 					item: item,
