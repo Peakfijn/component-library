@@ -31,4 +31,13 @@ Object.defineProperty(exports, 'Card', {
   }
 });
 
+var _breakpoint = require('./breakpoint');
+
+Object.defineProperty(exports, 'BreakpointWrapper', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_breakpoint).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

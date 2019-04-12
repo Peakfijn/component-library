@@ -31,9 +31,7 @@ var StyledContainer = exports.StyledContainer = _styledComponents2.default.span.
 var StyledCircle = exports.StyledCircle = (0, _styledComponents2.default)(_styles2.default).withConfig({
 	displayName: 'styles__StyledCircle',
 	componentId: 'sc-19n49g2-1'
-})(['position:absolute;transform:translate(-', ',-50%);z-index:1;border-radius:50px;'], function (props) {
-	return props.theme.gutter.large;
-});
+})(['position:absolute;transform:translate(-50%,-50%);z-index:1;border-radius:50px;']);
 
 StyledContainer.defaultProps = _defaultProps2.default;
 StyledCircle.defaultProps = _defaultProps2.default;
