@@ -17,6 +17,7 @@ export default {
 			huge: '24px',
 			gigantic: '32px',
 			humongous: '48px',
+			carousel: '64px',
 		},
 		color: {
 			text: {
