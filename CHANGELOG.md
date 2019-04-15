@@ -1,3 +1,33 @@
+# [1.3.0](https://gitlab.com/peakfijn/component-library/compare/1.2.0...1.3.0) (2019-04-15)
+
+
+### Bug fixes
+
+* removed fixed 0 width from separator ([288dda3](https://gitlab.com/peakfijn/component-library/commit/288dda3))
+* replaced some spaces by tabs ([e692e04](https://gitlab.com/peakfijn/component-library/commit/e692e04))
+
+
+### Code refactors
+
+* allow dropdown to be used with formik ([0759e55](https://gitlab.com/peakfijn/component-library/commit/0759e55))
+
+
+### Code style changes
+
+* repositioned the notification badge ([f5ad349](https://gitlab.com/peakfijn/component-library/commit/f5ad349))
+
+
+### New features
+
+* created a component to only display on certain breakpoints ([63f8fe2](https://gitlab.com/peakfijn/component-library/commit/63f8fe2))
+* horizontal divider component ([4ec7315](https://gitlab.com/peakfijn/component-library/commit/4ec7315))
+* implement text input fields for library ([02471d4](https://gitlab.com/peakfijn/component-library/commit/02471d4))
+
+
+### Other chores
+
+* clean up of unused code ([bef5680](https://gitlab.com/peakfijn/component-library/commit/bef5680))
+
 # [1.2.0](https://gitlab.com/peakfijn/component-library/compare/1.1.0...1.2.0) (2019-04-12)
 
 
