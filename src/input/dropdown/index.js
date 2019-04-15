@@ -8,12 +8,15 @@ import Text from '../text';
 
 class Dropdown extends Component {
 	state = {
-		intermittentValue: ''
+		intermittentValue: '',
+		isOpen: false,
 	};
 
 	handleChange = (item) => {
-		const { input: { onChange } } = this.props;
-		onChange(item.value);
+		const { field, form } = this.props;
+		form.setFieldValue(field.name, item.value);
+		field.onBlur();
+		this.setState({ isOpen: false });
 	}
 
 	render () {
@@ -23,7 +26,6 @@ class Dropdown extends Component {
 			options,
 			disabled,
 			placeholder,
-			input: { value, onFocus, onBlur },
 			label,
 			size,
 			icon,
@@ -32,23 +34,25 @@ class Dropdown extends Component {
 			id,
 			notFound,
 			className,
+			field,
 			...other
 		} = this.props;
 
-		const { intermittentValue } = this.state;
-
+		const { intermittentValue, isOpen } = this.state;
 		return (
 			<Downshift
 				className={className}
 				itemToString={i => (!i || i.label == null ? "" : String(i.label))}
-				selectedItem={value}
+				selectedItem={field.value}
 				onChange={this.handleChange}
-				onSelect={() => { this.setState({ intermittentValue: '' })}}
+				onSelect={() => {
+					this.setState({ intermittentValue: '', isOpen: false })
+					field.onBlur();
+				}}
 			>
 				{({
 					getMenuProps,
 					getItemProps,
-					isOpen,
 					selectedItem
 				}) => (
 					<div>
@@ -63,8 +67,8 @@ class Dropdown extends Component {
 								icon={icon}
 								iconPosition={iconPosition}
 								disabled={disabled}
-								placeholder={value ? options.reduce((accumulator, option) =>
-									option.value === value && option.label|| accumulator
+								placeholder={field.value ? options.reduce((accumulator, option) =>
+									option.value === field.value && option.label|| accumulator
 								, '') : placeholder}
 								input={{
 									value: intermittentValue,
@@ -72,10 +76,11 @@ class Dropdown extends Component {
 										this.setState({ intermittentValue: e.target.value });
 									},
 									onFocus: () => {
-										onFocus();
+										this.setState({ isOpen: true });
 									},
 									onBlur: () => {
-										onBlur();
+										field.onBlur();
+										this.setState({ isOpen: false });
 									}
 								}}
 							>
@@ -106,6 +111,8 @@ Dropdown.defaultProps = {
 	size: 'medium',
 	iconPosition: "right",
 	input: {},
+	field: {},
+	form: {},
 	label: null,
 	notFound: 'No result',
 	icon: 'angle-down',
@@ -122,6 +129,8 @@ Dropdown.propTypes = {
 	focussed: PropTypes.bool,
 	modifier: PropTypes.string,
 	input: PropTypes.objectOf(PropTypes.any),
+	field: PropTypes.objectOf(PropTypes.any),
+	form: PropTypes.objectOf(PropTypes.any),
 	icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	notFound: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	options: PropTypes.arrayOf(PropTypes.shape({

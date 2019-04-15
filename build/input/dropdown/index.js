@@ -53,11 +53,16 @@ var Dropdown = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-			intermittentValue: ''
+			intermittentValue: '',
+			isOpen: false
 		}, _this.handleChange = function (item) {
-			var onChange = _this.props.input.onChange;
+			var _this$props = _this.props,
+			    field = _this$props.field,
+			    form = _this$props.form;
 
-			onChange(item.value);
+			form.setFieldValue(field.name, item.value);
+			field.onBlur();
+			_this.setState({ isOpen: false });
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
@@ -72,10 +77,6 @@ var Dropdown = function (_Component) {
 			    options = _props.options,
 			    disabled = _props.disabled,
 			    placeholder = _props.placeholder,
-			    _props$input = _props.input,
-			    value = _props$input.value,
-			    _onFocus = _props$input.onFocus,
-			    _onBlur = _props$input.onBlur,
 			    label = _props.label,
 			    size = _props.size,
 			    icon = _props.icon,
@@ -84,10 +85,12 @@ var Dropdown = function (_Component) {
 			    id = _props.id,
 			    notFound = _props.notFound,
 			    className = _props.className,
-			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'input', 'label', 'size', 'icon', 'focussed', 'iconPosition', 'id', 'notFound', 'className']);
+			    field = _props.field,
+			    other = _objectWithoutProperties(_props, ['modifier', 'meta', 'options', 'disabled', 'placeholder', 'label', 'size', 'icon', 'focussed', 'iconPosition', 'id', 'notFound', 'className', 'field']);
 
-			var intermittentValue = this.state.intermittentValue;
-
+			var _state = this.state,
+			    intermittentValue = _state.intermittentValue,
+			    isOpen = _state.isOpen;
 
 			return _react2.default.createElement(
 				_downshift2.default,
@@ -96,16 +99,16 @@ var Dropdown = function (_Component) {
 					itemToString: function itemToString(i) {
 						return !i || i.label == null ? "" : String(i.label);
 					},
-					selectedItem: value,
+					selectedItem: field.value,
 					onChange: this.handleChange,
 					onSelect: function onSelect() {
-						_this2.setState({ intermittentValue: '' });
+						_this2.setState({ intermittentValue: '', isOpen: false });
+						field.onBlur();
 					}
 				},
 				function (_ref2) {
 					var getMenuProps = _ref2.getMenuProps,
 					    getItemProps = _ref2.getItemProps,
-					    isOpen = _ref2.isOpen,
 					    selectedItem = _ref2.selectedItem;
 					return _react2.default.createElement(
 						'div',
@@ -125,8 +128,8 @@ var Dropdown = function (_Component) {
 									icon: icon,
 									iconPosition: iconPosition,
 									disabled: disabled,
-									placeholder: value ? options.reduce(function (accumulator, option) {
-										return option.value === value && option.label || accumulator;
+									placeholder: field.value ? options.reduce(function (accumulator, option) {
+										return option.value === field.value && option.label || accumulator;
 									}, '') : placeholder,
 									input: {
 										value: intermittentValue,
@@ -134,10 +137,11 @@ var Dropdown = function (_Component) {
 											_this2.setState({ intermittentValue: e.target.value });
 										},
 										onFocus: function onFocus() {
-											_onFocus();
+											_this2.setState({ isOpen: true });
 										},
 										onBlur: function onBlur() {
-											_onBlur();
+											field.onBlur();
+											_this2.setState({ isOpen: false });
 										}
 									}
 								},
@@ -170,6 +174,8 @@ Dropdown.defaultProps = {
 	size: 'medium',
 	iconPosition: "right",
 	input: {},
+	field: {},
+	form: {},
 	label: null,
 	notFound: 'No result',
 	icon: 'angle-down',
@@ -186,6 +192,8 @@ Dropdown.propTypes = {
 	focussed: _propTypes2.default.bool,
 	modifier: _propTypes2.default.string,
 	input: _propTypes2.default.objectOf(_propTypes2.default.any),
+	field: _propTypes2.default.objectOf(_propTypes2.default.any),
+	form: _propTypes2.default.objectOf(_propTypes2.default.any),
 	icon: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	notFound: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	options: _propTypes2.default.arrayOf(_propTypes2.default.shape({

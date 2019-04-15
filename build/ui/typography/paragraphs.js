@@ -43,16 +43,18 @@ var Caption = exports.Caption = _styledComponents2.default.p.withConfig({
 	return props.theme.gutter.medium;
 }, function (props) {
 	return props.theme.fontSize.small;
-}, function (props) {
-	return props.theme.color.text.light;
+}, function (_ref2) {
+	var color = _ref2.color,
+	    theme = _ref2.theme;
+	return color ? theme.color.text[color] : theme.color.text.light;
 }, function (props) {
 	return props.theme.fontSize.tiny;
-}, function (_ref2) {
-	var isUpperCase = _ref2.isUpperCase;
-	return isUpperCase && '\n\t\ttext-transform: uppercase;\n\t' || '';
 }, function (_ref3) {
-	var modifier = _ref3.modifier,
-	    theme = _ref3.theme;
+	var isUpperCase = _ref3.isUpperCase;
+	return isUpperCase && '\n\t\ttext-transform: uppercase;\n\t' || '';
+}, function (_ref4) {
+	var modifier = _ref4.modifier,
+	    theme = _ref4.theme;
 	return modifier === 'dark' && '\n\t\tcolor: ' + theme.color.text.normal + ';\n\t' || '';
 });
 
