@@ -28,22 +28,24 @@ var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
+var _borderRadius = require('./modifiers/border-radius');
+
+var _borderRadius2 = _interopRequireDefault(_borderRadius);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Input = _styledComponents2.default.input.withConfig({
 	displayName: 'styles__Input',
 	componentId: 'sc-9uz7iv-0'
-})(['box-sizing:border-box;outline:none;border:1px solid ', ';border-radius:', ';background:', ';width:100%;color:', ';stroke:', ';', ' ', ' ', ' ', ''], function (props) {
+})(['box-sizing:border-box;outline:none;border:1px solid ', ';background:', ';width:100%;color:', ';stroke:', ';', ' ', ' ', ' ', ' ', ''], function (props) {
 	return props.theme.color.border.normal;
-}, function (props) {
-	return props.theme.borderRadius.medium;
 }, function (props) {
 	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
 	return props.theme.color.text.normal;
-}, _state2.default, _size2.default, _iconAdjustment2.default, _validation2.default);
+}, _state2.default, _size2.default, _borderRadius2.default, _iconAdjustment2.default, _validation2.default);
 
 Input.defaultProps = _defaultProps2.default;
 
