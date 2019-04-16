@@ -22,22 +22,25 @@ var Tab = function Tab(props) {
 	var title = props.title,
 	    isActive = props.isActive,
 	    onClick = props.onClick,
-	    className = props.className;
+	    className = props.className,
+	    horizontal = props.horizontal;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
-		{ isActive: isActive, onClick: onClick, className: className },
+		{ isActive: isActive, onClick: onClick, className: className, horizontal: horizontal },
 		title
 	);
 };
 
 Tab.defaultProps = {
+	horizontal: 'small',
 	isActive: false,
 	className: null
 };
 
 Tab.propTypes = {
+	horizontal: _propTypes2.default.string,
 	className: _propTypes2.default.string,
 	title: _propTypes2.default.string.isRequired,
 	isActive: _propTypes2.default.bool,

@@ -17,15 +17,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var StyledTab = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__StyledTab',
 	componentId: 'btmnbh-0'
-})(['margin:0 ', ';cursor:pointer;padding:', ' 0;color:', ';', ' &:first-child{margin-left:0;}&:last-child{margin-right:0;}&:hover{color:', ';}'], function (props) {
-	return props.theme.gutter.large;
+})(['', ' cursor:pointer;padding:', ' 0;color:', ';', ' &:first-child{margin-left:0;}&:last-child{margin-right:0;}&:hover{color:', ';}'], function (_ref) {
+	var horizontal = _ref.horizontal,
+	    gutter = _ref.theme.gutter;
+	return horizontal && '\n\t\tmargin-left: ' + gutter['' + horizontal] + ';\n\t\tmargin-right: ' + gutter['' + horizontal] + ';\n\t' || '';
 }, function (props) {
 	return props.theme.gutter.large;
 }, function (props) {
 	return props.theme.color.text.light;
-}, function (_ref) {
-	var isActive = _ref.isActive,
-	    theme = _ref.theme;
+}, function (_ref2) {
+	var isActive = _ref2.isActive,
+	    theme = _ref2.theme;
 	return isActive && '\n\t\tbox-shadow: 0 1px 0 0 ' + theme.color.brand + ';\n\t\tcolor: ' + theme.color.text.normal + ';\n\t' || '';
 }, function (props) {
 	return props.theme.color.text.normal;

@@ -61,6 +61,10 @@ const WrapperStyle = styled.div`
 			flex-grow: 1;
 			flex-shrink: 1;
 		` || ''}
+		${grow && grow === "auto" && `
+			flex-basis: 50%;
+			flex-shrink: 0;
+		` || ''}
 	` || ''}
 
 	${({ modifier }) => modifier === 'full' && `
