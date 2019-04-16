@@ -68,6 +68,7 @@ export const CarouselImageWrapper = styled.div`
 
 export const CarouselImage = styled.img`
 	background-size: cover;
+	background-position: center;
 	flex-shrink: 0;
 	flex-grow: 0;
 

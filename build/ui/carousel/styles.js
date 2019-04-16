@@ -60,7 +60,7 @@ var CarouselImageWrapper = exports.CarouselImageWrapper = _styledComponents2.def
 var CarouselImage = exports.CarouselImage = _styledComponents2.default.img.withConfig({
 	displayName: 'styles__CarouselImage',
 	componentId: 'jirywc-6'
-})(['background-size:cover;flex-shrink:0;flex-grow:0;', ';'], function (_ref4) {
+})(['background-size:cover;background-position:center;flex-shrink:0;flex-grow:0;', ';'], function (_ref4) {
 	var hidden = _ref4.hidden;
 	return hidden && '\n\t\tdisplay: block;\n\t\theight: 1px;\n\t\twidth: 1px;\n\t';
 });
