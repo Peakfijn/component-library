@@ -56,13 +56,9 @@ var Carousel = function (_Component) {
 	}, {
 		key: 'calculateImageWidth',
 		value: function calculateImageWidth() {
-			console.log('Testing123 - log this.totalRef:', this.totalRef);
-			console.log('Testing123 - log this.contentRef:', this.contentRef);
 			if (!this.totalRef) {
 				return 0;
 			}
-			console.log('Testing123 - log this.totalRef.current && this.totalRef.current.clientWidth:', this.totalRef.current && this.totalRef.current.clientWidth);
-			console.log('Testing123 - log this.contentRef.current && this.contentRef.current.clientWidth:', this.contentRef.current && this.contentRef.current.clientWidth);
 			var totalWidth = this.totalRef.current && this.totalRef.current.clientWidth;
 			var contentWidth = this.contentRef.current && this.contentRef.current.clientWidth;
 			var sidesWidth = (totalWidth - contentWidth) / 2;
@@ -245,7 +241,12 @@ var Carousel = function (_Component) {
 					)
 				),
 				items.map(function (item) {
-					return _react2.default.createElement(_styles.CarouselImage, { key: 'caroucel-image-' + item.url, alt: '', style: { backgroundImage: 'url(' + item.url + ')' }, hidden: true });
+					return _react2.default.createElement(_styles.CarouselImage, {
+						key: 'caroucel-image-' + item.url,
+						alt: '',
+						style: { backgroundImage: 'url(' + item.url + ')' },
+						hidden: true
+					});
 				}),
 				renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : _react2.default.createElement(
 					_styles.CarouselControl,
@@ -271,16 +272,14 @@ var Carousel = function (_Component) {
 Carousel.defaultProps = {
 	renderControl: undefined,
 	width: undefined,
-	maxWidthBreakpoint: undefined,
-	align: undefined
+	maxWidthBreakpoint: undefined
 };
 
 Carousel.propTypes = {
 	data: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
 	width: _propTypes2.default.string,
 	maxWidthBreakpoint: _propTypes2.default.string,
-	renderControl: _propTypes2.default.func,
-	align: _propTypes2.default.oneOf(['left'])
+	renderControl: _propTypes2.default.func
 };
 
 exports.default = Carousel;

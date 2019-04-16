@@ -36,19 +36,19 @@ class Carousel extends Component {
 		this.handleNext = this.handleNext.bind(this);
 		this.handlePrevious = this.handlePrevious.bind(this);
 	}
+
 	componentDidMount() {
 		this.forceUpdate();
 	}
+
 	calculateImageWidth() {
-		console.log('Testing123 - log this.totalRef:', this.totalRef);
-		console.log('Testing123 - log this.contentRef:', this.contentRef);
 		if (!this.totalRef) {
 			return 0;
 		}
-		console.log('Testing123 - log this.totalRef.current && this.totalRef.current.clientWidth:', this.totalRef.current && this.totalRef.current.clientWidth);
-		console.log('Testing123 - log this.contentRef.current && this.contentRef.current.clientWidth:', this.contentRef.current && this.contentRef.current.clientWidth);
-		const totalWidth = this.totalRef.current && this.totalRef.current.clientWidth;
-		const contentWidth = this.contentRef.current && this.contentRef.current.clientWidth;
+		const totalWidth = this.totalRef.current &&
+			this.totalRef.current.clientWidth;
+		const contentWidth = this.contentRef.current &&
+			this.contentRef.current.clientWidth;
 		const sidesWidth = ((totalWidth - contentWidth) / 2);
 		return sidesWidth + contentWidth;
 	}
@@ -201,7 +201,12 @@ class Carousel extends Component {
 				</CarouselTotal>
 
 				{items.map(item => (
-					<CarouselImage key={`caroucel-image-${item.url}`} alt="" style={{ backgroundImage: `url(${item.url})` }} hidden />
+					<CarouselImage
+						key={`caroucel-image-${item.url}`}
+						alt=""
+						style={{ backgroundImage: `url(${item.url})` }}
+						hidden
+					/>
 				))}
 				{renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : (
 					<CarouselControl>
@@ -222,7 +227,6 @@ Carousel.defaultProps = {
 	renderControl: undefined,
 	width: undefined,
 	maxWidthBreakpoint: undefined,
-	align: undefined,
 };
 
 Carousel.propTypes = {
@@ -230,7 +234,6 @@ Carousel.propTypes = {
 	width: PropTypes.string,
 	maxWidthBreakpoint: PropTypes.string,
 	renderControl: PropTypes.func,
-	align: PropTypes.oneOf(['left']),
 };
 
 export default Carousel;
