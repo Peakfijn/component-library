@@ -145,8 +145,6 @@ var Carousel = function (_Component) {
 		key: 'render',
 		value: function render() {
 			var _props = this.props,
-			    _props$data = _props.data,
-			    data = _props$data === undefined ? {} : _props$data,
 			    width = _props.width,
 			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
 			    renderControl = _props.renderControl;
@@ -175,33 +173,7 @@ var Carousel = function (_Component) {
 							maxWidthBreakpoint: maxWidthBreakpoint,
 							ref: this.contentRef
 						},
-						_react2.default.createElement(
-							_styles.CarouselText,
-							{ modifier: 'only-vertical', vertical: 'carousel' },
-							data.subtitle || currentItem.subtitle ? _react2.default.createElement(
-								_styles.InvertedSpan,
-								null,
-								currentItem.subtitle || data.subtitle
-							) : _react2.default.createElement(
-								_styles.InvertedSpan,
-								null,
-								'\xA0'
-							),
-							data.title || currentItem.title ? _react2.default.createElement(
-								_styles.InvertedH3,
-								null,
-								currentItem.title || data.title
-							) : _react2.default.createElement(
-								_styles.InvertedH3,
-								null,
-								'\xA0'
-							),
-							(data.description || currentItem.description) && _react2.default.createElement(
-								_styles.InvertedP,
-								null,
-								currentItem.title || data.title
-							)
-						)
+						'\xA0'
 					),
 					_react2.default.createElement(
 						_styles.CarouselImages,

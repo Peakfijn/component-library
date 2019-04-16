@@ -21,8 +21,7 @@ exports.default = {
 			large: '20px',
 			huge: '24px',
 			gigantic: '32px',
-			humongous: '48px',
-			carousel: '64px'
+			humongous: '48px'
 		},
 		color: {
 			text: {

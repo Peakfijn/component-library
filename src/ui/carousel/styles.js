@@ -1,15 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import defaultProps from '../../default-props';
-import Spacing from '../layout/spacing';
-
-const UNoMargin = css`
-	margin: 0 !important;
-`;
-
-const tInverted = css`
-	color: ${props => props.theme.color.text.inverted};
-`;
-
 
 export const CarouselWrapper = styled.div`
 	position: relative;
@@ -36,7 +26,6 @@ export const CarouselControl = styled.span`
 		text-decoration: none;
 	}
 `;
-
 
 export const CarouselContent = styled.div`
 	position: relative;
@@ -89,39 +78,6 @@ export const CarouselImage = styled.img`
 	`};
 `;
 
-export const CarouselText = styled(Spacing)`
-	transform: translateX(-85%) translateY(10%);
-
-	h3 {
-		white-space: initial;
-		word-break: normal;
-	}
-`;
-
-export const InvertedSpan = styled.span`
-	${tInverted}
-	text-transform: uppercase;
-
-	margin-top: 1.66rem;
-	margin-bottom: 1.66rem;
-	word-break: break-all;
-	word-break: break-word;
-	word-break: normal;
-	font-size: ${props => props.theme.fontSize.huge};
-	line-height: ${props => props.theme.fontSize.huge};
-`;
-
-export const InvertedH3 = styled.h3`
-	${tInverted}
-`;
-
-export const InvertedP = styled.p`
-	${tInverted}
-`;
-
-
-UNoMargin.defaultProps = defaultProps;
-tInverted.defaultProps = defaultProps;
 CarouselWrapper.defaultProps = defaultProps;
 CarouselTotal.defaultProps = defaultProps;
 CarouselControl.defaultProps = defaultProps;
@@ -129,7 +85,3 @@ CarouselContent.defaultProps = defaultProps;
 CarouselImages.defaultProps = defaultProps;
 CarouselImageWrapper.defaultProps = defaultProps;
 CarouselImage.defaultProps = defaultProps;
-CarouselText.defaultProps = defaultProps;
-InvertedSpan.defaultProps = defaultProps;
-InvertedH3.defaultProps = defaultProps;
-InvertedP.defaultProps = defaultProps;

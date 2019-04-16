@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.InvertedP = exports.InvertedH3 = exports.InvertedSpan = exports.CarouselText = exports.CarouselImage = exports.CarouselImageWrapper = exports.CarouselImages = exports.CarouselContent = exports.CarouselControl = exports.CarouselTotal = exports.CarouselWrapper = undefined;
+exports.CarouselImage = exports.CarouselImageWrapper = exports.CarouselImages = exports.CarouselContent = exports.CarouselControl = exports.CarouselTotal = exports.CarouselWrapper = undefined;
 
 var _styledComponents = require('styled-components');
 
@@ -13,17 +13,7 @@ var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
-var _spacing = require('../layout/spacing');
-
-var _spacing2 = _interopRequireDefault(_spacing);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var UNoMargin = (0, _styledComponents.css)(['margin:0 !important;']);
-
-var tInverted = (0, _styledComponents.css)(['color:', ';'], function (props) {
-	return props.theme.color.text.inverted;
-});
 
 var CarouselWrapper = exports.CarouselWrapper = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselWrapper',
@@ -75,32 +65,6 @@ var CarouselImage = exports.CarouselImage = _styledComponents2.default.img.withC
 	return hidden && '\n\t\tdisplay: block;\n\t\theight: 1px;\n\t\twidth: 1px;\n\t';
 });
 
-var CarouselText = exports.CarouselText = (0, _styledComponents2.default)(_spacing2.default).withConfig({
-	displayName: 'styles__CarouselText',
-	componentId: 'jirywc-7'
-})(['transform:translateX(-85%) translateY(10%);h3{white-space:initial;word-break:normal;}']);
-
-var InvertedSpan = exports.InvertedSpan = _styledComponents2.default.span.withConfig({
-	displayName: 'styles__InvertedSpan',
-	componentId: 'jirywc-8'
-})(['', ' text-transform:uppercase;margin-top:1.66rem;margin-bottom:1.66rem;word-break:break-all;word-break:break-word;word-break:normal;font-size:', ';line-height:', ';'], tInverted, function (props) {
-	return props.theme.fontSize.huge;
-}, function (props) {
-	return props.theme.fontSize.huge;
-});
-
-var InvertedH3 = exports.InvertedH3 = _styledComponents2.default.h3.withConfig({
-	displayName: 'styles__InvertedH3',
-	componentId: 'jirywc-9'
-})(['', ''], tInverted);
-
-var InvertedP = exports.InvertedP = _styledComponents2.default.p.withConfig({
-	displayName: 'styles__InvertedP',
-	componentId: 'jirywc-10'
-})(['', ''], tInverted);
-
-UNoMargin.defaultProps = _defaultProps2.default;
-tInverted.defaultProps = _defaultProps2.default;
 CarouselWrapper.defaultProps = _defaultProps2.default;
 CarouselTotal.defaultProps = _defaultProps2.default;
 CarouselControl.defaultProps = _defaultProps2.default;
@@ -108,7 +72,3 @@ CarouselContent.defaultProps = _defaultProps2.default;
 CarouselImages.defaultProps = _defaultProps2.default;
 CarouselImageWrapper.defaultProps = _defaultProps2.default;
 CarouselImage.defaultProps = _defaultProps2.default;
-CarouselText.defaultProps = _defaultProps2.default;
-InvertedSpan.defaultProps = _defaultProps2.default;
-InvertedH3.defaultProps = _defaultProps2.default;
-InvertedP.defaultProps = _defaultProps2.default;

@@ -9,10 +9,6 @@ import {
 	CarouselImages,
 	CarouselImageWrapper,
 	CarouselImage,
-	CarouselText,
-	InvertedH3,
-	InvertedP,
-	InvertedSpan,
 } from './styles';
 
 class Carousel extends Component {
@@ -113,7 +109,7 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const { data = {}, width, maxWidthBreakpoint, renderControl } = this.props;
+		const { width, maxWidthBreakpoint, renderControl } = this.props;
 		const {
 			items,
 			isAnimating,
@@ -134,21 +130,7 @@ class Carousel extends Component {
 						maxWidthBreakpoint={maxWidthBreakpoint}
 						ref={this.contentRef}
 					>
-						<CarouselText modifier="only-vertical" vertical="carousel">
-							{(data.subtitle || currentItem.subtitle) ?
-								<InvertedSpan>
-									{currentItem.subtitle || data.subtitle}
-								</InvertedSpan>
-								: <InvertedSpan>&nbsp;</InvertedSpan>
-							}
-							{(data.title || currentItem.title) ?
-								<InvertedH3>{currentItem.title || data.title}</InvertedH3>
-								: <InvertedH3>&nbsp;</InvertedH3>
-							}
-							{(data.description || currentItem.description) &&
-								<InvertedP>{currentItem.title || data.title}</InvertedP>
-							}
-						</CarouselText>
+						&nbsp;
 					</CarouselContent>
 					<CarouselImages>
 						<CarouselImageWrapper
