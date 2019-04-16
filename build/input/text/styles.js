@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder: 1px solid ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\tcolor: ', ';\n\tstroke: ', ';\n\n\t/* States */\n\t', '\n\n\t/* Modifier: size */\n\t', '\n\t', '\n\n\t', '\n\t', '\n'], ['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder: 1px solid ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\tcolor: ', ';\n\tstroke: ', ';\n\n\t/* States */\n\t', '\n\n\t/* Modifier: size */\n\t', '\n\t', '\n\n\t', '\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -34,10 +36,9 @@ var _borderRadius2 = _interopRequireDefault(_borderRadius);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Input = _styledComponents2.default.input.withConfig({
-	displayName: 'styles__Input',
-	componentId: 'sc-9uz7iv-0'
-})(['box-sizing:border-box;outline:none;border:1px solid ', ';background:', ';width:100%;color:', ';stroke:', ';', ' ', ' ', ' ', ' ', ''], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Input = _styledComponents2.default.input(_templateObject, function (props) {
 	return props.theme.color.border.normal;
 }, function (props) {
 	return props.theme.color.background.input;

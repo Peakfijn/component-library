@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tbox-sizing: border-box;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\tline-height: initial;\n\n\t/* Modifiers: horizontal gutter width */\n\t', '\n\n\t/* Modifiers: vertical gutter width */\n\t', '\n\n\t/* Modifiers: at minimum breakpoint apply spacing */\n\t', '\n\n\t/* Modifiers: at maximum breakpoint apply spacing */\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n\n\t/* Modifiers: remove specific */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t/* Modifiers: only specific */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n'], ['\n\tbox-sizing: border-box;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\tline-height: initial;\n\n\t/* Modifiers: horizontal gutter width */\n\t', '\n\n\t/* Modifiers: vertical gutter width */\n\t', '\n\n\t/* Modifiers: at minimum breakpoint apply spacing */\n\t', '\n\n\t/* Modifiers: at maximum breakpoint apply spacing */\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n\n\t/* Modifiers: remove specific */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t/* Modifiers: only specific */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -14,10 +16,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SpacingStyle = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__SpacingStyle',
-	componentId: 'sc-1ebimj7-0'
-})(['box-sizing:border-box;margin-right:auto;margin-left:auto;line-height:initial;', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var SpacingStyle = _styledComponents2.default.div(_templateObject, function (_ref) {
 	var horizontal = _ref.horizontal,
 	    gutter = _ref.theme.gutter;
 	return horizontal && '\n\t\tpadding-left: ' + gutter['' + horizontal] + ';\n\t\tpadding-right: ' + gutter['' + horizontal] + ';\n\t' || '';

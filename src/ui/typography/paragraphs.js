@@ -7,8 +7,8 @@ export const Paragraph = styled.p`
 	line-height: ${props => props.theme.fontSize.medium};
 	color: ${props => props.theme.color.text.normal};
 	font-size: ${props => props.theme.fontSize.medium};
-	${({ modifier, theme }) => modifier === 'light' && `
-		color: ${theme.color.text.light};
+	${({ theme, color = 'normal' }) =>  color && `
+		color: ${theme.color.text[color]};
 	` || ''}
 `;
 
@@ -21,8 +21,8 @@ export const Caption = styled.p`
 	${({ isUpperCase }) => isUpperCase && `
 		text-transform: uppercase;
 	` || ''}
-	${({ modifier, theme }) => modifier === 'dark' && `
-		color: ${theme.color.text.normal};
+	${({ theme, color = 'normal' }) =>  color && `
+		color: ${theme.color.text[color]};
 	` || ''}
 `;
 

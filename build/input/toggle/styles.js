@@ -5,6 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Slider = exports.Switch = undefined;
 
+var _templateObject = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\twidth: calc(', ' + (', ' * 2));\n\theight: ', ';\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\ttransition: background-color 100ms ease-out;\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n'], ['\n\tcursor: pointer;\n\twidth: calc(', ' + (', ' * 2));\n\theight: ', ';\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\ttransition: background-color 100ms ease-out;\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\tmargin: ', ';\n\twidth: ', ';\n\theight: ', ';\n\tposition: absolute;\n\ttransition: left 100ms ease-out;\n\n\t/* State: selected */\n\t', '\n'], ['\n\tcursor: pointer;\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\tmargin: ', ';\n\twidth: ', ';\n\theight: ', ';\n\tposition: absolute;\n\ttransition: left 100ms ease-out;\n\n\t/* State: selected */\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -21,10 +24,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Switch = exports.Switch = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__Switch',
-	componentId: 'n1lthu-0'
-})(['cursor:pointer;width:calc(', ' + (', ' * 2));height:', ';background-color:', ';border-radius:', ';transition:background-color 100ms ease-out;margin-right:', ';', ' ', ' ', ' ', ''], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Switch = exports.Switch = _styledComponents2.default.div(_templateObject, function (props) {
 	return props.theme.componentSize.toggle.width;
 }, function (props) {
 	return props.theme.gutter.tiny;
@@ -52,10 +54,7 @@ var Switch = exports.Switch = _styledComponents2.default.div.withConfig({
 	return focussed && selected ? '\n\t\tbackground-color: ' + (0, _polished.darken)(theme.color.adjustColor.tiny, theme.color.brand) + ';\n\t' : '';
 });
 
-var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__Slider',
-	componentId: 'n1lthu-1'
-})(['cursor:pointer;background-color:', ';border-radius:', ';margin:', ';width:', ';height:', ';position:absolute;transition:left 100ms ease-out;', ''], function (props) {
+var Slider = exports.Slider = _styledComponents2.default.div(_templateObject2, function (props) {
 	return props.theme.color.background.input;
 }, function (props) {
 	return props.theme.componentSize.slider;

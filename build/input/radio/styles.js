@@ -5,6 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Slider = exports.Switch = undefined;
 
+var _templateObject = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tposition: relative;\n\tdisplay: inline-block;\n\twidth: ', ';\n\theight: ', ';\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\tborder: 1px solid ', ';\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n'], ['\n\tcursor: pointer;\n\tposition: relative;\n\tdisplay: inline-block;\n\twidth: ', ';\n\theight: ', ';\n\tbackground-color: ', ';\n\tborder-radius: ', ';\n\tborder: 1px solid ', ';\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tmargin: ', ';\n\tborder-radius: ', ';\n\twidth: ', ';\n\theight: ', ';\n\tposition: absolute;\n\n\ttop: ', ';\n\tbottom: ', ';\n\tleft: ', ';\n\tright: ', ';\n\n\t/* State: selected */\n\t', '\n\n\t/* State: selected & disabled */\n\t', '\n'], ['\n\tcursor: pointer;\n\tmargin: ', ';\n\tborder-radius: ', ';\n\twidth: ', ';\n\theight: ', ';\n\tposition: absolute;\n\n\ttop: ', ';\n\tbottom: ', ';\n\tleft: ', ';\n\tright: ', ';\n\n\t/* State: selected */\n\t', '\n\n\t/* State: selected & disabled */\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -19,10 +22,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Switch = exports.Switch = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__Switch',
-	componentId: 'sc-1p91ebh-0'
-})(['cursor:pointer;position:relative;display:inline-block;width:', ';height:', ';background-color:', ';border-radius:', ';border:1px solid ', ';margin-right:', ';', ''], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Switch = exports.Switch = _styledComponents2.default.div(_templateObject, function (props) {
 	return props.theme.componentSize.radio;
 }, function (props) {
 	return props.theme.componentSize.radio;
@@ -36,10 +38,7 @@ var Switch = exports.Switch = _styledComponents2.default.div.withConfig({
 	return props.theme.gutter.small;
 }, _switchState2.default);
 
-var Slider = exports.Slider = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__Slider',
-	componentId: 'sc-1p91ebh-1'
-})(['cursor:pointer;margin:', ';border-radius:', ';width:', ';height:', ';position:absolute;top:', ';bottom:', ';left:', ';right:', ';', ' ', ''], function (props) {
+var Slider = exports.Slider = _styledComponents2.default.div(_templateObject2, function (props) {
 	return props.theme.gutter.none;
 }, function (props) {
 	return props.theme.componentSize.dot;

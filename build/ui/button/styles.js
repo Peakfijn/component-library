@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tbox-sizing: border-box;\n\tdisplay: inline-block;\n\tmargin-bottom: ', ';\n\toutline: none;\n\tborder: 1px solid transparent;\n\tborder-radius: ', ';\n\tcursor: pointer;\n\twidth: ', ';\n\ttext-transform: none;\n\ttext-decoration: none;\n\tfont-family: inherit;\n\n\t/* Modifier: full-width */\n\t', '\n\n\t', '\n\n\t/* Modifier: color primary */\n\t', '\n\n\t/* Modifier: secondary */\n\t', '\n\n\t/* Modifier: disabled */\n\t', '\n\n\t/* Modifier: invisible */\n\t', ';\n\n\t/* Modifier: light */\n\t', '\n\n\t/* Modifier: dark */\n\t', '\n\n\t/* Modifiers: size */\n\t', '\n\n\t/* Modifiers: fontSize */\n\t', '\n\n\t/* Modifiers: borderRadius */\n\t', '\n\n\t', '\n'], ['\n\tbox-sizing: border-box;\n\tdisplay: inline-block;\n\tmargin-bottom: ', ';\n\toutline: none;\n\tborder: 1px solid transparent;\n\tborder-radius: ', ';\n\tcursor: pointer;\n\twidth: ', ';\n\ttext-transform: none;\n\ttext-decoration: none;\n\tfont-family: inherit;\n\n\t/* Modifier: full-width */\n\t', '\n\n\t', '\n\n\t/* Modifier: color primary */\n\t', '\n\n\t/* Modifier: secondary */\n\t', '\n\n\t/* Modifier: disabled */\n\t', '\n\n\t/* Modifier: invisible */\n\t', ';\n\n\t/* Modifier: light */\n\t', '\n\n\t/* Modifier: dark */\n\t', '\n\n\t/* Modifiers: size */\n\t', '\n\n\t/* Modifiers: fontSize */\n\t', '\n\n\t/* Modifiers: borderRadius */\n\t', '\n\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -28,6 +30,8 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 var themeColor = function themeColor(key, props) {
 	return props.theme.color[key];
 };
@@ -36,10 +40,7 @@ var applyForState = function applyForState(state, props) {
 	return props.state === state ? ', &' : '';
 };
 
-var StyledButton = _styledComponents2.default.button.withConfig({
-	displayName: 'styles__StyledButton',
-	componentId: 'sc-1shn4a8-0'
-})(['box-sizing:border-box;display:inline-block;margin-bottom:', ';outline:none;border:1px solid transparent;border-radius:', ';cursor:pointer;width:', ';text-transform:none;text-decoration:none;font-family:inherit;', ' ', ' ', ' ', ' ', ' ', ';', ' ', ' ', ' ', ' ', ' ', ''], function (props) {
+var StyledButton = _styledComponents2.default.button(_templateObject, function (props) {
 	return props.theme.gutter.medium;
 }, function (props) {
 	return props.theme.borderRadius.medium;

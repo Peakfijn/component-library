@@ -5,6 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.StyledSelect = exports.StyledHeader = undefined;
 
+var _templateObject = _taggedTemplateLiteral(['\n\tmargin-bottom: ', ';\n\tcolor: ', ';\n'], ['\n\tmargin-bottom: ', ';\n\tcolor: ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder: 1px solid ', ';\n\tborder-radius: ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\tcolor: ', ';\n\tstroke: ', ';\n\tappearance: none;\n\n\t/* States */\n\t', '\n\n\t/* Modifier: size */\n\t', '\n\n\t', '\n\t', '\n'], ['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder: 1px solid ', ';\n\tborder-radius: ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\tcolor: ', ';\n\tstroke: ', ';\n\tappearance: none;\n\n\t/* States */\n\t', '\n\n\t/* Modifier: size */\n\t', '\n\n\t', '\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -31,19 +34,15 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var StyledHeader = exports.StyledHeader = _styledComponents2.default.h4.withConfig({
-	displayName: 'styles__StyledHeader',
-	componentId: 'sc-19aao7l-0'
-})(['margin-bottom:', ';color:', ';'], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var StyledHeader = exports.StyledHeader = _styledComponents2.default.h4(_templateObject, function (props) {
 	return props.theme.gutter.small;
 }, function (props) {
 	return props.theme.color.text.normal;
 });
 
-var StyledSelect = exports.StyledSelect = _styledComponents2.default.select.withConfig({
-	displayName: 'styles__StyledSelect',
-	componentId: 'sc-19aao7l-1'
-})(['box-sizing:border-box;outline:none;border:1px solid ', ';border-radius:', ';background:', ';width:100%;color:', ';stroke:', ';appearance:none;', ' ', ' ', ' ', ''], function (props) {
+var StyledSelect = exports.StyledSelect = _styledComponents2.default.select(_templateObject2, function (props) {
 	return props.theme.color.border.normal;
 }, function (props) {
 	return props.theme.borderRadius.medium;

@@ -5,6 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ModalButton = exports.ModalFooter = exports.TitleContainer = exports.ModalContent = exports.ModalContentContainer = exports.ModalContainer = undefined;
 
+var _templateObject = _taggedTemplateLiteral(['\n\tposition: fixed;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\tz-index: 1000;\n\tbackground-color: ', ';\n\twidth: 100%;\n\theight: 100%;\n'], ['\n\tposition: fixed;\n\ttop: 0;\n\tright: 0;\n\tbottom: 0;\n\tleft: 0;\n\tz-index: 1000;\n\tbackground-color: ', ';\n\twidth: 100%;\n\theight: 100%;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\theight: 100%;\n'], ['\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\theight: 100%;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\tborder-radius: ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\t', '\n'], ['\n\tborder-radius: ', ';\n\tbackground: ', ';\n\twidth: 100%;\n\t', '\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tborder-bottom: 1px solid ', ';\n\tpadding: ', ';\n\tline-height: 2rem;\n'], ['\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tborder-bottom: 1px solid ', ';\n\tpadding: ', ';\n\tline-height: 2rem;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\tborder-top: 1px solid ', ';\n\tpadding: ', ';\n'], ['\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\tborder-top: 1px solid ', ';\n\tpadding: ', ';\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n\tmargin: ', ';\n'], ['\n\tmargin: ', ';\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -19,22 +26,15 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ModalContainer = exports.ModalContainer = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__ModalContainer',
-	componentId: 'qsm57g-0'
-})(['position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;background-color:', ';width:100%;height:100%;'], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ModalContainer = exports.ModalContainer = _styledComponents2.default.div(_templateObject, function (props) {
 	return props.theme.color.modalBackground;
 });
 
-var ModalContentContainer = exports.ModalContentContainer = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__ModalContentContainer',
-	componentId: 'qsm57g-1'
-})(['display:flex;align-items:center;justify-content:center;height:100%;']);
+var ModalContentContainer = exports.ModalContentContainer = _styledComponents2.default.div(_templateObject2);
 
-var ModalContent = exports.ModalContent = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__ModalContent',
-	componentId: 'qsm57g-2'
-})(['border-radius:', ';background:', ';width:100%;', ''], function (props) {
+var ModalContent = exports.ModalContent = _styledComponents2.default.div(_templateObject3, function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
 	return props.theme.color.background.input;
@@ -46,28 +46,19 @@ var ModalContent = exports.ModalContent = _styledComponents2.default.div.withCon
 	}) || '';
 });
 
-var TitleContainer = exports.TitleContainer = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__TitleContainer',
-	componentId: 'qsm57g-3'
-})(['display:flex;justify-content:space-between;border-bottom:1px solid ', ';padding:', ';line-height:2rem;'], function (props) {
+var TitleContainer = exports.TitleContainer = _styledComponents2.default.div(_templateObject4, function (props) {
 	return props.theme.color.border.light;
 }, function (props) {
 	return props.theme.gutter.medium;
 });
 
-var ModalFooter = exports.ModalFooter = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__ModalFooter',
-	componentId: 'qsm57g-4'
-})(['display:flex;justify-content:flex-end;border-top:1px solid ', ';padding:', ';'], function (props) {
+var ModalFooter = exports.ModalFooter = _styledComponents2.default.div(_templateObject5, function (props) {
 	return props.theme.color.border.light;
 }, function (props) {
 	return props.theme.gutter.small;
 });
 
-var ModalButton = exports.ModalButton = (0, _styledComponents2.default)(_button2.default).withConfig({
-	displayName: 'styles__ModalButton',
-	componentId: 'qsm57g-5'
-})(['margin:', ';'], function (props) {
+var ModalButton = exports.ModalButton = (0, _styledComponents2.default)(_button2.default)(_templateObject6, function (props) {
 	return props.theme.gutter.small;
 });
 

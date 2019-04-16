@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tcolor: inherit;\n\n\t/* Modifier: input */\n\t', '\n\n\t', '\n\n\t/* Modifier: error */\n\t', '\n\n\t', '\n\n\t/* Modifier: left */\n\t', '\n\n\t/* Size */\n\t', '\n\t', '\n'], ['\n\tcolor: inherit;\n\n\t/* Modifier: input */\n\t', '\n\n\t', '\n\n\t/* Modifier: error */\n\t', '\n\n\t', '\n\n\t/* Modifier: left */\n\t', '\n\n\t/* Size */\n\t', '\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -16,10 +18,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var InputIcon = (0, _styledComponents2.default)(_reactFontawesome.FontAwesomeIcon).withConfig({
-	displayName: 'styles__InputIcon',
-	componentId: 'sc-1mswufl-0'
-})(['color:inherit;', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var InputIcon = (0, _styledComponents2.default)(_reactFontawesome.FontAwesomeIcon)(_templateObject, function (_ref) {
 	var modifier = _ref.modifier,
 	    theme = _ref.theme;
 	return modifier === "input-right" && '\n\t\tcolor: ' + theme.color.text.light + ';\n\t\tposition: absolute;\n\t\tright: ' + theme.gutter.small + ';\n\t\ttop: ' + theme.gutter.small + ';\n\t' || '';
