@@ -14,10 +14,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _spacing = require('../layout/spacing');
-
-var _spacing2 = _interopRequireDefault(_spacing);
-
 var _styles = require('./styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -53,12 +49,20 @@ var Carousel = function (_Component) {
 	}
 
 	_createClass(Carousel, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.forceUpdate();
+		}
+	}, {
 		key: 'calculateImageWidth',
 		value: function calculateImageWidth() {
+			console.log('Testing123 - log this.totalRef:', this.totalRef);
+			console.log('Testing123 - log this.contentRef:', this.contentRef);
 			if (!this.totalRef) {
 				return 0;
 			}
-
+			console.log('Testing123 - log this.totalRef.current && this.totalRef.current.clientWidth:', this.totalRef.current && this.totalRef.current.clientWidth);
+			console.log('Testing123 - log this.contentRef.current && this.contentRef.current.clientWidth:', this.contentRef.current && this.contentRef.current.clientWidth);
 			var totalWidth = this.totalRef.current && this.totalRef.current.clientWidth;
 			var contentWidth = this.contentRef.current && this.contentRef.current.clientWidth;
 			var sidesWidth = (totalWidth - contentWidth) / 2;
@@ -137,6 +141,8 @@ var Carousel = function (_Component) {
 			var _props = this.props,
 			    _props$data = _props.data,
 			    data = _props$data === undefined ? {} : _props$data,
+			    width = _props.width,
+			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
 			    renderControl = _props.renderControl;
 			var _state3 = this.state,
 			    items = _state3.items,
@@ -159,7 +165,8 @@ var Carousel = function (_Component) {
 						{
 							horizontal: 'none',
 							vertical: 'none',
-							maxWidthBreakpoint: data.width || 'phone',
+							width: width,
+							maxWidthBreakpoint: maxWidthBreakpoint,
 							ref: this.contentRef
 						},
 						_react2.default.createElement(
@@ -192,20 +199,6 @@ var Carousel = function (_Component) {
 								_styles.LinkAnchor,
 								{ href: currentItem.link || data.link },
 								currentItem.button || data.button
-							)
-						),
-						renderControl ? renderControl(this.handlePrevious, this.handleNext) : _react2.default.createElement(
-							_styles.CarouselControl,
-							null,
-							_react2.default.createElement(
-								_styles.CarouselLeft,
-								{ type: 'button', onClick: this.handlePrevious },
-								'<'
-							),
-							_react2.default.createElement(
-								_styles.CarouselRight,
-								{ type: 'button', onClick: this.handleNext },
-								'>'
 							)
 						)
 					),
@@ -249,10 +242,24 @@ var Carousel = function (_Component) {
 								width: imageWidth
 							})
 						)
+					)
+				),
+				items.map(function (item) {
+					return _react2.default.createElement(_styles.CarouselImage, { key: 'caroucel-image-' + item.url, alt: '', style: { backgroundImage: 'url(' + item.url + ')' }, hidden: true });
+				}),
+				renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : _react2.default.createElement(
+					_styles.CarouselControl,
+					null,
+					_react2.default.createElement(
+						_styles.CarouselLeft,
+						{ type: 'button', onClick: !isAnimating && this.handlePrevious },
+						'<'
 					),
-					items.map(function (item) {
-						return _react2.default.createElement(_styles.CarouselImage, { alt: '', style: { backgroundImage: 'url(' + item.url + ')' }, hidden: true });
-					})
+					_react2.default.createElement(
+						_styles.CarouselRight,
+						{ type: 'button', onClick: !isAnimating && this.handleNext },
+						'>'
+					)
 				)
 			);
 		}
@@ -262,12 +269,18 @@ var Carousel = function (_Component) {
 }(_react.Component);
 
 Carousel.defaultProps = {
-	renderControl: null
+	renderControl: undefined,
+	width: undefined,
+	maxWidthBreakpoint: undefined,
+	align: undefined
 };
 
 Carousel.propTypes = {
 	data: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
-	renderControl: _propTypes2.default.func
+	width: _propTypes2.default.string,
+	maxWidthBreakpoint: _propTypes2.default.string,
+	renderControl: _propTypes2.default.func,
+	align: _propTypes2.default.oneOf(['left'])
 };
 
 exports.default = Carousel;

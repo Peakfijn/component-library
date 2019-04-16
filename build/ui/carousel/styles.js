@@ -19,13 +19,13 @@ var _spacing2 = _interopRequireDefault(_spacing);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var UNoMargin = (0, _styledComponents.css)(['margin:0!important;']);
+var UNoMargin = (0, _styledComponents.css)(['margin:0 !important;']);
 
 var tInverted = (0, _styledComponents.css)(['color:', ';'], function (props) {
 	return props.theme.color.text.inverted;
 });
 
-var Button = (0, _styledComponents.css)(['flex-direction:row;justify-content:center;text-transform:uppercase;border:none;font-style:normal;letter-spacing:normal;line-height:2.5rem;min-height:2.5rem;text-decoration:none;padding:0 2rem;font-weight:500;font-stretch:normal;cursor:pointer;outline:none;display:inline-block;white-space:nowrap;@media(\'<=small\'){padding:0 .75rem;}&:hover,&:focus{opacity:.85;}&:active{opacity:1;text-decoration:none;}']);
+var Button = (0, _styledComponents.css)(['flex-direction:row;justify-content:center;text-transform:uppercase;border:none;font-style:normal;letter-spacing:normal;line-height:2.5rem;min-height:2.5rem;text-decoration:none;padding:0 2rem;font-weight:500;font-stretch:normal;cursor:pointer;outline:none;display:inline-block;white-space:nowrap;&:hover,&:focus{opacity:0.85;}&:active{opacity:1;text-decoration:none;}@media (\'<=small\'){padding:0 0.75rem;}']);
 
 var CarouselWrapper = exports.CarouselWrapper = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselWrapper',
@@ -35,7 +35,7 @@ var CarouselWrapper = exports.CarouselWrapper = _styledComponents2.default.div.w
 var CarouselTotal = exports.CarouselTotal = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselTotal',
 	componentId: 'jirywc-1'
-})(['position:absolute;top:0;bottom:0;right:0;left:0;z-index:99;']);
+})(['position:absolute;top:0;bottom:0;right:0;left:0;z-index:99;width:100%;']);
 
 var CarouselControl = exports.CarouselControl = _styledComponents2.default.span.withConfig({
 	displayName: 'styles__CarouselControl',
@@ -54,10 +54,19 @@ var CarouselRight = exports.CarouselRight = _styledComponents2.default.button.wi
 	componentId: 'jirywc-4'
 })(['right:0;font-size:45px;line-height:30px;text-align:center;padding:12px 16px;', ';'], buttonTertiary);
 
-var CarouselContent = exports.CarouselContent = (0, _styledComponents2.default)(_spacing2.default).withConfig({
+var CarouselContent = exports.CarouselContent = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselContent',
 	componentId: 'jirywc-5'
-})(['position:relative;z-index:1;min-height:100%;']);
+})(['position:relative;z-index:1;min-height:100%;', ' ', ''], function (_ref) {
+	var maxWidth = _ref.maxWidth;
+	return maxWidth && '\n\t\tmax-width: ' + maxWidth + ';\n\t' || '';
+}, function (_ref2) {
+	var maxWidthBreakpoint = _ref2.maxWidthBreakpoint,
+	    breakpoint = _ref2.theme.breakpoint;
+	return Object.keys(breakpoint).map(function (key) {
+		return '\n\t\t\t' + (maxWidthBreakpoint === key && '\n\t\t\t\twidth: 100%;\n\t\t\t\tmax-width: ' + breakpoint[key] + ';\n\t\t\t' || '') + '\n\t\t' || '';
+	}) || '';
+});
 
 var CarouselImages = exports.CarouselImages = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselImages',
@@ -67,19 +76,16 @@ var CarouselImages = exports.CarouselImages = _styledComponents2.default.div.wit
 var CarouselImageWrapper = exports.CarouselImageWrapper = _styledComponents2.default.div.withConfig({
 	displayName: 'styles__CarouselImageWrapper',
 	componentId: 'jirywc-7'
-})(['height:100%;overflow:hidden;', ';'], function (_ref) {
-	var animating = _ref.animating;
+})(['height:100%;display:flex;', ';'], function (_ref3) {
+	var animating = _ref3.animating;
 	return animating && '\n\t\ttransition: transform 1s;\n\t';
 });
 
 var CarouselImage = exports.CarouselImage = _styledComponents2.default.img.withConfig({
 	displayName: 'styles__CarouselImage',
 	componentId: 'jirywc-8'
-})(['max-height:100%;height:100%;background-size:cover;', ';', ';'], function (_ref2) {
-	var width = _ref2.width;
-	return width === 0 && '\n\t\tmin-width: 80%;\n\t';
-}, function (_ref3) {
-	var hidden = _ref3.hidden;
+})(['background-size:cover;flex-shrink:0;flex-grow:0;', ';'], function (_ref4) {
+	var hidden = _ref4.hidden;
 	return hidden && '\n\t\tdisplay: block;\n\t\theight: 1px;\n\t\twidth: 1px;\n\t';
 });
 
@@ -110,7 +116,7 @@ var InvertedP = exports.InvertedP = _styledComponents2.default.p.withConfig({
 var LinkAnchor = exports.LinkAnchor = _styledComponents2.default.a.withConfig({
 	displayName: 'styles__LinkAnchor',
 	componentId: 'jirywc-13'
-})(['', ' ', ' ', ' background-color:transparent;color:', ';box-shadow:0 0 0 3px ', ' inset;&:active{box-shadow:0 0 0 3px ', ' inset;background-image:none;background:', ';color:', ';fill:', ';text-decoration:none;}'], tInverted, UNoMargin, Button, function (props) {
+})(['', ' ', ' ', ' background-color:transparent;color:', ';box-shadow:0 0 0 3px ', ' inset;&:active{box-shadow:0 0 0 3px ', ' inset;background:', ';color:', ';fill:', ';text-decoration:none;}'], tInverted, UNoMargin, Button, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
 	return props.theme.color.text.inverted;

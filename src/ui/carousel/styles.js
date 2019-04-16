@@ -55,6 +55,7 @@ export const CarouselTotal = styled.div`
 	right: 0;
 	left: 0;
 	z-index: 99;
+	width: 100%;
 `;
 
 export const CarouselControl = styled.span`
@@ -91,10 +92,24 @@ export const CarouselRight = styled.button`
 	${buttonTertiary};
 `;
 
-export const CarouselContent = styled(Spacing)`
+export const CarouselContent = styled.div`
 	position: relative;
 	z-index: 1;
 	min-height: 100%;
+
+	${({ maxWidth }) => maxWidth && `
+		max-width: ${maxWidth};
+	` || ''}
+
+	/* Modifiers: set max-width at breakpoint */
+	${({ maxWidthBreakpoint, theme: { breakpoint } }) => Object.keys(breakpoint).map(
+		key => `
+			${maxWidthBreakpoint === key && `
+				width: 100%;
+				max-width: ${breakpoint[key]};
+			` || ''}
+		` || ''
+	) || ''}
 `;
 
 export const CarouselImages = styled.div`
@@ -109,7 +124,7 @@ export const CarouselImages = styled.div`
 
 export const CarouselImageWrapper = styled.div`
 	height: 100%;
-	overflow: hidden;
+	display: flex;
 
 	${({ animating }) => animating && `
 		transition: transform 1s;
@@ -117,13 +132,9 @@ export const CarouselImageWrapper = styled.div`
 `;
 
 export const CarouselImage = styled.img`
-	max-height: 100%;
-	height: 100%;
 	background-size: cover;
-
-	${({ width }) => width === 0 && `
-		min-width: 80%;
-	`};
+	flex-shrink: 0;
+	flex-grow: 0;
 
 	${({ hidden }) => hidden && `
 		display: block;

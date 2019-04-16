@@ -36,12 +36,17 @@ class Carousel extends Component {
 		this.handleNext = this.handleNext.bind(this);
 		this.handlePrevious = this.handlePrevious.bind(this);
 	}
-
+	componentDidMount() {
+		this.forceUpdate();
+	}
 	calculateImageWidth() {
+		console.log('Testing123 - log this.totalRef:', this.totalRef);
+		console.log('Testing123 - log this.contentRef:', this.contentRef);
 		if (!this.totalRef) {
 			return 0;
 		}
-
+		console.log('Testing123 - log this.totalRef.current && this.totalRef.current.clientWidth:', this.totalRef.current && this.totalRef.current.clientWidth);
+		console.log('Testing123 - log this.contentRef.current && this.contentRef.current.clientWidth:', this.contentRef.current && this.contentRef.current.clientWidth);
 		const totalWidth = this.totalRef.current && this.totalRef.current.clientWidth;
 		const contentWidth = this.contentRef.current && this.contentRef.current.clientWidth;
 		const sidesWidth = ((totalWidth - contentWidth) / 2);
@@ -98,7 +103,7 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const { data = {}, renderControl } = this.props;
+		const { data = {}, width, maxWidthBreakpoint, renderControl } = this.props;
 		const {
 			items,
 			isAnimating,
@@ -115,7 +120,8 @@ class Carousel extends Component {
 					<CarouselContent
 						horizontal="none"
 						vertical="none"
-						maxWidthBreakpoint={data.width || 'phone'}
+						width={width}
+						maxWidthBreakpoint={maxWidthBreakpoint}
 						ref={this.contentRef}
 					>
 						<CarouselText modifier="only-vertical" vertical="carousel">
@@ -138,17 +144,6 @@ class Carousel extends Component {
 								</LinkAnchor>
 							}
 						</CarouselText>
-
-						{renderControl ? renderControl(this.handlePrevious, this.handleNext) : (
-							<CarouselControl>
-								<CarouselLeft type="button" onClick={this.handlePrevious}>
-									{'<'}
-								</CarouselLeft>
-								<CarouselRight type="button" onClick={this.handleNext}>
-									{'>'}
-								</CarouselRight>
-							</CarouselControl>
-						)}
 					</CarouselContent>
 					<CarouselImages>
 						<CarouselImageWrapper
@@ -203,22 +198,39 @@ class Carousel extends Component {
 
 						</CarouselImageWrapper>
 					</CarouselImages>
-					{items.map(item => (
-						<CarouselImage alt="" style={{ backgroundImage: `url(${item.url})` }} hidden />
-					))}
 				</CarouselTotal>
+
+				{items.map(item => (
+					<CarouselImage key={`caroucel-image-${item.url}`} alt="" style={{ backgroundImage: `url(${item.url})` }} hidden />
+				))}
+				{renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : (
+					<CarouselControl>
+						<CarouselLeft type="button" onClick={!isAnimating && this.handlePrevious}>
+							{'<'}
+						</CarouselLeft>
+						<CarouselRight type="button" onClick={!isAnimating && this.handleNext}>
+							{'>'}
+						</CarouselRight>
+					</CarouselControl>
+				)}
 			</CarouselWrapper>
 		);
 	}
 }
 
 Carousel.defaultProps = {
-	renderControl: null,
+	renderControl: undefined,
+	width: undefined,
+	maxWidthBreakpoint: undefined,
+	align: undefined,
 };
 
 Carousel.propTypes = {
 	data: PropTypes.objectOf(PropTypes.any).isRequired,
+	width: PropTypes.string,
+	maxWidthBreakpoint: PropTypes.string,
 	renderControl: PropTypes.func,
+	align: PropTypes.oneOf(['left']),
 };
 
 export default Carousel;
