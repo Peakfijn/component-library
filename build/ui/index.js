@@ -106,4 +106,13 @@ Object.defineProperty(exports, 'Image', {
   }
 });
 
+var _carousel = require('./carousel');
+
+Object.defineProperty(exports, 'Carousel', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_carousel).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

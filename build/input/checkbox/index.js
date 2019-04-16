@@ -99,7 +99,15 @@ Checkbox.defaultProps = {
 	id: null,
 	indeterminate: false,
 	meta: {},
-	borderRadius: null
+	borderRadius: null,
+	input: {
+		onBlur: function onBlur() {
+			return null;
+		},
+		onChange: function onChange() {
+			return null;
+		}
+	}
 };
 
 Checkbox.propTypes = {
@@ -112,7 +120,10 @@ Checkbox.propTypes = {
 	initialValue: _propTypes2.default.bool,
 	focussed: _propTypes2.default.bool,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any),
-	input: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
+	input: _propTypes2.default.shape({
+		onBlur: _propTypes2.default.func,
+		onChange: _propTypes2.default.func
+	}),
 	indeterminate: _propTypes2.default.bool,
 	borderRadius: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full'])
 };
