@@ -1,12 +1,10 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
-
+import Button from '../button';
 import {
 	CarouselWrapper,
 	CarouselTotal,
 	CarouselControl,
-	CarouselLeft,
-	CarouselRight,
 	CarouselContent,
 	CarouselImages,
 	CarouselImageWrapper,
@@ -15,7 +13,6 @@ import {
 	InvertedH3,
 	InvertedP,
 	InvertedSpan,
-	LinkAnchor,
 } from './styles';
 
 class Carousel extends Component {
@@ -38,7 +35,20 @@ class Carousel extends Component {
 	}
 
 	componentDidMount() {
+		window.addEventListener("resize", this.handleResizing);
 		this.forceUpdate();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.handleResizing);
+	}
+
+	handleResizing = () => {
+		const imageWidth = this.calculateImageWidth();
+
+		this.setState({
+			targetLocation: imageWidth * -1,
+		});
 	}
 
 	calculateImageWidth() {
@@ -68,7 +78,7 @@ class Carousel extends Component {
 		return {};
 	}
 
-	handleNext() {
+	handleNext = () => {
 		const imageWidth = this.calculateImageWidth();
 		const { items, speed, currentIndex } = this.state;
 		this.setState({
@@ -85,7 +95,7 @@ class Carousel extends Component {
 		}, speed);
 	}
 
-	handlePrevious() {
+	handlePrevious = () => {
 		const imageWidth = this.calculateImageWidth();
 		const { items, speed, currentIndex } = this.state;
 		this.setState({
@@ -113,7 +123,8 @@ class Carousel extends Component {
 
 		const currentItem = this.calculateItem(items, currentIndex) || {};
 		const imageWidth = this.calculateImageWidth();
-
+		console.log('Testing123 - log this.totalRef:', this.totalRef);
+		console.log('Testing123 - log this.contentRef:', this.contentRef);
 		return (
 			<CarouselWrapper>
 				<CarouselTotal ref={this.totalRef}>
@@ -137,11 +148,6 @@ class Carousel extends Component {
 							}
 							{(data.description || currentItem.description) &&
 								<InvertedP>{currentItem.title || data.title}</InvertedP>
-							}
-							{(data.link || currentItem.link) &&
-								<LinkAnchor href={currentItem.link || data.link}>
-									{currentItem.button || data.button}
-								</LinkAnchor>
 							}
 						</CarouselText>
 					</CarouselContent>
@@ -210,12 +216,12 @@ class Carousel extends Component {
 				))}
 				{renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : (
 					<CarouselControl>
-						<CarouselLeft type="button" onClick={!isAnimating && this.handlePrevious}>
+						<Button type="button" onClick={!isAnimating && this.handlePrevious}>
 							{'<'}
-						</CarouselLeft>
-						<CarouselRight type="button" onClick={!isAnimating && this.handleNext}>
+						</Button>
+						<Button type="button" onClick={!isAnimating && this.handleNext}>
 							{'>'}
-						</CarouselRight>
+						</Button>
 					</CarouselControl>
 				)}
 			</CarouselWrapper>

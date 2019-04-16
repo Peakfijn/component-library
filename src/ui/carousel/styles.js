@@ -10,38 +10,6 @@ const tInverted = css`
 	color: ${props => props.theme.color.text.inverted};
 `;
 
-const Button = css`
-	flex-direction: row;
-	justify-content: center;
-	text-transform: uppercase;
-	border: none;
-	font-style: normal;
-	letter-spacing: normal;
-	line-height: 2.5rem;
-	min-height: 2.5rem;
-	text-decoration: none;
-	padding: 0 2rem;
-	font-weight: 500;
-	font-stretch: normal;
-	cursor: pointer;
-	outline: none;
-	display: inline-block;
-	white-space: nowrap;
-
-	&:hover,
-	&:focus {
-		opacity: 0.85;
-	}
-
-	&:active {
-		opacity: 1;
-		text-decoration: none;
-	}
-
-	@media ('<=small') {
-		padding: 0 0.75rem;
-	}
-`;
 
 export const CarouselWrapper = styled.div`
 	position: relative;
@@ -69,28 +37,6 @@ export const CarouselControl = styled.span`
 	}
 `;
 
-const buttonTertiary = css`
-	${UNoMargin}
-	${tInverted}
-`;
-
-export const CarouselLeft = styled.button`
-	left: 0;
-	font-size: 45px;
-	line-height: 30px;
-	text-align: center;
-	padding: 12px 16px;
-	${buttonTertiary};
-`;
-
-export const CarouselRight = styled.button`
-	right: 0;
-	font-size: 45px;
-	line-height: 30px;
-	text-align: center;
-	padding: 12px 16px;
-	${buttonTertiary};
-`;
 
 export const CarouselContent = styled.div`
 	position: relative;
@@ -173,33 +119,12 @@ export const InvertedP = styled.p`
 	${tInverted}
 `;
 
-export const LinkAnchor = styled.a`
-	${tInverted}
-	${UNoMargin}
-	${Button}
-
-	background-color: transparent;
-	color: ${props => props.theme.color.text.normal};
-	box-shadow: 0 0 0 3px ${props => props.theme.color.text.inverted} inset;
-
-	&:active {
-		box-shadow: 0 0 0 3px ${props => props.theme.color.text.normal} inset;
-		background: ${props => props.theme.color.text.normal};
-		color: ${props => props.theme.color.text.inverted};
-		fill: ${props => props.theme.color.text.inverted};
-		text-decoration: none;
-	}
-`;
 
 UNoMargin.defaultProps = defaultProps;
 tInverted.defaultProps = defaultProps;
-Button.defaultProps = defaultProps;
 CarouselWrapper.defaultProps = defaultProps;
 CarouselTotal.defaultProps = defaultProps;
 CarouselControl.defaultProps = defaultProps;
-buttonTertiary.defaultProps = defaultProps;
-CarouselLeft.defaultProps = defaultProps;
-CarouselRight.defaultProps = defaultProps;
 CarouselContent.defaultProps = defaultProps;
 CarouselImages.defaultProps = defaultProps;
 CarouselImageWrapper.defaultProps = defaultProps;
@@ -208,4 +133,3 @@ CarouselText.defaultProps = defaultProps;
 InvertedSpan.defaultProps = defaultProps;
 InvertedH3.defaultProps = defaultProps;
 InvertedP.defaultProps = defaultProps;
-LinkAnchor.defaultProps = defaultProps;

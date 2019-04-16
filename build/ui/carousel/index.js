@@ -14,6 +14,10 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _button = require('../button');
+
+var _button2 = _interopRequireDefault(_button);
+
 var _styles = require('./styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31,6 +35,56 @@ var Carousel = function (_Component) {
 		_classCallCheck(this, Carousel);
 
 		var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this, props));
+
+		_this.handleResizing = function () {
+			var imageWidth = _this.calculateImageWidth();
+
+			_this.setState({
+				targetLocation: imageWidth * -1
+			});
+		};
+
+		_this.handleNext = function () {
+			var imageWidth = _this.calculateImageWidth();
+			var _this$state = _this.state,
+			    items = _this$state.items,
+			    speed = _this$state.speed,
+			    currentIndex = _this$state.currentIndex;
+
+			_this.setState({
+				isAnimating: true,
+				targetLocation: imageWidth * -2
+			});
+
+			setTimeout(function () {
+				_this.setState({
+					isAnimating: false,
+					targetLocation: imageWidth * -1,
+					currentIndex: items.length > currentIndex + 1 ? currentIndex + 1 : 0
+				});
+			}, speed);
+		};
+
+		_this.handlePrevious = function () {
+			var imageWidth = _this.calculateImageWidth();
+			var _this$state2 = _this.state,
+			    items = _this$state2.items,
+			    speed = _this$state2.speed,
+			    currentIndex = _this$state2.currentIndex;
+
+			_this.setState({
+				isAnimating: true,
+				targetLocation: 0
+			});
+
+			setTimeout(function () {
+				_this.setState({
+					isAnimating: false,
+					targetLocation: imageWidth * -1,
+					currentIndex: currentIndex - 1 < 0 ? items.length - 1 : currentIndex - 1
+				});
+			}, speed);
+		};
 
 		_this.state = {
 			items: JSON.parse(props.data.items),
@@ -51,7 +105,13 @@ var Carousel = function (_Component) {
 	_createClass(Carousel, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			window.addEventListener("resize", this.handleResizing);
 			this.forceUpdate();
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			window.removeEventListener("resize", this.handleResizing);
 		}
 	}, {
 		key: 'calculateImageWidth',
@@ -84,54 +144,6 @@ var Carousel = function (_Component) {
 			return {};
 		}
 	}, {
-		key: 'handleNext',
-		value: function handleNext() {
-			var _this2 = this;
-
-			var imageWidth = this.calculateImageWidth();
-			var _state = this.state,
-			    items = _state.items,
-			    speed = _state.speed,
-			    currentIndex = _state.currentIndex;
-
-			this.setState({
-				isAnimating: true,
-				targetLocation: imageWidth * -2
-			});
-
-			setTimeout(function () {
-				_this2.setState({
-					isAnimating: false,
-					targetLocation: imageWidth * -1,
-					currentIndex: items.length > currentIndex + 1 ? currentIndex + 1 : 0
-				});
-			}, speed);
-		}
-	}, {
-		key: 'handlePrevious',
-		value: function handlePrevious() {
-			var _this3 = this;
-
-			var imageWidth = this.calculateImageWidth();
-			var _state2 = this.state,
-			    items = _state2.items,
-			    speed = _state2.speed,
-			    currentIndex = _state2.currentIndex;
-
-			this.setState({
-				isAnimating: true,
-				targetLocation: 0
-			});
-
-			setTimeout(function () {
-				_this3.setState({
-					isAnimating: false,
-					targetLocation: imageWidth * -1,
-					currentIndex: currentIndex - 1 < 0 ? items.length - 1 : currentIndex - 1
-				});
-			}, speed);
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			var _props = this.props,
@@ -140,16 +152,17 @@ var Carousel = function (_Component) {
 			    width = _props.width,
 			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
 			    renderControl = _props.renderControl;
-			var _state3 = this.state,
-			    items = _state3.items,
-			    isAnimating = _state3.isAnimating,
-			    targetLocation = _state3.targetLocation,
-			    currentIndex = _state3.currentIndex;
+			var _state = this.state,
+			    items = _state.items,
+			    isAnimating = _state.isAnimating,
+			    targetLocation = _state.targetLocation,
+			    currentIndex = _state.currentIndex;
 
 
 			var currentItem = this.calculateItem(items, currentIndex) || {};
 			var imageWidth = this.calculateImageWidth();
-
+			console.log('Testing123 - log this.totalRef:', this.totalRef);
+			console.log('Testing123 - log this.contentRef:', this.contentRef);
 			return _react2.default.createElement(
 				_styles.CarouselWrapper,
 				null,
@@ -190,11 +203,6 @@ var Carousel = function (_Component) {
 								_styles.InvertedP,
 								null,
 								currentItem.title || data.title
-							),
-							(data.link || currentItem.link) && _react2.default.createElement(
-								_styles.LinkAnchor,
-								{ href: currentItem.link || data.link },
-								currentItem.button || data.button
 							)
 						)
 					),
@@ -252,12 +260,12 @@ var Carousel = function (_Component) {
 					_styles.CarouselControl,
 					null,
 					_react2.default.createElement(
-						_styles.CarouselLeft,
+						_button2.default,
 						{ type: 'button', onClick: !isAnimating && this.handlePrevious },
 						'<'
 					),
 					_react2.default.createElement(
-						_styles.CarouselRight,
+						_button2.default,
 						{ type: 'button', onClick: !isAnimating && this.handleNext },
 						'>'
 					)
