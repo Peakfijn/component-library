@@ -44,6 +44,34 @@ var Carousel = function (_Component) {
 			});
 		};
 
+		_this.calculateImageWidth = function () {
+			if (!_this.totalRef) {
+				return 0;
+			}
+			var totalWidth = _this.totalRef.current && _this.totalRef.current.clientWidth;
+			var contentWidth = _this.contentRef.current && _this.contentRef.current.clientWidth;
+			var sidesWidth = (totalWidth - contentWidth) / 2;
+			return sidesWidth + contentWidth;
+		};
+
+		_this.calculateItem = function () {
+			var items = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+			var currentIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+			if (currentIndex >= 0 && currentIndex < items.length) {
+				return items[currentIndex];
+			}
+
+			if (currentIndex < 0) {
+				return _this.calculateItem(items, items.length + currentIndex);
+			}
+
+			if (currentIndex > items.length - 1) {
+				return _this.calculateItem(items, currentIndex - items.length);
+			}
+			return {};
+		};
+
 		_this.handleNext = function () {
 			var imageWidth = _this.calculateImageWidth();
 			var _this$state = _this.state,
@@ -114,36 +142,6 @@ var Carousel = function (_Component) {
 			window.removeEventListener("resize", this.handleResizing);
 		}
 	}, {
-		key: 'calculateImageWidth',
-		value: function calculateImageWidth() {
-			if (!this.totalRef) {
-				return 0;
-			}
-			var totalWidth = this.totalRef.current && this.totalRef.current.clientWidth;
-			var contentWidth = this.contentRef.current && this.contentRef.current.clientWidth;
-			var sidesWidth = (totalWidth - contentWidth) / 2;
-			return sidesWidth + contentWidth;
-		}
-	}, {
-		key: 'calculateItem',
-		value: function calculateItem() {
-			var items = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-			var currentIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-			if (currentIndex >= 0 && currentIndex < items.length) {
-				return items[currentIndex];
-			}
-
-			if (currentIndex < 0) {
-				return this.calculateItem(items, items.length + currentIndex);
-			}
-
-			if (currentIndex > items.length - 1) {
-				return this.calculateItem(items, currentIndex - items.length);
-			}
-			return {};
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			var _props = this.props,
@@ -161,8 +159,7 @@ var Carousel = function (_Component) {
 
 			var currentItem = this.calculateItem(items, currentIndex) || {};
 			var imageWidth = this.calculateImageWidth();
-			console.log('Testing123 - log this.totalRef:', this.totalRef);
-			console.log('Testing123 - log this.contentRef:', this.contentRef);
+
 			return _react2.default.createElement(
 				_styles.CarouselWrapper,
 				null,

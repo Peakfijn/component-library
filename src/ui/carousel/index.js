@@ -51,7 +51,7 @@ class Carousel extends Component {
 		});
 	}
 
-	calculateImageWidth() {
+	calculateImageWidth = () => {
 		if (!this.totalRef) {
 			return 0;
 		}
@@ -63,7 +63,7 @@ class Carousel extends Component {
 		return sidesWidth + contentWidth;
 	}
 
-	calculateItem(items = [], currentIndex = 0) {
+	calculateItem = (items = [], currentIndex = 0) => {
 		if (currentIndex >= 0 && currentIndex < items.length) {
 			return items[currentIndex];
 		}
@@ -123,8 +123,7 @@ class Carousel extends Component {
 
 		const currentItem = this.calculateItem(items, currentIndex) || {};
 		const imageWidth = this.calculateImageWidth();
-		console.log('Testing123 - log this.totalRef:', this.totalRef);
-		console.log('Testing123 - log this.contentRef:', this.contentRef);
+
 		return (
 			<CarouselWrapper>
 				<CarouselTotal ref={this.totalRef}>
