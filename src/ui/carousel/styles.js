@@ -16,17 +16,6 @@ export const CarouselTotal = styled.div`
 	width: 100%;
 `;
 
-export const CarouselControl = styled.span`
-	position: absolute;
-	right: 0;
-	top: 100%;
-	transform: translateY(-100%) translateX(0%);
-
-	&:active {
-		text-decoration: none;
-	}
-`;
-
 export const CarouselContent = styled.div`
 	position: relative;
 	z-index: 1;
@@ -80,8 +69,6 @@ export const CarouselImage = styled.img`
 `;
 
 CarouselWrapper.defaultProps = defaultProps;
-CarouselTotal.defaultProps = defaultProps;
-CarouselControl.defaultProps = defaultProps;
 CarouselContent.defaultProps = defaultProps;
 CarouselImages.defaultProps = defaultProps;
 CarouselImageWrapper.defaultProps = defaultProps;

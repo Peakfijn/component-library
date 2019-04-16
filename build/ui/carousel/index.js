@@ -14,10 +14,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _button = require('../button');
-
-var _button2 = _interopRequireDefault(_button);
-
 var _styles = require('./styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -146,8 +142,7 @@ var Carousel = function (_Component) {
 		value: function render() {
 			var _props = this.props,
 			    width = _props.width,
-			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
-			    renderControl = _props.renderControl;
+			    maxWidthBreakpoint = _props.maxWidthBreakpoint;
 			var _state = this.state,
 			    items = _state.items,
 			    isAnimating = _state.isAnimating,
@@ -224,21 +219,7 @@ var Carousel = function (_Component) {
 						style: { backgroundImage: 'url(' + item.url + ')' },
 						hidden: true
 					});
-				}),
-				renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : _react2.default.createElement(
-					_styles.CarouselControl,
-					null,
-					_react2.default.createElement(
-						_button2.default,
-						{ type: 'button', onClick: !isAnimating && this.handlePrevious },
-						'<'
-					),
-					_react2.default.createElement(
-						_button2.default,
-						{ type: 'button', onClick: !isAnimating && this.handleNext },
-						'>'
-					)
-				)
+				})
 			);
 		}
 	}]);
@@ -247,7 +228,6 @@ var Carousel = function (_Component) {
 }(_react.Component);
 
 Carousel.defaultProps = {
-	renderControl: undefined,
 	width: undefined,
 	maxWidthBreakpoint: undefined
 };
@@ -255,8 +235,7 @@ Carousel.defaultProps = {
 Carousel.propTypes = {
 	data: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
 	width: _propTypes2.default.string,
-	maxWidthBreakpoint: _propTypes2.default.string,
-	renderControl: _propTypes2.default.func
+	maxWidthBreakpoint: _propTypes2.default.string
 };
 
 exports.default = Carousel;

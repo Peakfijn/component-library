@@ -1,10 +1,9 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../button';
+
 import {
 	CarouselWrapper,
 	CarouselTotal,
-	CarouselControl,
 	CarouselContent,
 	CarouselImages,
 	CarouselImageWrapper,
@@ -109,7 +108,7 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const { width, maxWidthBreakpoint, renderControl } = this.props;
+		const { width, maxWidthBreakpoint } = this.props;
 		const {
 			items,
 			isAnimating,
@@ -195,23 +194,12 @@ class Carousel extends Component {
 						hidden
 					/>
 				))}
-				{renderControl ? renderControl(!isAnimating && this.handlePrevious, !isAnimating && this.handleNext) : (
-					<CarouselControl>
-						<Button type="button" onClick={!isAnimating && this.handlePrevious}>
-							{'<'}
-						</Button>
-						<Button type="button" onClick={!isAnimating && this.handleNext}>
-							{'>'}
-						</Button>
-					</CarouselControl>
-				)}
 			</CarouselWrapper>
 		);
 	}
 }
 
 Carousel.defaultProps = {
-	renderControl: undefined,
 	width: undefined,
 	maxWidthBreakpoint: undefined,
 };
@@ -220,7 +208,6 @@ Carousel.propTypes = {
 	data: PropTypes.objectOf(PropTypes.any).isRequired,
 	width: PropTypes.string,
 	maxWidthBreakpoint: PropTypes.string,
-	renderControl: PropTypes.func,
 };
 
 export default Carousel;
