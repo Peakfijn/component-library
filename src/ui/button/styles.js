@@ -5,9 +5,23 @@ import fontSizeModifier from './modifiers/font-size';
 import borderRadiusModifier from './modifiers/border-radius';
 import defaultProps from '../../default-props';
 
-const themeColor = (key, props) => props.theme.color[key];
+const themeColor = (key, theme) => theme.color[key] || theme.color.normal;
 
 const applyForState = (state, props) => (props.state === state ? ', &' : '')
+
+/*
+ * Returns the proper text color, depending on the background color and whether or not a specific text color has been 
+ * specified.
+ */
+const getTextColor = (color, text, themeColors) => {
+	if (text)
+		return themeColors.text[text];
+	if (themeColors.invertedTextColors &&
+		themeColors.invertedTextColors.includes(color)) {
+		return themeColors.text.inverted;
+	}
+	return themeColors.text.normal;
+};
 
 const StyledButton = styled.button`
 	box-sizing: border-box;
@@ -23,70 +37,40 @@ const StyledButton = styled.button`
 	font-family: inherit;
 
 	/* Modifier: full-width */
-	${props => props.modifier === 'full' && `
+	${props => (props.modifier === 'full' || props.modifier === 'ghost-full') && `
 		width: 100%;
 	`}
 
 	${({ modifier }) => modifier === 'no-margin' && `
-	margin-bottom: 0;
-` || ''}
-
-	/* Modifier: color primary */
-	${({ color, theme: { color: themeColors }, state }) => (
-		color === "primary" ||
-		color === "success" ||
-		color === "danger" ||
-		color === "info"
-	) && `
-		background-color: ${themeColors[color]};
-		color: ${themeColors.text.inverted};
-		border: 1px solid ${darken(themeColors.adjustColor.tiny, themeColors[color])};
-		${(state === 'hover' || state === 'focus' || state === 'active' ) && `
-			background-color: ${lighten(themeColors.adjustColor.tiny, themeColors[color])};
-		` || ''}
-		${state === 'active' && `
-			background-color: ${darken(themeColors.adjustColor.tiny, themeColors[color])};
-		` || ''}
-
-		:hover:enabled,
-		:focus:enabled	{
-			background-color: ${lighten(themeColors.adjustColor.tiny, themeColors[color])};
-		}
-		:active:enabled	{
-			background-color: ${darken(themeColors.adjustColor.tiny, themeColors[color])};
-		}
+		margin-bottom: 0;
 	` || ''}
 
-	/* Modifier: secondary */
-	${({ color, theme: { color: themeColors }, state }) => (
-		color === 'secondary' ||
-		color === 'normal'
-	) && `
-		background-color: ${themeColors[color]};
-		color: ${themeColors.text.normal};
-		border: 1px solid ${darken(themeColors.adjustColor.tiny, themeColors[color])};
-
+	/* Apply color and state styling */
+	${({ modifier, color, text, theme, state }) => modifier !== 'text' && `
+		background-color: ${themeColor(color, theme)};
+		color: ${getTextColor(color, text, theme.color)};
+		border: 1px solid ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		${(state === 'hover' || state === 'focus' || state === 'active' ) && `
-			background-color: ${lighten(themeColors.adjustColor.tiny, themeColors[color])};
+			background-color: ${lighten(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		` || ''}
 		${state === 'active' && `
-			background-color: ${darken(themeColors.adjustColor.tiny, themeColors[color])};
+			background-color: ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		` || ''}
 
 		:hover:enabled,
 		:focus:enabled	{
-			background-color: ${lighten(themeColors.adjustColor.tiny, themeColors[color])};
+			background-color: ${lighten(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		}
 		:active:enabled	{
-			background-color: ${darken(themeColors.adjustColor.tiny, themeColors[color])};
+			background-color: ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		}
 	` || ''}
 
 	/* Modifier: disabled */
-	${props => props.disabled && `
-		background-color: ${props.theme.color.background.inputDisabled};
-		color: ${props.theme.color.text.disabled};
-		border: 1px solid ${lighten(props.theme.color.adjustColor.tiny, props.theme.color.background.inputDisabled)};
+	${({ theme: { color }, disabled }) => disabled && `
+		background-color: ${color.background.inputDisabled};
+		color: ${color.text.disabled};
+		border: 1px solid ${lighten(color.adjustColor.tiny, color.background.inputDisabled)};
 		cursor: not-allowed;
 	` || ''}
 
@@ -102,54 +86,86 @@ const StyledButton = styled.button`
 		&:focus:enabled	{
 			background-color: transparent;
 		}
-		&:active:enabled	{
+		&:active:enabled {
 			background-color: transparent;
 		}
 	` || ''};
 
-	/* Modifier: light */
-	${props => props.modifier === "light" && `
-		background-color: ${themeColor('inverseText', props)};
-		color: ${themeColor('grey', props)};
-		border: 1px solid ${themeColor('inverseText', props)};
-		border: 1px solid ${themeColor('grey', props)};
-		border-radius: 50px;
-		width: ${props.width};
-		height: ${props.height};
+	/* Modifier: ghost */
+	${({ modifier, color, theme, state }) => (
+		modifier === 'ghost' ||
+		modifier === 'ghost-full'
+	) && `
+		background-color: transparent;
+		color: ${themeColor(color, theme)};
+		border: 1px solid ${themeColor(color, theme)};
+		${(state === 'hover' || state === 'focus' || state === 'active' ) && `
+			border: 1px solid ${lighten(theme.color.adjustColor.tiny, themeColor(color, theme))};
+		` || ''}
+		${state === 'active' && `
+			border: 1px solid ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
+		` || ''}
 
-		:active:enabled ${applyForState('active', props)}	{
-			background-color: ${darken(themeColor('darkenActivePercentage', props), themeColor('inverseText', props))}
+		:hover:enabled,
+		:focus:enabled	{
+			border: 1px solid ${lighten(theme.color.adjustColor.tiny, themeColor(color, theme))};
+			background-color: transparent;
 		}
-		:hover:enabled ${applyForState('hover', props)}	{
-			background-color: ${lighten(themeColor('lightenHoverPercentage', props), themeColor('inverseText', props))}
+		:active:enabled	{
+			border: 1px solid ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
+			background-color: transparent;
 		}
-		:focus:enabled ${applyForState('focus', props)} {
-			background-color: ${darken(themeColor('darkenFocusPercentage', props), themeColor('inverseText', props))}
+	` || ''}
+
+	${({ modifier, color, theme }) => modifier === 'text' && `
+		background-color: transparent;
+		color: ${themeColor(color, theme)};
+		border: none;
+	` || ''}
+
+	/* Modifier: light */
+	${({ modifier, theme, width, height }) => modifier === "light" && `
+		background-color: ${themeColor('inverseText', theme)};
+		color: ${themeColor('grey', theme)};
+		border: 1px solid ${themeColor('inverseText', theme)};
+		border: 1px solid ${themeColor('grey', theme)};
+		border-radius: 50px;
+		width: ${width};
+		height: ${height};
+
+		:active:enabled ${applyForState('active', theme)}	{
+			background-color: ${darken(themeColor('darkenActivePercentage', theme), themeColor('inverseText', theme))}
+		}
+		:hover:enabled ${applyForState('hover', theme)}	{
+			background-color: ${lighten(themeColor('lightenHoverPercentage', theme), themeColor('inverseText', theme))}
+		}
+		:focus:enabled ${applyForState('focus', theme)} {
+			background-color: ${darken(themeColor('darkenFocusPercentage', theme), themeColor('inverseText', theme))}
 		}
 	` || ''}
 
 	/* Modifier: dark */
-	${props => props.modifier === "dark" && `
-		background-color: ${themeColor('socialDarkColor', props)};
-		color: ${themeColor('inverseText', props)};
-		border: 1px solid ${themeColor('socialDarkColor', props)};
+	${({ modifier, theme, width, height }) => modifier === "dark" && `
+		background-color: ${themeColor('socialDarkColor', theme)};
+		color: ${themeColor('inverseText', theme)};
+		border: 1px solid ${themeColor('socialDarkColor', theme)};
 		border: none;
 		border-radius: 50px;
-		width: ${props.width};
-		height: ${props.height};
+		width: ${width};
+		height: ${height};
 		padding: unset;
 
-		:active:enabled ${applyForState('active', props)}	{
+		:active:enabled ${applyForState('active', theme)}	{
 			background-color:
-			${darken(themeColor('darkenActivePercentage', props),themeColor('socialDarkColor', props))}
+			${darken(themeColor('darkenActivePercentage', theme),themeColor('socialDarkColor', theme))}
 		}
-		:hover:enabled ${applyForState('hover', props)}	{
+		:hover:enabled ${applyForState('hover', theme)}	{
 			background-color:
-			${lighten(themeColor('lightenHoverPercentage', props), themeColor('socialDarkColor', props))}
+			${lighten(themeColor('lightenHoverPercentage', theme), themeColor('socialDarkColor', theme))}
 		}
-		:focus:enabled ${applyForState('focus', props)} {
+		:focus:enabled ${applyForState('focus', theme)} {
 			background-color:
-			${darken(themeColor('darkenFocusPercentage', props), themeColor('socialDarkColor', props))}
+			${darken(themeColor('darkenFocusPercentage', theme), themeColor('socialDarkColor', theme))}
 		}
 	`}
 
