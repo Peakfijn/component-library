@@ -92,7 +92,7 @@ const StyledButton = styled.button`
 	` || ''};
 
 	/* Modifier: ghost */
-	${({ modifier, color, theme, state }) => (
+	${({ modifier, color, theme, state, width, height }) => (
 		modifier === 'ghost' ||
 		modifier === 'ghost-full'
 	) && `
@@ -105,6 +105,8 @@ const StyledButton = styled.button`
 		${state === 'active' && `
 			border: 1px solid ${darken(theme.color.adjustColor.tiny, themeColor(color, theme))};
 		` || ''}
+		width: ${width};
+		height: ${height};
 
 		:hover:enabled,
 		:focus:enabled	{

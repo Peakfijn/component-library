@@ -80,8 +80,10 @@ var StyledButton = _styledComponents2.default.button(_templateObject, function (
 	var modifier = _ref4.modifier,
 	    color = _ref4.color,
 	    theme = _ref4.theme,
-	    state = _ref4.state;
-	return (modifier === 'ghost' || modifier === 'ghost-full') && '\n\t\tbackground-color: transparent;\n\t\tcolor: ' + themeColor(color, theme) + ';\n\t\tborder: 1px solid ' + themeColor(color, theme) + ';\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tborder: 1px solid ' + (0, _polished.lighten)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tborder: 1px solid ' + (0, _polished.darken)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t' || '') + '\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tborder: 1px solid ' + (0, _polished.lighten)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t\tbackground-color: transparent;\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tborder: 1px solid ' + (0, _polished.darken)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t\tbackground-color: transparent;\n\t\t}\n\t' || '';
+	    state = _ref4.state,
+	    width = _ref4.width,
+	    height = _ref4.height;
+	return (modifier === 'ghost' || modifier === 'ghost-full') && '\n\t\tbackground-color: transparent;\n\t\tcolor: ' + themeColor(color, theme) + ';\n\t\tborder: 1px solid ' + themeColor(color, theme) + ';\n\t\t' + ((state === 'hover' || state === 'focus' || state === 'active') && '\n\t\t\tborder: 1px solid ' + (0, _polished.lighten)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t' || '') + '\n\t\t' + (state === 'active' && '\n\t\t\tborder: 1px solid ' + (0, _polished.darken)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t' || '') + '\n\t\twidth: ' + width + ';\n\t\theight: ' + height + ';\n\n\t\t:hover:enabled,\n\t\t:focus:enabled\t{\n\t\t\tborder: 1px solid ' + (0, _polished.lighten)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t\tbackground-color: transparent;\n\t\t}\n\t\t:active:enabled\t{\n\t\t\tborder: 1px solid ' + (0, _polished.darken)(theme.color.adjustColor.tiny, themeColor(color, theme)) + ';\n\t\t\tbackground-color: transparent;\n\t\t}\n\t' || '';
 }, function (_ref5) {
 	var modifier = _ref5.modifier,
 	    color = _ref5.color,
