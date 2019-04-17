@@ -13,6 +13,7 @@ const Button = props => {
 		size,
 		children,
 		color,
+		text,
 		onClick,
 		width,
 		height,
@@ -31,6 +32,7 @@ const Button = props => {
 			state={state}
 			size={size}
 			color={color}
+			text={text}
 			onClick={onClick}
 			width={width}
 			height={height}
@@ -56,6 +58,7 @@ Button.defaultProps = {
 	fontSize: null,
 	borderRadius: null,
 	color: 'normal',
+	text: null,
 	modifier: 'primary',
 	size: 'medium',
 	onClick: () => {},
@@ -70,6 +73,7 @@ Button.propTypes = {
 	noPadding: PropTypes.bool,
 	modifier: PropTypes.string,
 	color: PropTypes.string,
+	text: PropTypes.string,
 	state: PropTypes.string,
 	size: PropTypes.string,
 	width: PropTypes.string,
