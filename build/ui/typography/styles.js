@@ -5,6 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DividerStyled = exports.HorizontalDividerStyled = undefined;
 
+var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: block;\n\theight: 100%;\n\ttext-align: center;\n'], ['\n\tdisplay: block;\n\theight: 100%;\n\ttext-align: center;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n'], ['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -15,14 +18,10 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HorizontalDividerStyled = exports.HorizontalDividerStyled = _styledComponents2.default.span.withConfig({
-	displayName: 'styles__HorizontalDividerStyled',
-	componentId: 'sc-13xzxxd-0'
-})(['display:block;height:100%;text-align:center;']);
-var DividerStyled = exports.DividerStyled = _styledComponents2.default.span.withConfig({
-	displayName: 'styles__DividerStyled',
-	componentId: 'sc-13xzxxd-1'
-})(['width:1px;border-right:', 'px solid ', ';overflow:hidden;display:block;height:', ';margin:auto;'], function (_ref) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var HorizontalDividerStyled = exports.HorizontalDividerStyled = _styledComponents2.default.span(_templateObject);
+var DividerStyled = exports.DividerStyled = _styledComponents2.default.span(_templateObject2, function (_ref) {
 	var borderSize = _ref.borderSize;
 	return borderSize;
 }, function (_ref2) {

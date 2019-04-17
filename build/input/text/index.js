@@ -48,7 +48,8 @@ var Text = function Text(props) {
 	    onClick = props.onClick,
 	    name = props.name,
 	    value = props.value,
-	    error = props.error;
+	    error = props.error,
+	    borderRadius = props.borderRadius;
 
 	return _react2.default.createElement(
 		_formGroup2.default,
@@ -80,7 +81,8 @@ var Text = function Text(props) {
 			error: error || !meta.valid && meta.submitFailed,
 			icon: icon,
 			iconPosition: iconPosition,
-			focussed: focussed
+			focussed: focussed,
+			borderRadius: borderRadius
 		}),
 		children
 	);
@@ -110,7 +112,8 @@ Text.defaultProps = {
 	onClick: function onClick() {},
 	name: null,
 	value: null,
-	error: null
+	error: null,
+	borderRadius: "medium"
 };
 
 Text.propTypes = {
@@ -128,6 +131,7 @@ Text.propTypes = {
 	id: _propTypes2.default.string.isRequired,
 	icon: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	iconPosition: _propTypes2.default.oneOf(['left', 'right']),
+	borderRadius: _propTypes2.default.oneOf(['small', 'medium', 'large']),
 	size: _propTypes2.default.oneOf(['medium']),
 	autocomplete: _propTypes2.default.string,
 	maxLength: _propTypes2.default.number,

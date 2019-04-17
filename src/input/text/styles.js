@@ -4,12 +4,12 @@ import stateStyles from '../styles/state';
 import sizeStyles from '../styles/size';
 import iconAdjustmentStyles from '../styles/icon-adjustment';
 import defaultProps from '../../default-props';
+import borderRadiusModifier from './modifiers/border-radius';
 
 const Input = styled.input`
 	box-sizing: border-box;
 	outline: none;
 	border: 1px solid ${props => props.theme.color.border.normal};
-	border-radius: ${props => props.theme.borderRadius.medium};
 	background: ${props => props.theme.color.background.input};
 	width: 100%;
 	color: ${props => props.theme.color.text.normal};
@@ -20,6 +20,7 @@ const Input = styled.input`
 
 	/* Modifier: size */
 	${sizeStyles}
+	${borderRadiusModifier}
 
 	${iconAdjustmentStyles}
 	${validationStyles}

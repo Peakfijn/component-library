@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import defaultProps from '../../../default-props';
 
 const StyledTab = styled.div`
-	margin: 0 ${props => props.theme.gutter.large};
+	${({ horizontal, theme: { gutter } }) => horizontal && `
+		margin-left: ${gutter[`${horizontal}`]};
+		margin-right: ${gutter[`${horizontal}`]};
+	` || ''}
 	cursor: pointer;
 	padding: ${props => props.theme.gutter.large} 0;
 	color: ${props => props.theme.color.text.light};

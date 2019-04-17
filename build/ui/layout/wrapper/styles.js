@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n'], ['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -14,10 +16,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var WrapperStyle = _styledComponents2.default.div.withConfig({
-	displayName: 'styles__WrapperStyle',
-	componentId: 'sc-1cdz4ht-0'
-})(['', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], function (_ref) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var WrapperStyle = _styledComponents2.default.div(_templateObject, function (_ref) {
 	var modifier = _ref.modifier,
 	    align = _ref.align,
 	    justify = _ref.justify,
@@ -29,7 +30,7 @@ var WrapperStyle = _styledComponents2.default.div.withConfig({
 }, function (_ref2) {
 	var modifier = _ref2.modifier,
 	    grow = _ref2.grow;
-	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tword-break: break-all;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\t\twidth: 100%;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\toverflow: auto;\n\t\t\tflex-grow: 1;\n\t\t\tflex-shrink: 1;\n\t\t' || '') + '\n\t' || '';
+	return modifier === 'flex-cell' && '\n\t\twhite-space: initial;\n\t\tflex: 1;\n\t\ttext-overflow: ellipsis;\n\t\tword-break: break-all;\n\t\tbox-sizing: border-box;\n\t\tword-wrap: break-word;\n\t\twidth: 100%;\n\n\t\t' + (grow && grow === "not-grow" && '\n\t\t\tflex-grow: 0;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\toverflow: auto;\n\t\t\tflex-grow: 1;\n\t\t\tflex-shrink: 1;\n\t\t' || '') + '\n\t\t' + (grow && grow === "auto" && '\n\t\t\tflex-basis: 50%;\n\t\t\tflex-shrink: 0;\n\t\t' || '') + '\n\t' || '';
 }, function (_ref3) {
 	var modifier = _ref3.modifier;
 	return modifier === 'full' && '\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: fixed;\n\t\toverflow: auto;\n\t' || '';

@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: block;\n\tmargin-bottom: ', ';\n\tcolor: ', ';\n'], ['\n\tdisplay: block;\n\tmargin-bottom: ', ';\n\tcolor: ', ';\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -14,10 +16,9 @@ var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Label = _styledComponents2.default.label.withConfig({
-	displayName: 'label__Label',
-	componentId: 'sc-12hdu14-0'
-})(['display:block;margin-bottom:', ';color:', ';'], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Label = _styledComponents2.default.label(_templateObject, function (props) {
 	return props.theme.gutter.medium;
 }, function (props) {
 	return props.theme.color.text.normal;

@@ -31,6 +31,7 @@ const Text = props => {
 		name,
 		value,
 		error,
+		borderRadius
 	} = props;
 	return (
 		<FormGroup
@@ -62,6 +63,7 @@ const Text = props => {
 				icon={icon}
 				iconPosition={iconPosition}
 				focussed={focussed}
+				borderRadius={borderRadius}
 			/>
 			{children}
 		</FormGroup>
@@ -86,13 +88,14 @@ Text.defaultProps = {
 	children: null,
 	initialValue: '',
 	className: null,
-	onBlur: ()=> {},
-	onFocus: ()=> {},
-	onChange: ()=> {},
-	onClick: ()=> {},
+	onBlur: () => { },
+	onFocus: () => { },
+	onChange: () => { },
+	onClick: () => { },
 	name: null,
 	value: null,
 	error: null,
+	borderRadius: "medium",
 };
 
 Text.propTypes = {
@@ -118,6 +121,7 @@ Text.propTypes = {
 	id: PropTypes.string.isRequired,
 	icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 	iconPosition: PropTypes.oneOf(['left', 'right']),
+	borderRadius: PropTypes.oneOf(['small', 'medium', 'large']),
 	size: PropTypes.oneOf(['medium']),
 	autocomplete: PropTypes.string,
 	maxLength: PropTypes.number,

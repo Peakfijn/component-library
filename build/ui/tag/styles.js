@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\ttext-transform: none;\n\ttext-decoration: none;\n\tcolor: ', ';\n\tfont-family: inherit;\n\tfont-size: ', ';\n\n\t/* Modifiers: size */\n\t', '\n'], ['\n\tbox-sizing: border-box;\n\toutline: none;\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\ttext-transform: none;\n\ttext-decoration: none;\n\tcolor: ', ';\n\tfont-family: inherit;\n\tfont-size: ', ';\n\n\t/* Modifiers: size */\n\t', '\n']);
+
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -18,10 +20,9 @@ var _size2 = _interopRequireDefault(_size);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Tag = _styledComponents2.default.span.withConfig({
-	displayName: 'styles__Tag',
-	componentId: 'ikmztq-0'
-})(['box-sizing:border-box;outline:none;border-radius:', ';background-color:', ';text-transform:none;text-decoration:none;color:', ';font-family:inherit;font-size:', ';', ''], function (props) {
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Tag = _styledComponents2.default.span(_templateObject, function (props) {
 	return props.theme.borderRadius.medium;
 }, function (props) {
 	return props.theme.color[props.color];
