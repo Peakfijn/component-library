@@ -28,8 +28,7 @@ var Wrapper = function Wrapper(props) {
 	    grow = props.grow,
 	    background = props.background,
 	    wrap = props.wrap,
-	    className = props.className,
-	    width = props.width;
+	    className = props.className;
 
 
 	return _react2.default.createElement(
@@ -42,7 +41,6 @@ var Wrapper = function Wrapper(props) {
 			grow: grow,
 			background: background,
 			wrap: wrap,
-			width: width,
 			modifier: modifier,
 			className: className
 		},
@@ -59,7 +57,6 @@ Wrapper.defaultProps = {
 	grow: null,
 	background: null,
 	wrap: null,
-	width: null,
 	children: null,
 	className: null
 };
@@ -72,12 +69,6 @@ Wrapper.propTypes = {
 	grow: _propTypes2.default.oneOf(['not-grow', 'fluid']),
 	background: _propTypes2.default.oneOf(['window']),
 	wrap: _propTypes2.default.shape({
-		small: _propTypes2.default.string,
-		medium: _propTypes2.default.string,
-		large: _propTypes2.default.string,
-		huge: _propTypes2.default.string
-	}),
-	width: _propTypes2.default.shape({
 		small: _propTypes2.default.string,
 		medium: _propTypes2.default.string,
 		large: _propTypes2.default.string,

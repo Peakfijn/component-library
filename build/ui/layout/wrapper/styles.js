@@ -44,22 +44,22 @@ var WrapperStyle = _styledComponents2.default.div(_templateObject, function (_re
 }, function (_ref6) {
 	var background = _ref6.background,
 	    theme = _ref6.theme;
-	return background && '\n\t\t\tbackground: ' + theme.color.background['' + background] + ';\n\t' || '';
+	return background && '\n\t\t\tbackground: ' + theme.color.background[background] + ';\n\t' || '';
 }, function (_ref7) {
 	var horizontalGutter = _ref7.horizontalGutter,
 	    theme = _ref7.theme,
 	    grow = _ref7.grow;
-	return horizontalGutter && '\n\t\t> * {\n\t\t\tpadding-left: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t\tpadding-right: ' + theme.gutter['' + horizontalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-left: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-right: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
+	return horizontalGutter && '\n\t\t> * {\n\t\t\tpadding-left: ' + theme.gutter[horizontalGutter] + ';\n\t\t\tpadding-right: ' + theme.gutter[horizontalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-left: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-right: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
 }, function (_ref8) {
 	var verticalGutter = _ref8.verticalGutter,
 	    theme = _ref8.theme,
 	    grow = _ref8.grow;
-	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-top: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-bottom: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
+	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter[verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter[verticalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-top: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-bottom: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
 }, function (_ref9) {
-	var width = _ref9.width,
+	var wrap = _ref9.wrap,
 	    breakpoint = _ref9.theme.breakpoint;
-	return width && '\n\t\t' + (Object.keys(width).map(function (key) {
-		return '\n\t\t\t@media (max-width: ' + breakpoint[key] + ') {\n\t\t\t\t> * {\n\t\t\t\t\tflex-basis: ' + width[key] + ' !important;\n\t\t\t\t}\n\t\t\t}\n\t\t' || '';
+	return wrap && '\n\t\t' + (Object.keys(wrap).map(function (key) {
+		return '\n\t\t\t@media (max-width: ' + breakpoint[key] + ') {\n\t\t\t\t& {\n\t\t\t\t\tflex-basis: ' + wrap[key] + ' !important;\n\t\t\t\t}\n\t\t\t}\n\t\t' || '';
 	}).reverse().join(' ') || '') + '\n\t' || '';
 });
 
