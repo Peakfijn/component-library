@@ -14,6 +14,7 @@ const Wrapper = props => {
 		background,
 		wrap,
 		className,
+		width,
 	} = props;
 
 	return (
@@ -25,6 +26,7 @@ const Wrapper = props => {
 			grow={grow}
 			background={background}
 			wrap={wrap}
+			width={width}
 			modifier={modifier}
 			className={className}
 		>
@@ -42,6 +44,7 @@ Wrapper.defaultProps = {
 	grow: null,
 	background: null,
 	wrap: null,
+	width: null,
 	children: null,
 	className: null,
 }
@@ -58,6 +61,12 @@ Wrapper.propTypes = {
 	grow: PropTypes.oneOf(['not-grow', 'fluid']),
 	background: PropTypes.oneOf(['window']),
 	wrap: PropTypes.shape({
+		small: PropTypes.string,
+		medium: PropTypes.string,
+		large: PropTypes.string,
+		huge: PropTypes.string,
+	}),
+	width: PropTypes.shape({
 		small: PropTypes.string,
 		medium: PropTypes.string,
 		large: PropTypes.string,

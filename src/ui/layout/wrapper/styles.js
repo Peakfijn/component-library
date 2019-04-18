@@ -123,6 +123,16 @@ const WrapperStyle = styled.div`
 			}
 		` || ''}
 	` || ''}
+
+	${({ width, theme: { breakpoint } }) => width && `
+		${Object.keys(width).map(key => `
+			@media (max-width: ${breakpoint[key]}) {
+				> * {
+					flex-basis: ${width[key]} !important;
+				}
+			}
+		` || '').reverse().join(' ') || ''}
+	` || ''}
 `;
 
 WrapperStyle.defaultProps = defaultProps;

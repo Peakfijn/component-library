@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n'], ['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n']);
+var _templateObject = _taggedTemplateLiteral(['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n'], ['\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n\n\t', '\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -55,6 +55,12 @@ var WrapperStyle = _styledComponents2.default.div(_templateObject, function (_re
 	    theme = _ref8.theme,
 	    grow = _ref8.grow;
 	return verticalGutter && '\n\t\t> * {\n\t\t\tpadding-top: ' + theme.gutter['' + verticalGutter] + ';\n\t\t\tpadding-bottom: ' + theme.gutter['' + verticalGutter] + ';\n\t\t}\n\t\t' + (grow === "fluid" && '\n\t\t\t> *:first-child {\n\t\t\t\tpadding-top: 0;\n\t\t\t}\n\t\t\t> *:last-child {\n\t\t\t\tpadding-bottom: 0;\n\t\t\t}\n\t\t' || '') + '\n\t' || '';
+}, function (_ref9) {
+	var width = _ref9.width,
+	    breakpoint = _ref9.theme.breakpoint;
+	return width && '\n\t\t' + (Object.keys(width).map(function (key) {
+		return '\n\t\t\t@media (max-width: ' + breakpoint[key] + ') {\n\t\t\t\t> * {\n\t\t\t\t\tflex-basis: ' + width[key] + ' !important;\n\t\t\t\t}\n\t\t\t}\n\t\t' || '';
+	}).reverse().join(' ') || '') + '\n\t' || '';
 });
 
 WrapperStyle.defaultProps = _defaultProps2.default;
