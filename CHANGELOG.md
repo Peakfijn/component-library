@@ -1,3 +1,33 @@
+# [1.4.0](https://gitlab.com/peakfijn/component-library/compare/1.3.0...1.4.0) (2019-04-18)
+
+
+### Bug fixes
+
+* fixed some linting errors ([e234afd](https://gitlab.com/peakfijn/component-library/commit/e234afd))
+* resovled some lint errors ([984be60](https://gitlab.com/peakfijn/component-library/commit/984be60))
+
+
+### Code refactors
+
+* removed a render prop that was being extra ([22e0d93](https://gitlab.com/peakfijn/component-library/commit/22e0d93))
+* removed some duplicate button stylings and fixed resizing ([a3f8579](https://gitlab.com/peakfijn/component-library/commit/a3f8579))
+* removed some obsolete code ([a4930d3](https://gitlab.com/peakfijn/component-library/commit/a4930d3))
+* removed styled-component babel plugin ([2f5e4df](https://gitlab.com/peakfijn/component-library/commit/2f5e4df))
+
+
+### Code style changes
+
+* added dynamic horizontal gutter on flex-cell wrapper ([65fe4cb](https://gitlab.com/peakfijn/component-library/commit/65fe4cb))
+* fixed image position in the carousel ([5b4dcfd](https://gitlab.com/peakfijn/component-library/commit/5b4dcfd))
+
+
+### New features
+
+* add first implementation of carousel component ([57fb5b7](https://gitlab.com/peakfijn/component-library/commit/57fb5b7))
+* added an option to set the width and height for a ghost button ([e7fb5b5](https://gitlab.com/peakfijn/component-library/commit/e7fb5b5))
+* changed the button to support any color property in the base theme ([96ccd8d](https://gitlab.com/peakfijn/component-library/commit/96ccd8d))
+* resolved the sizing issues, carousel now works ([41fd4e2](https://gitlab.com/peakfijn/component-library/commit/41fd4e2))
+
 # [1.3.0](https://gitlab.com/peakfijn/component-library/compare/1.2.0...1.3.0) (2019-04-15)
 
 
