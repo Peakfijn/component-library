@@ -91,15 +91,15 @@ const WrapperStyle = styled.div`
 	` || ''}
 
 	${({ background, theme }) => background && `
-			background: ${theme.color.background[`${background}`]};
+			background: ${theme.color.background[background]};
 	` || ''}
 
 	${({ horizontalGutter, theme, grow }) => horizontalGutter && `
 		> * {
-			padding-left: ${theme.gutter[`${horizontalGutter}`]};
-			padding-right: ${theme.gutter[`${horizontalGutter}`]};
+			padding-left: ${theme.gutter[horizontalGutter]};
+			padding-right: ${theme.gutter[horizontalGutter]};
 		}
-		${grow === "fluid" && `
+		${(grow === "fluid") && `
 			> *:first-child {
 				padding-left: 0;
 			}
@@ -111,8 +111,8 @@ const WrapperStyle = styled.div`
 
 	${({ verticalGutter, theme, grow }) => verticalGutter && `
 		> * {
-			padding-top: ${theme.gutter[`${verticalGutter}`]};
-			padding-bottom: ${theme.gutter[`${verticalGutter}`]};
+			padding-top: ${theme.gutter[verticalGutter]};
+			padding-bottom: ${theme.gutter[verticalGutter]};
 		}
 		${grow === "fluid" && `
 			> *:first-child {
@@ -122,6 +122,16 @@ const WrapperStyle = styled.div`
 				padding-bottom: 0;
 			}
 		` || ''}
+	` || ''}
+
+	${({ wrap, theme: { breakpoint } }) => wrap && `
+		${Object.keys(wrap).map(key => `
+			@media (max-width: ${breakpoint[key]}) {
+				& {
+					flex-basis: ${wrap[key]} !important;
+				}
+			}
+		` || '').reverse().join(' ') || ''}
 	` || ''}
 `;
 
