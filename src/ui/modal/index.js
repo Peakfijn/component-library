@@ -52,7 +52,7 @@ Modal.propTypes = {
 	footerContent: PropTypes.node,
 	isOpen: PropTypes.bool.isRequired,
 	toggleModal: PropTypes.func.isRequired,
-	maxWidthBreakpoint: PropTypes.oneOf([''])
+	maxWidthBreakpoint: PropTypes.string,
 }
 
 export default Modal;

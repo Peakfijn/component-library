@@ -63,7 +63,7 @@ Modal.propTypes = {
 	footerContent: _propTypes2.default.node,
 	isOpen: _propTypes2.default.bool.isRequired,
 	toggleModal: _propTypes2.default.func.isRequired,
-	maxWidthBreakpoint: _propTypes2.default.oneOf([''])
+	maxWidthBreakpoint: _propTypes2.default.string
 };
 
 exports.default = Modal;
