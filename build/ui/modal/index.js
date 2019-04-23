@@ -21,7 +21,8 @@ var Modal = function Modal(props) {
 	    isOpen = props.isOpen,
 	    toggleModal = props.toggleModal,
 	    footerContent = props.footerContent,
-	    className = props.className;
+	    className = props.className,
+	    maxWidthBreakpoint = props.maxWidthBreakpoint;
 
 
 	var onBackGroundClick = function onBackGroundClick(e) {
@@ -38,7 +39,7 @@ var Modal = function Modal(props) {
 			{ onClick: onBackGroundClick },
 			_react2.default.createElement(
 				_styles.ModalContent,
-				{ maxWidthBreakpoint: 'large' },
+				{ maxWidthBreakpoint: maxWidthBreakpoint },
 				children,
 				footerContent && _react2.default.createElement(
 					_styles.ModalFooter,
@@ -52,7 +53,8 @@ var Modal = function Modal(props) {
 
 Modal.defaultProps = {
 	footerContent: null,
-	className: null
+	className: null,
+	maxWidthBreakpoint: "large"
 };
 
 Modal.propTypes = {
@@ -60,7 +62,8 @@ Modal.propTypes = {
 	children: _propTypes2.default.node.isRequired,
 	footerContent: _propTypes2.default.node,
 	isOpen: _propTypes2.default.bool.isRequired,
-	toggleModal: _propTypes2.default.func.isRequired
+	toggleModal: _propTypes2.default.func.isRequired,
+	maxWidthBreakpoint: _propTypes2.default.string
 };
 
 exports.default = Modal;
