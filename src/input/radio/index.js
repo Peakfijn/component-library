@@ -61,7 +61,8 @@ Radio.defaultProps = {
 	focussed: false,
 	id: null,
 	className: null,
-	input: {}
+	input: {},
+	field: {}
 };
 
 Radio.propTypes = {
@@ -75,8 +76,8 @@ Radio.propTypes = {
 	disabled: PropTypes.bool,
 	focussed: PropTypes.bool,
 	meta: PropTypes.objectOf(PropTypes.any).isRequired,
-	input: PropTypes.objectOf(PropTypes.any).isRequired,
-	field: PropTypes.objectOf(PropTypes.any).isRequired,
+	input: PropTypes.objectOf(PropTypes.any),
+	field: PropTypes.objectOf(PropTypes.any),
 };
 
 export default Radio;
