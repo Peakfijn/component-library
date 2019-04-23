@@ -15,8 +15,13 @@ const Radio = ({
 	focussed,
 	toggleValue,
 	className,
+	field
 }) => {
-	const selected = input.value === toggleValue;
+	let selected = (input && input.value === toggleValue) || (field && field.value === toggleValue);
+
+	if (toggleValue === "" && !(input && input.value) && !(field && field.value)) {
+		selected = true;
+	}
 
 	return (
 		<FormGroup
@@ -29,20 +34,20 @@ const Radio = ({
 				<Switch
 					selected={selected}
 					disabled={disabled}
-					focussed={meta.active || focussed}
+					focussed={(meta && meta.active) || focussed}
 				>
 					{selected && <Slider selected={selected} disabled={disabled} />}
 				</Switch>
 				{label}
 				<HiddenInput
-					onClick={() => input.onChange(toggleValue)}
-					onFocus={() => input.onFocus()}
-					onBlur={() => input.onBlur()}
+					onClick={input.onChange || field.onChange}
+					onFocus={input.onFocus || field.onFocus}
+					onBlur={input.onBlur || field.onBlur}
 					disabled={disabled}
 					type="radio"
 					selected={selected}
 					value={toggleValue}
-					name={input.name}
+					name={input.name || field.name}
 					id={id}
 				/>
 			</Wrapper>
@@ -56,6 +61,8 @@ Radio.defaultProps = {
 	focussed: false,
 	id: null,
 	className: null,
+	input: {},
+	field: {}
 };
 
 Radio.propTypes = {
@@ -69,7 +76,8 @@ Radio.propTypes = {
 	disabled: PropTypes.bool,
 	focussed: PropTypes.bool,
 	meta: PropTypes.objectOf(PropTypes.any).isRequired,
-	input: PropTypes.objectOf(PropTypes.any).isRequired,
+	input: PropTypes.objectOf(PropTypes.any),
+	field: PropTypes.objectOf(PropTypes.any),
 };
 
 export default Radio;

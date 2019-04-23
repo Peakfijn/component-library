@@ -36,9 +36,14 @@ var Radio = function Radio(_ref) {
 	    id = _ref.id,
 	    focussed = _ref.focussed,
 	    toggleValue = _ref.toggleValue,
-	    className = _ref.className;
+	    className = _ref.className,
+	    field = _ref.field;
 
-	var selected = input.value === toggleValue;
+	var selected = input && input.value === toggleValue || field && field.value === toggleValue;
+
+	if (toggleValue === "" && !(input && input.value) && !(field && field.value)) {
+		selected = true;
+	}
 
 	return _react2.default.createElement(
 		_formGroup2.default,
@@ -56,26 +61,20 @@ var Radio = function Radio(_ref) {
 				{
 					selected: selected,
 					disabled: disabled,
-					focussed: meta.active || focussed
+					focussed: meta && meta.active || focussed
 				},
 				selected && _react2.default.createElement(_styles.Slider, { selected: selected, disabled: disabled })
 			),
 			label,
 			_react2.default.createElement(_hiddenInput2.default, {
-				onClick: function onClick() {
-					return input.onChange(toggleValue);
-				},
-				onFocus: function onFocus() {
-					return input.onFocus();
-				},
-				onBlur: function onBlur() {
-					return input.onBlur();
-				},
+				onClick: input.onChange || field.onChange,
+				onFocus: input.onFocus || field.onFocus,
+				onBlur: input.onBlur || field.onBlur,
 				disabled: disabled,
 				type: 'radio',
 				selected: selected,
 				value: toggleValue,
-				name: input.name,
+				name: input.name || field.name,
 				id: id
 			})
 		)
@@ -87,7 +86,9 @@ Radio.defaultProps = {
 	disabled: false,
 	focussed: false,
 	id: null,
-	className: null
+	className: null,
+	input: {},
+	field: {}
 };
 
 Radio.propTypes = {
@@ -98,7 +99,8 @@ Radio.propTypes = {
 	disabled: _propTypes2.default.bool,
 	focussed: _propTypes2.default.bool,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
-	input: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired
+	input: _propTypes2.default.objectOf(_propTypes2.default.any),
+	field: _propTypes2.default.objectOf(_propTypes2.default.any)
 };
 
 exports.default = Radio;
