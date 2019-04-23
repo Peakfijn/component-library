@@ -1,3 +1,18 @@
+# [1.5.0](https://gitlab.com/peakfijn/component-library/compare/1.4.0...1.5.0) (2019-04-23)
+
+
+### Bug fixes
+
+* fixed an incorrect prop type ([a43da9e](https://gitlab.com/peakfijn/component-library/commit/a43da9e))
+* improved wrapper modifier="flex-cell" with width options ([169a5ec](https://gitlab.com/peakfijn/component-library/commit/169a5ec))
+* used wrap instead of width ([53c9dfc](https://gitlab.com/peakfijn/component-library/commit/53c9dfc))
+
+
+### New features
+
+* added an option to set the max width of a modal ([67f67d1](https://gitlab.com/peakfijn/component-library/commit/67f67d1))
+* added top-right modifier for notification badge ([66b7283](https://gitlab.com/peakfijn/component-library/commit/66b7283))
+
 # [1.4.0](https://gitlab.com/peakfijn/component-library/compare/1.3.0...1.4.0) (2019-04-18)
 
 
