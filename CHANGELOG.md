@@ -1,3 +1,15 @@
+# [1.6.0](https://gitlab.com/peakfijn/component-library/compare/1.5.0...1.6.0) (2019-04-23)
+
+
+### Bug fixes
+
+* forgot to add the lint fixes ([862bb58](https://gitlab.com/peakfijn/component-library/commit/862bb58))
+
+
+### New features
+
+* prepared the radio button for formik ([9196947](https://gitlab.com/peakfijn/component-library/commit/9196947))
+
 # [1.5.0](https://gitlab.com/peakfijn/component-library/compare/1.4.0...1.5.0) (2019-04-23)
 
 
