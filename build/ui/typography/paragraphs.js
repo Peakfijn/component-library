@@ -52,7 +52,7 @@ var Caption = exports.Caption = _styledComponents2.default.p(_templateObject2, f
 	var theme = _ref4.theme,
 	    _ref4$fontSize = _ref4.fontSize,
 	    fontSize = _ref4$fontSize === undefined ? 'small' : _ref4$fontSize;
-	return fontSize && '\n\t\tfont-size: ' + theme.fontSize[fontSize] + ';\n\t' || '';
+	return fontSize && '\n\t\tfont-size: ' + theme.fontSize[fontSize] + ';\n\t\tline-height: ' + theme.fontSize[fontSize] + ';\n\t' || '';
 }, function (_ref5) {
 	var isUpperCase = _ref5.isUpperCase;
 	return isUpperCase && '\n\t\ttext-transform: uppercase;\n\t' || '';

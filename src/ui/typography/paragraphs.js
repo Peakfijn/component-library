@@ -21,6 +21,7 @@ export const Caption = styled.p`
 	color: ${({ color, theme }) => color ? theme.color.text[color] : theme.color.text.light};
 	${({ theme, fontSize = 'small' }) =>  fontSize && `
 		font-size: ${theme.fontSize[fontSize]};
+		line-height: ${theme.fontSize[fontSize]};
 	` || ''}
 	${({ isUpperCase }) => isUpperCase && `
 		text-transform: uppercase;
