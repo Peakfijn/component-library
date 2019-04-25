@@ -47,7 +47,6 @@ const WrapperStyle = styled.div`
 		white-space: initial;
 		flex: 1;
 		text-overflow: ellipsis;
-		word-break: break-all;
 		box-sizing: border-box;
 		word-wrap: break-word;
 		width: 100%;
