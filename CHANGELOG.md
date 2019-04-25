@@ -1,3 +1,11 @@
+## [1.6.1](https://gitlab.com/peakfijn/component-library/compare/1.6.0...1.6.1) (2019-04-25)
+
+
+### Bug fixes
+
+* paragraph line height ([93e69ab](https://gitlab.com/peakfijn/component-library/commit/93e69ab))
+* word bread should be initial ([3d5e25a](https://gitlab.com/peakfijn/component-library/commit/3d5e25a))
+
 # [1.6.0](https://gitlab.com/peakfijn/component-library/compare/1.5.0...1.6.0) (2019-04-23)
 
 
