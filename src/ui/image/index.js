@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import StyledImage from './styles';
 
 const Image = props => {
-	const { src, modifier, className, borderRadius, width, height, fit } = props;
+	const {
+		src,
+		modifier,
+		className,
+		borderRadius,
+		width,
+		height,
+		componentWidth,
+		componentHeight,
+		fit,
+	} = props;
 	if (!src) {
 		return null;
 	}
@@ -17,6 +27,8 @@ const Image = props => {
 			fit={fit}
 			width={width}
 			height={height}
+			componentWidth={componentWidth}
+			componentHeight={componentHeight}
 		/>
 	);
 }
@@ -28,6 +40,8 @@ Image.defaultProps = {
 	width: null,
 	height: null,
 	fit: null,
+	componentWidth: null,
+	componentHeight: null,
 }
 
 Image.propTypes = {
@@ -39,6 +53,8 @@ Image.propTypes = {
 	width: PropTypes.string,
 	fit: PropTypes.oneOf(['cover']),
 	height: PropTypes.string,
+	componentWidth: PropTypes.string,
+	componentHeight: PropTypes.string,
 	borderRadius: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
 }
 
