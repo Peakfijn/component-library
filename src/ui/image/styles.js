@@ -6,11 +6,11 @@ const InputIcon = styled.img`
 	color: inherit;
 
 	/* Size */
-	${({ theme, componentHeight, height }) => (componentHeight || height) && `
-		height: ${theme.componentSize[componentHeight] || height};
+	${({ theme, componentHeight }) => componentHeight && `
+		height: ${theme.componentSize[componentHeight]};
 	` || ''}
-	${({ theme, componentWidth, width }) => (componentWidth || width) && `
-		height: ${theme.componentSize[componentWidth] || width};
+	${({ theme, componentWidth }) => componentWidth && `
+		width: ${theme.componentSize[componentWidth]};
 	` || ''}
 
 	${({ fit }) => fit && `
