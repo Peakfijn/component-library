@@ -10,8 +10,8 @@ export const H1 = styled.h1`
 	text-decoration: none;
 	margin-top: 0;
 	margin-bottom: ${props => props.theme.gutter.huge};
-	${({ theme: { fontSize, lineHeightMultiplier }}) => `
-		line-height: calc(${fontSize.huge} ${lineHeightMultiplier.h1});
+	${({ theme: { fontSize, lineHeight }}) => `
+		line-height: calc(${fontSize.huge} ${lineHeight.h1});
 	`}
 	color: ${props => props.theme.color.text.normal};
 	font-size: ${props => props.theme.fontSize.gigantic};
@@ -27,8 +27,8 @@ export const H2 = styled.h2`
 	text-decoration: none;
 	margin-top: 0;
 	margin-bottom: ${props => props.theme.gutter.medium};
-	${({ theme: { fontSize, lineHeightMultiplier }}) => `
-		line-height: calc(${fontSize.large} ${lineHeightMultiplier.h2});
+	${({ theme: { fontSize, lineHeight }}) => `
+		line-height: calc(${fontSize.large} ${lineHeight.h2});
 	`}
 	color: ${props => props.theme.color.text.normal} !important;
 	font-size: ${props => props.theme.fontSize.huge};
@@ -44,8 +44,8 @@ export const H3 = styled.h3`
 	text-decoration: none;
 	margin-top: 0;
 	margin-bottom: ${props => props.theme.gutter.small};
-	${({ theme: { fontSize, lineHeightMultiplier }}) => `
-		line-height: calc(${fontSize.large} ${lineHeightMultiplier.h3});
+	${({ theme: { fontSize, lineHeight }}) => `
+		line-height: calc(${fontSize.large} ${lineHeight.h3});
 	`}
 	color: ${props => props.theme.color.text.normal};
 	font-size: ${props => props.theme.fontSize.large};
