@@ -4,7 +4,7 @@ import defaultProps from '../../default-props';
 export const Paragraph = styled.p`
 	margin-top: ${props => props.theme.gutter.small};
 	margin-bottom: ${props => props.theme.gutter.medium};
-	${({ theme: { fontSize, lineHeight }}) => `
+	${({ theme: { lineHeight }}) => `
 		line-height: ${lineHeight.paragraph};
 	`}
 	color: ${props => props.theme.color.text.normal};
