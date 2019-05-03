@@ -1,3 +1,15 @@
+# [1.7.0](https://gitlab.com/peakfijn/component-library/compare/1.6.1...1.7.0) (2019-04-29)
+
+
+### Bug fixes
+
+* removed the use of width and height ([5285cdd](https://gitlab.com/peakfijn/component-library/commit/5285cdd))
+
+
+### New features
+
+* added new width and height properties to image ([b76a0b1](https://gitlab.com/peakfijn/component-library/commit/b76a0b1))
+
 ## [1.6.1](https://gitlab.com/peakfijn/component-library/compare/1.6.0...1.6.1) (2019-04-25)
 
 

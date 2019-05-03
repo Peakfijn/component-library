@@ -25,6 +25,8 @@ var Image = function Image(props) {
 	    borderRadius = props.borderRadius,
 	    width = props.width,
 	    height = props.height,
+	    componentWidth = props.componentWidth,
+	    componentHeight = props.componentHeight,
 	    fit = props.fit;
 
 	if (!src) {
@@ -38,7 +40,9 @@ var Image = function Image(props) {
 		borderRadius: borderRadius,
 		fit: fit,
 		width: width,
-		height: height
+		height: height,
+		componentWidth: componentWidth,
+		componentHeight: componentHeight
 	});
 };
 
@@ -48,7 +52,9 @@ Image.defaultProps = {
 	borderRadius: null,
 	width: null,
 	height: null,
-	fit: null
+	fit: null,
+	componentWidth: null,
+	componentHeight: null
 };
 
 Image.propTypes = {
@@ -58,6 +64,8 @@ Image.propTypes = {
 	width: _propTypes2.default.string,
 	fit: _propTypes2.default.oneOf(['cover']),
 	height: _propTypes2.default.string,
+	componentWidth: _propTypes2.default.string,
+	componentHeight: _propTypes2.default.string,
 	borderRadius: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full'])
 };
 

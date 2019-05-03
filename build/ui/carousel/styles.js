@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.CarouselImage = exports.CarouselImageWrapper = exports.CarouselImages = exports.CarouselContent = exports.CarouselTotal = exports.CarouselWrapper = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n'], ['\n\tposition: relative;\n\twidth: 100%;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\tz-index: 99;\n\twidth: 100%;\n'], ['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\tz-index: 99;\n\twidth: 100%;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\twidth: 100%;\n'], ['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\twidth: 100%;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n'], ['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n'], ['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n\theight: 100%;\n\tdisplay: flex;\n\n\t', ';\n'], ['\n\theight: 100%;\n\tdisplay: flex;\n\n\t', ';\n']),

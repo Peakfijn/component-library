@@ -6,15 +6,15 @@ const InputIcon = styled.img`
 	color: inherit;
 
 	/* Size */
-	${props => props.height && `
-		height: ${props.height};
+	${({ theme, componentHeight }) => componentHeight && `
+		height: ${theme.componentSize[componentHeight]};
 	` || ''}
-	${props => props.width && `
-		width: ${props.width};
+	${({ theme, componentWidth }) => componentWidth && `
+		width: ${theme.componentSize[componentWidth]};
 	` || ''}
 
 	${({ fit }) => fit && `
-			object-fit: ${fit};
+		object-fit: ${fit};
 	` || ''}
 
 	/* Modifiers: borderRadius */
