@@ -22,13 +22,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var InputIcon = _styledComponents2.default.img(_templateObject, function (props) {
-	return props.height && '\n\t\theight: ' + props.height + ';\n\t' || '';
-}, function (props) {
-	return props.width && '\n\t\twidth: ' + props.width + ';\n\t' || '';
-}, function (_ref) {
-	var fit = _ref.fit;
-	return fit && '\n\t\t\tobject-fit: ' + fit + ';\n\t' || '';
+var InputIcon = _styledComponents2.default.img(_templateObject, function (_ref) {
+	var theme = _ref.theme,
+	    componentHeight = _ref.componentHeight;
+	return componentHeight && '\n\t\theight: ' + theme.componentSize[componentHeight] + ';\n\t' || '';
+}, function (_ref2) {
+	var theme = _ref2.theme,
+	    componentWidth = _ref2.componentWidth;
+	return componentWidth && '\n\t\twidth: ' + theme.componentSize[componentWidth] + ';\n\t' || '';
+}, function (_ref3) {
+	var fit = _ref3.fit;
+	return fit && '\n\t\tobject-fit: ' + fit + ';\n\t' || '';
 }, _borderRadius2.default);
 
 InputIcon.defaultProps = _defaultProps2.default;
