@@ -1,3 +1,15 @@
+# [1.8.0](https://gitlab.com/peakfijn/component-library/compare/1.7.0...1.8.0) (2019-05-03)
+
+
+### Bug fixes
+
+* removed z index of 99 ([074a36d](https://gitlab.com/peakfijn/component-library/commit/074a36d))
+
+
+### New features
+
+* background adjustable color radios ([f4670b6](https://gitlab.com/peakfijn/component-library/commit/f4670b6))
+
 # [1.7.0](https://gitlab.com/peakfijn/component-library/compare/1.6.1...1.7.0) (2019-04-29)
 
 
