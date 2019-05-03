@@ -28,8 +28,10 @@ var Switch = exports.Switch = _styledComponents2.default.div(_templateObject, fu
 	return props.theme.componentSize.radio;
 }, function (props) {
 	return props.theme.componentSize.radio;
-}, function (props) {
-	return props.theme.color.background.input;
+}, function (_ref) {
+	var theme = _ref.theme,
+	    backgroundColor = _ref.backgroundColor;
+	return theme.color.background[backgroundColor];
 }, function (props) {
 	return props.theme.componentSize.radio;
 }, function (props) {
@@ -54,14 +56,14 @@ var Slider = exports.Slider = _styledComponents2.default.div(_templateObject2, f
 	return props.theme.gutter.tiny;
 }, function (props) {
 	return props.theme.gutter.tiny;
-}, function (_ref) {
-	var selected = _ref.selected,
-	    theme = _ref.theme;
-	return selected && '\n\t\tbackground-color: ' + theme.color.background.input + ';\n\t' || '';
 }, function (_ref2) {
 	var selected = _ref2.selected,
-	    disabled = _ref2.disabled,
 	    theme = _ref2.theme;
+	return selected && '\n\t\tbackground-color: ' + theme.color.background.input + ';\n\t' || '';
+}, function (_ref3) {
+	var selected = _ref3.selected,
+	    disabled = _ref3.disabled,
+	    theme = _ref3.theme;
 	return selected && disabled && '\n\t\tbackground-color: ' + theme.color.background.input + ';\n\t\tcursor: not-allowed;\n\t' || '';
 });
 

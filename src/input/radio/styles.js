@@ -8,7 +8,7 @@ export const Switch = styled.div`
 	display: inline-block;
 	width: ${props => props.theme.componentSize.radio};
 	height: ${props => props.theme.componentSize.radio};
-	background-color: ${props => props.theme.color.background.input};
+	background-color: ${({ theme, backgroundColor }) => theme.color.background[backgroundColor]};
 	border-radius: ${props => props.theme.componentSize.radio};
 	border: 1px solid ${props => props.theme.color.border.normal};
 	margin-right: ${props => props.theme.gutter.small};
