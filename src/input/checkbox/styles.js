@@ -20,6 +20,17 @@ export const Box = styled.div`
 
 	/* Modifiers: borderRadius */
 	${borderRadiusModifier}
+
+	/* State: selected */
+	${({ selected, theme }) => selected && `
+		background-color: ${theme.color.background.inputSelected};
+	` || ''}
+
+	/* State: selected & disabled */
+	${({ selected, disabled, theme }) => selected && disabled && `
+		background-color: ${theme.color.background.inputSelected};
+		cursor: not-allowed;
+	` || ''}
 `;
 
 export const Check = styled.div`
