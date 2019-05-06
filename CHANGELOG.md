@@ -1,3 +1,10 @@
+## [1.8.1](https://gitlab.com/peakfijn/component-library/compare/1.8.0...1.8.1) (2019-05-06)
+
+
+### Bug fixes
+
+* background color for checkbox ([4f30466](https://gitlab.com/peakfijn/component-library/commit/4f30466))
+
 # [1.8.0](https://gitlab.com/peakfijn/component-library/compare/1.7.0...1.8.0) (2019-05-03)
 
 
