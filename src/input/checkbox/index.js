@@ -38,11 +38,20 @@ const Checkbox = ({
 					indeterminate={indeterminate}
 					borderRadius={borderRadius}
 				>
-					{(selected || indeterminate) && (
+					{(selected || indeterminate) ? (
 						<Check
 							selected={selected}
 							disabled={disabled}
 							indeterminate={indeterminate}
+						>
+							{indeterminate ? '-' : '\u2714 ' }
+						</Check>
+					) : (
+						<Check
+							selected={selected}
+							disabled={disabled}
+							indeterminate={indeterminate}
+							hidden
 						>
 							{indeterminate ? '-' : '\u2714 ' }
 						</Check>

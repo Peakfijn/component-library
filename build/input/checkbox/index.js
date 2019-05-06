@@ -65,12 +65,21 @@ var Checkbox = function Checkbox(_ref) {
 					indeterminate: indeterminate,
 					borderRadius: borderRadius
 				},
-				(selected || indeterminate) && _react2.default.createElement(
+				selected || indeterminate ? _react2.default.createElement(
 					_styles.Check,
 					{
 						selected: selected,
 						disabled: disabled,
 						indeterminate: indeterminate
+					},
+					indeterminate ? '-' : '\u2714 '
+				) : _react2.default.createElement(
+					_styles.Check,
+					{
+						selected: selected,
+						disabled: disabled,
+						indeterminate: indeterminate,
+						hidden: true
 					},
 					indeterminate ? '-' : '\u2714 '
 				)

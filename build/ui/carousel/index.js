@@ -142,7 +142,8 @@ var Carousel = function (_Component) {
 		value: function render() {
 			var _props = this.props,
 			    width = _props.width,
-			    maxWidthBreakpoint = _props.maxWidthBreakpoint;
+			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
+			    children = _props.children;
 			var _state = this.state,
 			    items = _state.items,
 			    isAnimating = _state.isAnimating,
@@ -157,7 +158,7 @@ var Carousel = function (_Component) {
 				_styles.CarouselWrapper,
 				null,
 				_react2.default.createElement(
-					_styles.CarouselTotal,
+					'div',
 					{ ref: this.totalRef },
 					_react2.default.createElement(
 						_styles.CarouselContent,
@@ -168,7 +169,7 @@ var Carousel = function (_Component) {
 							maxWidthBreakpoint: maxWidthBreakpoint,
 							ref: this.contentRef
 						},
-						'\xA0'
+						children || '&nbsp;'
 					),
 					_react2.default.createElement(
 						_styles.CarouselImages,
@@ -183,30 +184,22 @@ var Carousel = function (_Component) {
 							},
 							_react2.default.createElement(_styles.CarouselImage, {
 								alt: '',
-								style: {
-									backgroundImage: 'url(' + (this.calculateItem(items, currentIndex - 1) && this.calculateItem(items, currentIndex - 1).url) + ')'
-								},
+								src: this.calculateItem(items, currentIndex - 1) && this.calculateItem(items, currentIndex - 1).url,
 								width: imageWidth
 							}),
 							_react2.default.createElement(_styles.CarouselImage, {
 								alt: '',
-								style: {
-									backgroundImage: 'url(' + (currentItem && currentItem.url) + ')'
-								},
+								src: currentItem && currentItem.url,
 								width: imageWidth
 							}),
 							_react2.default.createElement(_styles.CarouselImage, {
 								alt: '',
-								style: {
-									backgroundImage: 'url(' + (this.calculateItem(items, currentIndex + 1) && this.calculateItem(items, currentIndex + 1).url) + ')'
-								},
+								src: this.calculateItem(items, currentIndex + 1) && this.calculateItem(items, currentIndex + 1).url,
 								width: imageWidth
 							}),
 							_react2.default.createElement(_styles.CarouselImage, {
 								alt: '',
-								style: {
-									backgroundImage: 'url(' + (this.calculateItem(items, currentIndex + 2) && this.calculateItem(items, currentIndex + 2).url) + ')'
-								},
+								src: this.calculateItem(items, currentIndex + 2) && this.calculateItem(items, currentIndex + 2).url,
 								width: imageWidth
 							})
 						)
@@ -228,13 +221,15 @@ var Carousel = function (_Component) {
 }(_react.Component);
 
 Carousel.defaultProps = {
-	width: undefined,
-	maxWidthBreakpoint: undefined
+	width: null,
+	maxWidthBreakpoint: null,
+	children: null
 };
 
 Carousel.propTypes = {
 	data: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
 	width: _propTypes2.default.string,
+	children: _propTypes2.default.string,
 	maxWidthBreakpoint: _propTypes2.default.string
 };
 

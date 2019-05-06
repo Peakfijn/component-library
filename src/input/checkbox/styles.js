@@ -42,6 +42,10 @@ export const Check = styled.div`
 	${({ disabled }) => disabled && `
 		cursor: not-allowed;
 	` || ''}
+
+	${({ hidden }) => hidden && `
+		opacity: 0;
+	` || ''}
 `;
 
 Box.defaultProps = defaultProps;

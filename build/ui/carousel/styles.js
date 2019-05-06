@@ -3,14 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.CarouselImage = exports.CarouselImageWrapper = exports.CarouselImages = exports.CarouselContent = exports.CarouselTotal = exports.CarouselWrapper = undefined;
+exports.CarouselImage = exports.CarouselImageWrapper = exports.CarouselImages = exports.CarouselContent = exports.CarouselWrapper = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tposition: relative;\n\twidth: 100%;\n'], ['\n\tposition: relative;\n\twidth: 100%;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\twidth: 100%;\n'], ['\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tright: 0;\n\tleft: 0;\n\twidth: 100%;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n'], ['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n'], ['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n\theight: 100%;\n\tdisplay: flex;\n\n\t', ';\n'], ['\n\theight: 100%;\n\tdisplay: flex;\n\n\t', ';\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\n\t', ';\n'], ['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\n\t', ';\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n'], ['\n\tposition: relative;\n\tz-index: 1;\n\tmin-height: 100%;\n\n\t', '\n\n\t/* Modifiers: set max-width at breakpoint */\n\t', '\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n'], ['\n\tposition: absolute;\n\toverflow: hidden;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tz-index: 0;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\n\t', ';\n'], ['\n\tdisplay: flex;\n\n\t', ';\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n'], ['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -26,9 +25,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var CarouselWrapper = exports.CarouselWrapper = _styledComponents2.default.div(_templateObject);
 
-var CarouselTotal = exports.CarouselTotal = _styledComponents2.default.div(_templateObject2);
-
-var CarouselContent = exports.CarouselContent = _styledComponents2.default.div(_templateObject3, function (_ref) {
+var CarouselContent = exports.CarouselContent = _styledComponents2.default.div(_templateObject2, function (_ref) {
 	var maxWidth = _ref.maxWidth;
 	return maxWidth && '\n\t\tmax-width: ' + maxWidth + ';\n\t' || '';
 }, function (_ref2) {
@@ -39,14 +36,14 @@ var CarouselContent = exports.CarouselContent = _styledComponents2.default.div(_
 	}) || '';
 });
 
-var CarouselImages = exports.CarouselImages = _styledComponents2.default.div(_templateObject4);
+var CarouselImages = exports.CarouselImages = _styledComponents2.default.div(_templateObject3);
 
-var CarouselImageWrapper = exports.CarouselImageWrapper = _styledComponents2.default.div(_templateObject5, function (_ref3) {
+var CarouselImageWrapper = exports.CarouselImageWrapper = _styledComponents2.default.div(_templateObject4, function (_ref3) {
 	var animating = _ref3.animating;
 	return animating && '\n\t\ttransition: transform 1s;\n\t';
 });
 
-var CarouselImage = exports.CarouselImage = _styledComponents2.default.img(_templateObject6, function (_ref4) {
+var CarouselImage = exports.CarouselImage = _styledComponents2.default.img(_templateObject5, function (_ref4) {
 	var hidden = _ref4.hidden;
 	return hidden && '\n\t\tdisplay: block;\n\t\theight: 1px;\n\t\twidth: 1px;\n\t';
 });

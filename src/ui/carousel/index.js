@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import {
 	CarouselWrapper,
-	CarouselTotal,
 	CarouselContent,
 	CarouselImages,
 	CarouselImageWrapper,
@@ -108,12 +107,16 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const { width, maxWidthBreakpoint } = this.props;
+		const {
+			width,
+			maxWidthBreakpoint,
+			children
+		} = this.props;
 		const {
 			items,
 			isAnimating,
 			targetLocation,
-			currentIndex,
+			currentIndex
 		} = this.state;
 
 		const currentItem = this.calculateItem(items, currentIndex) || {};
@@ -121,7 +124,7 @@ class Carousel extends Component {
 
 		return (
 			<CarouselWrapper>
-				<CarouselTotal ref={this.totalRef}>
+				<div ref={this.totalRef}>
 					<CarouselContent
 						horizontal="none"
 						vertical="none"
@@ -129,7 +132,7 @@ class Carousel extends Component {
 						maxWidthBreakpoint={maxWidthBreakpoint}
 						ref={this.contentRef}
 					>
-						&nbsp;
+						{children || '&nbsp;'}
 					</CarouselContent>
 					<CarouselImages>
 						<CarouselImageWrapper
@@ -141,50 +144,42 @@ class Carousel extends Component {
 						>
 							<CarouselImage
 								alt=""
-								style={{
-									backgroundImage: `url(${
-										this.calculateItem(items, currentIndex - 1) &&
-										this.calculateItem(items, currentIndex - 1).url
-									})`,
-								}}
+								src={
+									this.calculateItem(items, currentIndex - 1) &&
+									this.calculateItem(items, currentIndex - 1).url
+								}
 								width={imageWidth}
 							/>
 
 							<CarouselImage
 								alt=""
-								style={{
-									backgroundImage: `url(${
-										currentItem && currentItem.url
-									})`,
-								}}
+								src={
+									currentItem && currentItem.url
+								}
 								width={imageWidth}
 							/>
 
 							<CarouselImage
 								alt=""
-								style={{
-									backgroundImage: `url(${
-										this.calculateItem(items, currentIndex + 1) &&
-										this.calculateItem(items, currentIndex + 1).url
-									})`,
-								}}
+								src={
+									this.calculateItem(items, currentIndex + 1) &&
+									this.calculateItem(items, currentIndex + 1).url
+								}
 								width={imageWidth}
 							/>
 
 							<CarouselImage
 								alt=""
-								style={{
-									backgroundImage: `url(${
-										this.calculateItem(items, currentIndex + 2) &&
-										this.calculateItem(items, currentIndex + 2).url
-									})`,
-								}}
+								src={
+									this.calculateItem(items, currentIndex + 2) &&
+									this.calculateItem(items, currentIndex + 2).url
+								}
 								width={imageWidth}
 							/>
 
 						</CarouselImageWrapper>
 					</CarouselImages>
-				</CarouselTotal>
+				</div>
 
 				{items.map(item => (
 					<CarouselImage
@@ -200,13 +195,15 @@ class Carousel extends Component {
 }
 
 Carousel.defaultProps = {
-	width: undefined,
-	maxWidthBreakpoint: undefined,
+	width: null,
+	maxWidthBreakpoint: null,
+	children: null,
 };
 
 Carousel.propTypes = {
 	data: PropTypes.objectOf(PropTypes.any).isRequired,
 	width: PropTypes.string,
+	children: PropTypes.string,
 	maxWidthBreakpoint: PropTypes.string,
 };
 

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.Check = exports.Box = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tposition: relative;\n\tdisplay: inline-block;\n\tpadding: 2px;\n\twidth: ', ';\n\theight: ', ';\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n\n\t/* Modifiers: borderRadius */\n\t', '\n\n\t/* State: selected */\n\t', '\n\n\t/* State: selected & disabled */\n\t', '\n'], ['\n\tcursor: pointer;\n\tposition: relative;\n\tdisplay: inline-block;\n\tpadding: 2px;\n\twidth: ', ';\n\theight: ', ';\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tmargin-right: ', ';\n\n\t/* States */\n\t', '\n\n\t/* Modifiers: borderRadius */\n\t', '\n\n\t/* State: selected */\n\t', '\n\n\t/* State: selected & disabled */\n\t', '\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tcolor: ', ';\n\tline-height: initial;\n\n\t/* State: disabled */\n\t', '\n'], ['\n\tcursor: pointer;\n\tcolor: ', ';\n\tline-height: initial;\n\n\t/* State: disabled */\n\t', '\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tcolor: ', ';\n\tline-height: initial;\n\n\t/* State: disabled */\n\t', '\n\n\t', '\n'], ['\n\tcursor: pointer;\n\tcolor: ', ';\n\tline-height: initial;\n\n\t/* State: disabled */\n\t', '\n\n\t', '\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -56,6 +56,9 @@ var Check = exports.Check = _styledComponents2.default.div(_templateObject2, fun
 }, function (_ref3) {
 	var disabled = _ref3.disabled;
 	return disabled && '\n\t\tcursor: not-allowed;\n\t' || '';
+}, function (_ref4) {
+	var hidden = _ref4.hidden;
+	return hidden && '\n\t\topacity: 0;\n\t' || '';
 });
 
 Box.defaultProps = _defaultProps2.default;
