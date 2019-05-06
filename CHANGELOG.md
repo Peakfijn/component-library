@@ -1,3 +1,10 @@
+## [1.8.2](https://gitlab.com/peakfijn/component-library/compare/1.8.1...1.8.2) (2019-05-06)
+
+
+### Bug fixes
+
+* carousel should respond to content height ([07c91c7](https://gitlab.com/peakfijn/component-library/commit/07c91c7))
+
 ## [1.8.1](https://gitlab.com/peakfijn/component-library/compare/1.8.0...1.8.1) (2019-05-06)
 
 
