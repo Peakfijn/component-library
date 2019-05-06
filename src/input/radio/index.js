@@ -15,7 +15,8 @@ const Radio = ({
 	focussed,
 	toggleValue,
 	className,
-	field
+	field,
+	backgroundColor
 }) => {
 	let selected = (input && input.value === toggleValue) || (field && field.value === toggleValue);
 
@@ -35,6 +36,7 @@ const Radio = ({
 					selected={selected}
 					disabled={disabled}
 					focussed={(meta && meta.active) || focussed}
+					backgroundColor={backgroundColor}
 				>
 					{selected && <Slider selected={selected} disabled={disabled} />}
 				</Switch>
@@ -61,6 +63,7 @@ Radio.defaultProps = {
 	focussed: false,
 	id: null,
 	className: null,
+	backgroundColor: 'input',
 	input: {},
 	field: {}
 };
@@ -73,6 +76,7 @@ Radio.propTypes = {
 		PropTypes.node,
 	]),
 	toggleValue: PropTypes.string.isRequired,
+	backgroundColor: PropTypes.string,
 	disabled: PropTypes.bool,
 	focussed: PropTypes.bool,
 	meta: PropTypes.objectOf(PropTypes.any).isRequired,

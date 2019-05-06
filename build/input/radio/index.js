@@ -37,7 +37,8 @@ var Radio = function Radio(_ref) {
 	    focussed = _ref.focussed,
 	    toggleValue = _ref.toggleValue,
 	    className = _ref.className,
-	    field = _ref.field;
+	    field = _ref.field,
+	    backgroundColor = _ref.backgroundColor;
 
 	var selected = input && input.value === toggleValue || field && field.value === toggleValue;
 
@@ -61,7 +62,8 @@ var Radio = function Radio(_ref) {
 				{
 					selected: selected,
 					disabled: disabled,
-					focussed: meta && meta.active || focussed
+					focussed: meta && meta.active || focussed,
+					backgroundColor: backgroundColor
 				},
 				selected && _react2.default.createElement(_styles.Slider, { selected: selected, disabled: disabled })
 			),
@@ -87,6 +89,7 @@ Radio.defaultProps = {
 	focussed: false,
 	id: null,
 	className: null,
+	backgroundColor: 'input',
 	input: {},
 	field: {}
 };
@@ -96,6 +99,7 @@ Radio.propTypes = {
 	id: _propTypes2.default.string,
 	label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
 	toggleValue: _propTypes2.default.string.isRequired,
+	backgroundColor: _propTypes2.default.string,
 	disabled: _propTypes2.default.bool,
 	focussed: _propTypes2.default.bool,
 	meta: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
