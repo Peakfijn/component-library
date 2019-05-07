@@ -1,12 +1,14 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
-
+import { Wrapper, Spacing } from '../layout';
 import {
 	CarouselWrapper,
 	CarouselContent,
 	CarouselImages,
 	CarouselImageWrapper,
 	CarouselImage,
+	CarouselInnerWrapper,
+	ThumbnailWrapper,
 } from './styles';
 
 class Carousel extends Component {
@@ -110,7 +112,8 @@ class Carousel extends Component {
 		const {
 			width,
 			maxWidthBreakpoint,
-			children
+			children,
+			showThumbnails
 		} = this.props;
 		const {
 			items,
@@ -124,7 +127,7 @@ class Carousel extends Component {
 
 		return (
 			<CarouselWrapper>
-				<div ref={this.totalRef}>
+				<CarouselInnerWrapper ref={this.totalRef}>
 					<CarouselContent
 						horizontal="none"
 						vertical="none"
@@ -179,16 +182,23 @@ class Carousel extends Component {
 
 						</CarouselImageWrapper>
 					</CarouselImages>
-				</div>
+				</CarouselInnerWrapper>
 
-				{items.map(item => (
-					<CarouselImage
-						key={`caroucel-image-${item.url}`}
-						alt=""
-						style={{ backgroundImage: `url(${item.url})` }}
-						hidden
-					/>
-				))}
+				<ThumbnailWrapper modifier="flex" horizontalGutter="small" grow="fluid">
+					{items.map((item, itemKey) => (
+						<Wrapper modifier="flex-cell">
+							<Spacing horizontal="none">
+								<CarouselImage
+									key={`caroucel-image-${item.url}`}
+									alt=""
+									src={item.url}
+									showThumbnails={showThumbnails}
+									active={currentIndex === itemKey}
+								/>
+							</Spacing>
+						</Wrapper>
+					))}
+				</ThumbnailWrapper>
 			</CarouselWrapper>
 		);
 	}
@@ -198,11 +208,13 @@ Carousel.defaultProps = {
 	width: null,
 	maxWidthBreakpoint: null,
 	children: null,
+	showThumbnails: false,
 };
 
 Carousel.propTypes = {
 	data: PropTypes.objectOf(PropTypes.any).isRequired,
 	width: PropTypes.string,
+	showThumbnails: PropTypes.bool,
 	children: PropTypes.string,
 	maxWidthBreakpoint: PropTypes.string,
 };

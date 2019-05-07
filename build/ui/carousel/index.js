@@ -14,6 +14,8 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _layout = require('../layout');
+
 var _styles = require('./styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -143,7 +145,8 @@ var Carousel = function (_Component) {
 			var _props = this.props,
 			    width = _props.width,
 			    maxWidthBreakpoint = _props.maxWidthBreakpoint,
-			    children = _props.children;
+			    children = _props.children,
+			    showThumbnails = _props.showThumbnails;
 			var _state = this.state,
 			    items = _state.items,
 			    isAnimating = _state.isAnimating,
@@ -158,7 +161,7 @@ var Carousel = function (_Component) {
 				_styles.CarouselWrapper,
 				null,
 				_react2.default.createElement(
-					'div',
+					_styles.CarouselInnerWrapper,
 					{ ref: this.totalRef },
 					_react2.default.createElement(
 						_styles.CarouselContent,
@@ -205,14 +208,27 @@ var Carousel = function (_Component) {
 						)
 					)
 				),
-				items.map(function (item) {
-					return _react2.default.createElement(_styles.CarouselImage, {
-						key: 'caroucel-image-' + item.url,
-						alt: '',
-						style: { backgroundImage: 'url(' + item.url + ')' },
-						hidden: true
-					});
-				})
+				_react2.default.createElement(
+					_styles.ThumbnailWrapper,
+					{ modifier: 'flex', horizontalGutter: 'small', grow: 'fluid' },
+					items.map(function (item, itemKey) {
+						return _react2.default.createElement(
+							_layout.Wrapper,
+							{ modifier: 'flex-cell' },
+							_react2.default.createElement(
+								_layout.Spacing,
+								{ horizontal: 'none' },
+								_react2.default.createElement(_styles.CarouselImage, {
+									key: 'caroucel-image-' + item.url,
+									alt: '',
+									src: item.url,
+									showThumbnails: showThumbnails,
+									active: currentIndex === itemKey
+								})
+							)
+						);
+					})
+				)
 			);
 		}
 	}]);
@@ -223,12 +239,14 @@ var Carousel = function (_Component) {
 Carousel.defaultProps = {
 	width: null,
 	maxWidthBreakpoint: null,
-	children: null
+	children: null,
+	showThumbnails: false
 };
 
 Carousel.propTypes = {
 	data: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
 	width: _propTypes2.default.string,
+	showThumbnails: _propTypes2.default.bool,
 	children: _propTypes2.default.string,
 	maxWidthBreakpoint: _propTypes2.default.string
 };

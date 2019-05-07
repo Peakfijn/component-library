@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import defaultProps from '../../default-props';
+import { Wrapper } from '../layout';
 
 export const CarouselWrapper = styled.div`
 	position: relative;
@@ -44,6 +45,10 @@ export const CarouselImageWrapper = styled.div`
 	`};
 `;
 
+export const CarouselInnerWrapper = styled.div`
+	position: relative;
+`;
+
 export const CarouselImage = styled.img`
 	background-size: cover;
 	background-position: center;
@@ -51,13 +56,28 @@ export const CarouselImage = styled.img`
 	flex-grow: 0;
 	height: 100%;
 
-	${({ hidden }) => hidden && `
+	${({ showThumbnails, active, theme }) => showThumbnails ? `
+		height: auto;
+		height: -webkit-fill-available;
+		max-width: 100%;
+		position: relative;
+		max-height: 100%;
+		${active && `
+			outline: 1px solid ${theme.color.border.dark};
+		` || ''}
+	` : `
 		display: block;
 		height: 1px;
 		width: 1px;
 	`};
 `;
 
+export const ThumbnailWrapper = styled(Wrapper)`
+	max-height: 120px;
+	text-align: right;
+`;
+
+ThumbnailWrapper.defaultProps = defaultProps;
 CarouselWrapper.defaultProps = defaultProps;
 CarouselContent.defaultProps = defaultProps;
 CarouselImages.defaultProps = defaultProps;
