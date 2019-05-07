@@ -1,3 +1,22 @@
+# [1.10.0](https://gitlab.com/peakfijn/component-library/compare/1.9.0...1.10.0) (2019-05-07)
+
+
+### Code refactors
+
+* set the line height of the headers ([8965c93](https://gitlab.com/peakfijn/component-library/commit/8965c93))
+
+
+### New features
+
+* add paragraph line-height settings ([c85392b](https://gitlab.com/peakfijn/component-library/commit/c85392b))
+* change `lineHeightMultiplier` into `lineHeight` and changed the `multiplier` ([56869f1](https://gitlab.com/peakfijn/component-library/commit/56869f1))
+
+
+### Other chores
+
+* removed unused variable ([c31bba3](https://gitlab.com/peakfijn/component-library/commit/c31bba3))
+* set the commit lint to a new hash ([f3591d4](https://gitlab.com/peakfijn/component-library/commit/f3591d4))
+
 # [1.9.0](https://gitlab.com/peakfijn/component-library/compare/1.8.2...1.9.0) (2019-05-07)
 
 
