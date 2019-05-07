@@ -1,3 +1,10 @@
+# [1.9.0](https://gitlab.com/peakfijn/component-library/compare/1.8.2...1.9.0) (2019-05-07)
+
+
+### New features
+
+* show the thumbnails for the carousel with prop ([9cef757](https://gitlab.com/peakfijn/component-library/commit/9cef757))
+
 ## [1.8.2](https://gitlab.com/peakfijn/component-library/compare/1.8.1...1.8.2) (2019-05-06)
 
 
