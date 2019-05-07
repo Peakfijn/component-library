@@ -80,10 +80,11 @@ exports.default = {
 			huge: '24px',
 			gigantic: '32px'
 		},
-		lineHeightMultiplier: {
-			h1: '* 1.5',
-			h2: '* 1.5',
-			h3: '* 1.25'
+		lineHeight: {
+			h1: '1.5',
+			h2: '1.5',
+			h3: '1.25',
+			paragraph: '1.5'
 		},
 		boxShadow: {
 			inside: 'inset 0 0 0 1px rgba(0,0,0,.05), inset 0 1px 2px 0 rgba(78,83,90,.1)'

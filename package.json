@@ -20,7 +20,7 @@
 		"lint": "npm run lint:code && npm run lint:style && npm run lint:commit",
 		"lint:code": "eslint ./src/index.js src --max-warnings 0",
 		"lint:style": "stylelint 'src/**/*.js' --custom-syntax",
-		"lint:commit": "commitlint --from 578d7466f549af539ab3d695dcff371bc8f9c23f --to HEAD",
+		"lint:commit": "commitlint --from c31bba3e20e10ec6bd952541d1d2a0521cc68d65 --to HEAD",
 		"prettier": "prettier --single-quote --trailing-comma es5 --write src/**/**/**/**/*.js"
 	},
 	"dependencies": {
