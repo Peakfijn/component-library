@@ -1,3 +1,16 @@
+## [1.10.1](https://gitlab.com/peakfijn/component-library/compare/1.10.0...1.10.1) (2019-05-09)
+
+
+### Bug fixes
+
+* fix carousel keys and emphesis component ([c567e55](https://gitlab.com/peakfijn/component-library/commit/c567e55))
+* image height in carousel ([8320d3c](https://gitlab.com/peakfijn/component-library/commit/8320d3c))
+
+
+### Other chores
+
+* forgot to build assets ([fb018f0](https://gitlab.com/peakfijn/component-library/commit/fb018f0))
+
 # [1.10.0](https://gitlab.com/peakfijn/component-library/compare/1.9.0...1.10.0) (2019-05-07)
 
 
