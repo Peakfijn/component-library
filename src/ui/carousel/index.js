@@ -186,7 +186,7 @@ class Carousel extends Component {
 
 				<ThumbnailWrapper modifier="flex" horizontalGutter="small" grow="fluid">
 					{items.map((item, itemKey) => (
-						<Wrapper modifier="flex-cell">
+						<Wrapper modifier="flex-cell" key={`carousel-thumbnail-${item.url}`}>
 							<Spacing horizontal="none">
 								<CarouselImage
 									key={`caroucel-image-${item.url}`}

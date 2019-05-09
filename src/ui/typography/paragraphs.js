@@ -16,6 +16,19 @@ export const Paragraph = styled.p`
 	` || ''}
 `;
 
+export const Emphasis = styled.span`
+	${({ theme, lineHeight = 'paragraph' }) =>  lineHeight && `
+		line-height: ${theme.lineHeight[lineHeight]};
+	` || ''}
+	color: ${props => props.theme.color.text.normal};
+	${({ theme, fontSize = 'medium' }) =>  fontSize && `
+		font-size: ${theme.fontSize[fontSize]};
+	` || ''}
+	${({ theme, color = 'normal' }) =>  color && `
+		color: ${theme.color.text[color]};
+	` || ''}
+`;
+
 export const Caption = styled.p`
 	margin-top: 0;
 	margin-bottom: ${props => props.theme.gutter.medium};

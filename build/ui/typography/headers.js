@@ -28,10 +28,8 @@ var boldModifier = function boldModifier(_ref) {
 var H1 = exports.H1 = _styledComponents2.default.h1(_templateObject, function (props) {
 	return props.theme.gutter.huge;
 }, function (_ref2) {
-	var _ref2$theme = _ref2.theme,
-	    fontSize = _ref2$theme.fontSize,
-	    lineHeight = _ref2$theme.lineHeight;
-	return '\n\t\tline-height: calc(' + fontSize.huge + ' ' + lineHeight.h1 + ');\n\t';
+	var lineHeight = _ref2.theme.lineHeight;
+	return '\n\t\tline-height: ' + lineHeight.h1 + ';\n\t';
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
@@ -44,10 +42,8 @@ var H1 = exports.H1 = _styledComponents2.default.h1(_templateObject, function (p
 var H2 = exports.H2 = _styledComponents2.default.h2(_templateObject2, function (props) {
 	return props.theme.gutter.medium;
 }, function (_ref4) {
-	var _ref4$theme = _ref4.theme,
-	    fontSize = _ref4$theme.fontSize,
-	    lineHeight = _ref4$theme.lineHeight;
-	return '\n\t\tline-height: calc(' + fontSize.large + ' ' + lineHeight.h2 + ');\n\t';
+	var lineHeight = _ref4.theme.lineHeight;
+	return '\n\t\tline-height: ' + lineHeight.h2 + ';\n\t';
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {
@@ -60,10 +56,8 @@ var H2 = exports.H2 = _styledComponents2.default.h2(_templateObject2, function (
 var H3 = exports.H3 = _styledComponents2.default.h3(_templateObject, function (props) {
 	return props.theme.gutter.small;
 }, function (_ref6) {
-	var _ref6$theme = _ref6.theme,
-	    fontSize = _ref6$theme.fontSize,
-	    lineHeight = _ref6$theme.lineHeight;
-	return '\n\t\tline-height: calc(' + fontSize.large + ' ' + lineHeight.h3 + ');\n\t';
+	var lineHeight = _ref6.theme.lineHeight;
+	return '\n\t\tline-height: ' + lineHeight.h3 + ';\n\t';
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (props) {

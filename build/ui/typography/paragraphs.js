@@ -3,10 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Caption = exports.Paragraph = undefined;
+exports.Caption = exports.Emphasis = exports.Paragraph = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tmargin-top: ', ';\n\tmargin-bottom: ', ';\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n'], ['\n\tmargin-top: ', ';\n\tmargin-bottom: ', ';\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n'], ['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n'], ['\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n'], ['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -25,9 +26,7 @@ var Paragraph = exports.Paragraph = _styledComponents2.default.p(_templateObject
 }, function (props) {
 	return props.theme.gutter.medium;
 }, function (_ref) {
-	var _ref$theme = _ref.theme,
-	    fontSize = _ref$theme.fontSize,
-	    lineHeight = _ref$theme.lineHeight;
+	var lineHeight = _ref.theme.lineHeight;
 	return '\n\t\tline-height: ' + lineHeight.paragraph + ';\n\t';
 }, function (props) {
 	return props.theme.color.text.normal;
@@ -43,26 +42,45 @@ var Paragraph = exports.Paragraph = _styledComponents2.default.p(_templateObject
 	return color && '\n\t\tcolor: ' + theme.color.text[color] + ';\n\t' || '';
 });
 
-var Caption = exports.Caption = _styledComponents2.default.p(_templateObject2, function (props) {
-	return props.theme.gutter.medium;
+var Emphasis = exports.Emphasis = _styledComponents2.default.span(_templateObject2, function (_ref4) {
+	var theme = _ref4.theme,
+	    _ref4$lineHeight = _ref4.lineHeight,
+	    lineHeight = _ref4$lineHeight === undefined ? 'paragraph' : _ref4$lineHeight;
+	return lineHeight && '\n\t\tfont-size: ' + theme.fontSize[lineHeight] + ';\n\t' || '';
 }, function (props) {
-	return props.theme.lineHeight.paragraph;
-}, function (_ref4) {
-	var color = _ref4.color,
-	    theme = _ref4.theme;
-	return color ? theme.color.text[color] : theme.color.text.light;
+	return props.theme.color.text.normal;
 }, function (_ref5) {
 	var theme = _ref5.theme,
 	    _ref5$fontSize = _ref5.fontSize,
-	    fontSize = _ref5$fontSize === undefined ? 'small' : _ref5$fontSize;
+	    fontSize = _ref5$fontSize === undefined ? 'medium' : _ref5$fontSize;
 	return fontSize && '\n\t\tfont-size: ' + theme.fontSize[fontSize] + ';\n\t' || '';
 }, function (_ref6) {
-	var isUpperCase = _ref6.isUpperCase;
-	return isUpperCase && '\n\t\ttext-transform: uppercase;\n\t' || '';
+	var theme = _ref6.theme,
+	    _ref6$color = _ref6.color,
+	    color = _ref6$color === undefined ? 'normal' : _ref6$color;
+	return color && '\n\t\tcolor: ' + theme.color.text[color] + ';\n\t' || '';
+});
+
+var Caption = exports.Caption = _styledComponents2.default.p(_templateObject3, function (props) {
+	return props.theme.gutter.medium;
+}, function (props) {
+	return props.theme.lineHeight.paragraph;
 }, function (_ref7) {
-	var theme = _ref7.theme,
-	    _ref7$color = _ref7.color,
-	    color = _ref7$color === undefined ? 'normal' : _ref7$color;
+	var color = _ref7.color,
+	    theme = _ref7.theme;
+	return color ? theme.color.text[color] : theme.color.text.light;
+}, function (_ref8) {
+	var theme = _ref8.theme,
+	    _ref8$fontSize = _ref8.fontSize,
+	    fontSize = _ref8$fontSize === undefined ? 'small' : _ref8$fontSize;
+	return fontSize && '\n\t\tfont-size: ' + theme.fontSize[fontSize] + ';\n\t' || '';
+}, function (_ref9) {
+	var isUpperCase = _ref9.isUpperCase;
+	return isUpperCase && '\n\t\ttext-transform: uppercase;\n\t' || '';
+}, function (_ref10) {
+	var theme = _ref10.theme,
+	    _ref10$color = _ref10.color,
+	    color = _ref10$color === undefined ? 'normal' : _ref10$color;
 	return color && '\n\t\tcolor: ' + theme.color.text[color] + ';\n\t' || '';
 });
 

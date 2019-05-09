@@ -39,6 +39,12 @@ Object.defineProperty(exports, 'Caption', {
     return _paragraphs.Caption;
   }
 });
+Object.defineProperty(exports, 'Emphasis', {
+  enumerable: true,
+  get: function get() {
+    return _paragraphs.Emphasis;
+  }
+});
 
 var _separator = require('./separator');
 
