@@ -46,7 +46,7 @@ var Emphasis = exports.Emphasis = _styledComponents2.default.span(_templateObjec
 	var theme = _ref4.theme,
 	    _ref4$lineHeight = _ref4.lineHeight,
 	    lineHeight = _ref4$lineHeight === undefined ? 'paragraph' : _ref4$lineHeight;
-	return lineHeight && '\n\t\tfont-size: ' + theme.fontSize[lineHeight] + ';\n\t' || '';
+	return lineHeight && '\n\t\tline-height: ' + theme.lineHeight[lineHeight] + ';\n\t' || '';
 }, function (props) {
 	return props.theme.color.text.normal;
 }, function (_ref5) {

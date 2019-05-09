@@ -14,6 +14,7 @@
 		"build:watch": "babel src -w -d build",
 		"prepublish": "npm run build",
 		"commit": "npm run lint && git-cz",
+		"commit-fast": "git-cz",
 		"release": "semantic-release",
 		"test": "npm run test:security",
 		"test:security": "npm audit; exit 0",
