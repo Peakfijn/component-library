@@ -214,7 +214,7 @@ var Carousel = function (_Component) {
 					items.map(function (item, itemKey) {
 						return _react2.default.createElement(
 							_layout.Wrapper,
-							{ modifier: 'flex-cell' },
+							{ modifier: 'flex-cell', key: 'carousel-thumbnail-' + item.url },
 							_react2.default.createElement(
 								_layout.Spacing,
 								{ horizontal: 'none' },

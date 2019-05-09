@@ -67,8 +67,6 @@ export const CarouselImage = styled.img`
 		` || ''}
 	` : `
 		display: block;
-		height: 1px;
-		width: 1px;
 	`};
 `;
 

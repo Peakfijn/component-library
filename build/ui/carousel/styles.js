@@ -53,7 +53,7 @@ var CarouselImage = exports.CarouselImage = _styledComponents2.default.img(_temp
 	var showThumbnails = _ref4.showThumbnails,
 	    active = _ref4.active,
 	    theme = _ref4.theme;
-	return showThumbnails ? '\n\t\theight: auto;\n\t\theight: -webkit-fill-available;\n\t\tmax-width: 100%;\n\t\tposition: relative;\n\t\tmax-height: 100%;\n\t\t' + (active && '\n\t\t\toutline: 1px solid ' + theme.color.border.dark + ';\n\t\t' || '') + '\n\t' : '\n\t\tdisplay: block;\n\t\theight: 1px;\n\t\twidth: 1px;\n\t';
+	return showThumbnails ? '\n\t\theight: auto;\n\t\theight: -webkit-fill-available;\n\t\tmax-width: 100%;\n\t\tposition: relative;\n\t\tmax-height: 100%;\n\t\t' + (active && '\n\t\t\toutline: 1px solid ' + theme.color.border.dark + ';\n\t\t' || '') + '\n\t' : '\n\t\tdisplay: block;\n\t';
 });
 
 var ThumbnailWrapper = exports.ThumbnailWrapper = (0, _styledComponents2.default)(_layout.Wrapper)(_templateObject7);
