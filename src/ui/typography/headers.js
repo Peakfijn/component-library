@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import defaultProps from '../../default-props';
-
-const boldModifier = ({ isBold }) => isBold && (`
-	font-weight: bold;
-	` || ''
-);
+import boldModifier from "./modifier";
 
 export const H1 = styled.h1`
 	text-decoration: none;

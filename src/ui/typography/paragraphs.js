@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import defaultProps from '../../default-props';
+import boldModifier from "./modifier";
 
 export const Paragraph = styled.p`
 	margin-top: ${props => props.theme.gutter.small};
@@ -45,5 +46,22 @@ export const Caption = styled.p`
 	` || ''}
 `;
 
+export const Typography = styled.p`
+	${({ type, color, theme }) => type && theme.typography &&(typographyThemeConfiguration =>
+		typographyThemeConfiguration && `
+		font-size: ${theme.fontSize[typographyThemeConfiguration.size]};
+		${typographyThemeConfiguration.weight && `font-weight: ${typographyThemeConfiguration.weight};` || ''}
+		${typographyThemeConfiguration.family && `font-family: ${typographyThemeConfiguration.family};` || ''}
+		${typographyThemeConfiguration.transform && `text-transform: ${typographyThemeConfiguration.transform};` || ''}
+		${typographyThemeConfiguration.spacing && `letter-spacing: ${typographyThemeConfiguration.spacing};` || ''}
+		${typographyThemeConfiguration.lineHeight && `line-height: ${typographyThemeConfiguration.lineHeight};` || ''}
+		${(color || theme.color.text[typographyThemeConfiguration.color]) && `
+			color: ${color || theme.color.text[typographyThemeConfiguration.color]};
+		` || ''}
+	` || '')(theme.typography[type])}
+	${boldModifier}
+`;
+
+Typography.defaultProps = defaultProps;
 Paragraph.defaultProps = defaultProps;
 Caption.defaultProps = defaultProps;
