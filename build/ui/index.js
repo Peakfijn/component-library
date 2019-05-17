@@ -52,6 +52,24 @@ Object.keys(_notification).forEach(function (key) {
   });
 });
 
+var _progressBar = require('./progress-bar');
+
+Object.defineProperty(exports, 'ProgressBar', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_progressBar).default;
+  }
+});
+
+var _loading = require('./loading');
+
+Object.defineProperty(exports, 'Loading', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_loading).default;
+  }
+});
+
 var _tag = require('./tag');
 
 Object.defineProperty(exports, 'Tag', {
@@ -76,15 +94,6 @@ Object.defineProperty(exports, 'Icon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_icon).default;
-  }
-});
-
-var _progressBar = require('./progress-bar');
-
-Object.defineProperty(exports, 'ProgressBar', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_progressBar).default;
   }
 });
 
