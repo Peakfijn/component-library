@@ -87,7 +87,8 @@ var Datepicker = function (_Component) {
 			    iconPosition = _props.iconPosition,
 			    icon = _props.icon,
 			    placeholder = _props.placeholder,
-			    className = _props.className;
+			    className = _props.className,
+			    error = _props.error;
 
 			if (!_reactDeviceDetect.isMobile && !_reactDeviceDetect.isTablet && !(_reactDeviceDetect.isIE && _reactDeviceDetect.browserVersion <= 11)) {
 				return _react2.default.createElement(
@@ -98,7 +99,8 @@ var Datepicker = function (_Component) {
 						iconPosition: iconPosition,
 						icon: icon,
 						meta: meta,
-						className: className
+						className: className,
+						error: error
 					},
 					_react2.default.createElement(
 						_styles2.default,
@@ -131,7 +133,9 @@ var Datepicker = function (_Component) {
 				},
 				value: value && (value.format ? value.format(notation) : value),
 				placeholder: notation
-			}, this.props));
+			}, this.props, {
+				error: error
+			}));
 		}
 	}]);
 
@@ -146,7 +150,8 @@ Datepicker.defaultProps = {
 	label: null,
 	size: "medium",
 	notation: 'DD-MM-YYYY',
-	className: null
+	className: null,
+	error: null
 };
 
 Datepicker.propTypes = {
@@ -162,7 +167,8 @@ Datepicker.propTypes = {
 		defaultMessage: _propTypes2.default.string.isRequired
 	})]).isRequired,
 	label: _propTypes2.default.objectOf(_propTypes2.default.any),
-	iconPosition: _propTypes2.default.oneOf(['left', 'right'])
+	iconPosition: _propTypes2.default.oneOf(['left', 'right']),
+	error: _propTypes2.default.string
 };
 
 exports.default = Datepicker;
