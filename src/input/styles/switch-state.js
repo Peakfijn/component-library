@@ -1,12 +1,12 @@
 import { darken, lighten } from 'polished';
 
 export default ({ theme, focussed, selected, disabled, indeterminate, backgroundColor }) => `
-	${focussed ? `
+	${focussed && backgroundColor ? `
 		background-color: ${lighten(theme.color.adjustColor.tiny, theme.color.background[backgroundColor])};
 	` : ''}
 
 	/* State: selected or indeterminate */
-	${(selected || indeterminate) && `
+	${(selected || indeterminate) && backgroundColor && `
 		background-color: ${theme.color.background[backgroundColor]};
 		border-color: ${theme.color.brand};
 	` || ''}
