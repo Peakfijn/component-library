@@ -47,15 +47,16 @@ export const Caption = styled.p`
 `;
 
 export const Typography = styled.p`
-	${({ type, color, theme }) => type && theme.typography && (typographyObject => typographyObject && `
-		font-size: ${theme.fontSize[typographyObject.size]};
-		${typographyObject.weight && `font-weight: ${typographyObject.weight};` || ''}
-		${typographyObject.family && `font-family: ${typographyObject.family};` || ''}
-		${typographyObject.transform && `text-transform: ${typographyObject.transform};` || ''}
-		${typographyObject.spacing && `letter-spacing: ${typographyObject.spacing};` || ''}
-		${typographyObject.lineHeight && `line-height: ${typographyObject.lineHeight};` || ''}
-		${(color || theme.color.text[typographyObject.color]) && `
-			color: ${color || theme.color.text[typographyObject.color]};
+	${({ type, color, theme }) => type && theme.typography &&(typographyThemeConfiguration =>
+		typographyThemeConfiguration && `
+		font-size: ${theme.fontSize[typographyThemeConfiguration.size]};
+		${typographyThemeConfiguration.weight && `font-weight: ${typographyThemeConfiguration.weight};` || ''}
+		${typographyThemeConfiguration.family && `font-family: ${typographyThemeConfiguration.family};` || ''}
+		${typographyThemeConfiguration.transform && `text-transform: ${typographyThemeConfiguration.transform};` || ''}
+		${typographyThemeConfiguration.spacing && `letter-spacing: ${typographyThemeConfiguration.spacing};` || ''}
+		${typographyThemeConfiguration.lineHeight && `line-height: ${typographyThemeConfiguration.lineHeight};` || ''}
+		${(color || theme.color.text[typographyThemeConfiguration.color]) && `
+			color: ${color || theme.color.text[typographyThemeConfiguration.color]};
 		` || ''}
 	` || '')(theme.typography[type])}
 	${boldModifier}
