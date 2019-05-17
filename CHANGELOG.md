@@ -1,3 +1,10 @@
+## [1.10.2](https://gitlab.com/peakfijn/component-library/compare/1.10.1...1.10.2) (2019-05-17)
+
+
+### Bug fixes
+
+* added a safety check for a property ([dbee5aa](https://gitlab.com/peakfijn/component-library/commit/dbee5aa))
+
 ## [1.10.1](https://gitlab.com/peakfijn/component-library/compare/1.10.0...1.10.1) (2019-05-09)
 
 
