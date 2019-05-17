@@ -3,13 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.LoadingContainer = exports.Slider = exports.StyledProgress = exports.StyledBar = exports.StyledHeader = undefined;
+exports.Slider = exports.StyledProgress = exports.StyledBar = exports.StyledHeader = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\ttext-transform: none;\n\ttext-decoration: none;\n\tfont-family: inherit;\n\tfont-size: ', ';\n\tdisplay: inline-flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tmargin-bottom: ', ';\n'], ['\n\ttext-transform: none;\n\ttext-decoration: none;\n\tfont-family: inherit;\n\tfont-size: ', ';\n\tdisplay: inline-flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tmargin-bottom: ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\theight: 8px;\n\twidth: 100%;\n\tposition: relative;\n'], ['\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\theight: 8px;\n\twidth: 100%;\n\tposition: relative;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\theight: 8px;\n\twidth: ', ';\n'], ['\n\tborder-radius: ', ';\n\tbackground-color: ', ';\n\theight: 8px;\n\twidth: ', ';\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tmargin: 0;\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 16px;\n\twidth: 16px;\n\theight: 16px;\n\tposition: absolute;\n\tleft: calc(', ' - 10px);\n\ttop: -5px;\n'], ['\n\tcursor: pointer;\n\tmargin: 0;\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 16px;\n\twidth: 16px;\n\theight: 16px;\n\tposition: absolute;\n\tleft: calc(', ' - 10px);\n\ttop: -5px;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n\theight: ', ';\n'], ['\n\theight: ', ';\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n\tcursor: pointer;\n\tmargin: 0;\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 16px;\n\twidth: 16px;\n\theight: 16px;\n\tposition: absolute;\n\tleft: calc(', ' - 10px);\n\ttop: -5px;\n'], ['\n\tcursor: pointer;\n\tmargin: 0;\n\tbackground-color: ', ';\n\tborder: 1px solid ', ';\n\tborder-radius: 16px;\n\twidth: 16px;\n\theight: 16px;\n\tposition: absolute;\n\tleft: calc(', ' - 10px);\n\ttop: -5px;\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -18,10 +17,6 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
-
-var _wrapper = require('../layout/wrapper');
-
-var _wrapper2 = _interopRequireDefault(_wrapper);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,11 +48,6 @@ var Slider = exports.Slider = _styledComponents2.default.div(_templateObject4, f
 	return props.theme.color.grey;
 }, function (props) {
 	return props.progress;
-});
-
-var LoadingContainer = exports.LoadingContainer = (0, _styledComponents2.default)(_wrapper2.default)(_templateObject5, function (_ref) {
-	var height = _ref.height;
-	return height;
 });
 
 StyledHeader.defaultProps = _defaultProps2.default;

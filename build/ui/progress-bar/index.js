@@ -6,19 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _progressBar = require('./progress-bar');
 
-Object.defineProperty(exports, 'ProgressBar', {
+Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_progressBar).default;
-  }
-});
-
-var _loading = require('./loading');
-
-Object.defineProperty(exports, 'Loading', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_loading).default;
   }
 });
 

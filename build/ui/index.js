@@ -54,14 +54,20 @@ Object.keys(_notification).forEach(function (key) {
 
 var _progressBar = require('./progress-bar');
 
-Object.keys(_progressBar).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _progressBar[key];
-    }
-  });
+Object.defineProperty(exports, 'ProgressBar', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_progressBar).default;
+  }
+});
+
+var _loading = require('./loading');
+
+Object.defineProperty(exports, 'Loading', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_loading).default;
+  }
 });
 
 var _tag = require('./tag');

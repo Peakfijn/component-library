@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import defaultProps from '../../default-props';
-import Wrapper from "../layout/wrapper";
 
 export const StyledHeader = styled.div`
 	text-transform: none;
@@ -41,10 +40,6 @@ export const Slider = styled.div`
 	position: absolute;
 	left: calc(${props => props.progress} - 10px);
 	top: -5px;
-`;
-
-export const LoadingContainer = styled(Wrapper)`
-	height: ${({ height }) => height};
 `;
 
 StyledHeader.defaultProps = defaultProps;
