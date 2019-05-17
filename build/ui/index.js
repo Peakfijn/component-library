@@ -52,6 +52,18 @@ Object.keys(_notification).forEach(function (key) {
   });
 });
 
+var _progressBar = require('./progress-bar');
+
+Object.keys(_progressBar).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _progressBar[key];
+    }
+  });
+});
+
 var _tag = require('./tag');
 
 Object.defineProperty(exports, 'Tag', {
@@ -76,15 +88,6 @@ Object.defineProperty(exports, 'Icon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_icon).default;
-  }
-});
-
-var _progressBar = require('./progress-bar');
-
-Object.defineProperty(exports, 'ProgressBar', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_progressBar).default;
   }
 });
 
