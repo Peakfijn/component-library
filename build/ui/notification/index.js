@@ -22,4 +22,19 @@ Object.defineProperty(exports, 'NotificationBadge', {
   }
 });
 
+var _alert = require('./alert');
+
+Object.defineProperty(exports, 'AlertContext', {
+  enumerable: true,
+  get: function get() {
+    return _alert.AlertContext;
+  }
+});
+Object.defineProperty(exports, 'AlertContextProvider', {
+  enumerable: true,
+  get: function get() {
+    return _alert.AlertContextProvider;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
