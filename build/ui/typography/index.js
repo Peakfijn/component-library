@@ -45,6 +45,12 @@ Object.defineProperty(exports, 'Emphasis', {
     return _paragraphs.Emphasis;
   }
 });
+Object.defineProperty(exports, 'Typography', {
+  enumerable: true,
+  get: function get() {
+    return _paragraphs.Typography;
+  }
+});
 
 var _separator = require('./separator');
 

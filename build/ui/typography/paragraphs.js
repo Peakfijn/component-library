@@ -3,11 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Caption = exports.Emphasis = exports.Paragraph = undefined;
+exports.Typography = exports.Caption = exports.Emphasis = exports.Paragraph = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tmargin-top: ', ';\n\tmargin-bottom: ', ';\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n'], ['\n\tmargin-top: ', ';\n\tmargin-bottom: ', ';\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n'], ['\n\t', '\n\tcolor: ', ';\n\t', '\n\t', '\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n'], ['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n'], ['\n\tmargin-top: 0;\n\tmargin-bottom: ', ';\n\tline-height: ', ';\n\tcolor: ', ';\n\t', '\n\t', '\n\t', '\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n\t', '\n\t', '\n'], ['\n\t', '\n\t', '\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -16,6 +17,10 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 var _defaultProps = require('../../default-props');
 
 var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
+var _modifier = require('./modifier');
+
+var _modifier2 = _interopRequireDefault(_modifier);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84,5 +89,15 @@ var Caption = exports.Caption = _styledComponents2.default.p(_templateObject3, f
 	return color && '\n\t\tcolor: ' + theme.color.text[color] + ';\n\t' || '';
 });
 
+var Typography = exports.Typography = _styledComponents2.default.p(_templateObject4, function (_ref11) {
+	var type = _ref11.type,
+	    color = _ref11.color,
+	    theme = _ref11.theme;
+	return type && theme.typography && function (typographyThemeConfiguration) {
+		return typographyThemeConfiguration && '\n\t\tfont-size: ' + theme.fontSize[typographyThemeConfiguration.size] + ';\n\t\t' + (typographyThemeConfiguration.weight && 'font-weight: ' + typographyThemeConfiguration.weight + ';' || '') + '\n\t\t' + (typographyThemeConfiguration.family && 'font-family: ' + typographyThemeConfiguration.family + ';' || '') + '\n\t\t' + (typographyThemeConfiguration.transform && 'text-transform: ' + typographyThemeConfiguration.transform + ';' || '') + '\n\t\t' + (typographyThemeConfiguration.spacing && 'letter-spacing: ' + typographyThemeConfiguration.spacing + ';' || '') + '\n\t\t' + (typographyThemeConfiguration.lineHeight && 'line-height: ' + typographyThemeConfiguration.lineHeight + ';' || '') + '\n\t\t' + ((color || theme.color.text[typographyThemeConfiguration.color]) && '\n\t\t\tcolor: ' + (color || theme.color.text[typographyThemeConfiguration.color]) + ';\n\t\t' || '') + '\n\t' || '';
+	}(theme.typography[type]);
+}, _modifier2.default);
+
+Typography.defaultProps = _defaultProps2.default;
 Paragraph.defaultProps = _defaultProps2.default;
 Caption.defaultProps = _defaultProps2.default;
