@@ -5,7 +5,7 @@ This project is intended for internal use.
 ## Install
 
 ```terminal
-npm install git+https://gitlab.com/peakfijn/component-library --save
+npm install git@github.com:Peakfijn/component-library.git --save
 ```
 Some dependencies that should be implemented in the parent project: 
 * [redux](https://github.com/reduxjs/redux)

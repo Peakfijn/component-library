@@ -4,7 +4,7 @@
 	"main": "build/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.com/peakfijn/component-library.git"
+		"url": "git@github.com:Peakfijn/component-library.git"
 	},
 	"private": true,
 	"scripts": {
