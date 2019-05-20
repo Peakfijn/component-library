@@ -1,3 +1,32 @@
+# [1.11.0](https://github.com/Peakfijn/component-library/compare/1.10.2...1.11.0) (2019-05-20)
+
+
+### Bug fixes
+
+* added the compiled build files ([e33d88c](https://github.com/Peakfijn/component-library/commit/e33d88c))
+* added the compiled build files ([abca606](https://github.com/Peakfijn/component-library/commit/abca606))
+* moved the alert component and added a context object ([72537f3](https://github.com/Peakfijn/component-library/commit/72537f3))
+* moved the loading component to its own directory ([54596aa](https://github.com/Peakfijn/component-library/commit/54596aa))
+* removed the spacing from the loading component ([554af80](https://github.com/Peakfijn/component-library/commit/554af80))
+
+
+### New features
+
+* added error property to datepicker ([4e90de7](https://github.com/Peakfijn/component-library/commit/4e90de7))
+* created a loading state component ([f6ee57c](https://github.com/Peakfijn/component-library/commit/f6ee57c))
+* created a typography component ([e2590de](https://github.com/Peakfijn/component-library/commit/e2590de))
+
+
+### Other chores
+
+* changed function parameter name ([a14cca9](https://github.com/Peakfijn/component-library/commit/a14cca9))
+* removed an old and unused build file ([abe03ed](https://github.com/Peakfijn/component-library/commit/abe03ed))
+
+
+### Releases
+
+* changed the repo url in the project to github ([5bc2b7e](https://github.com/Peakfijn/component-library/commit/5bc2b7e))
+
 ## [1.10.2](https://gitlab.com/peakfijn/component-library/compare/1.10.1...1.10.2) (2019-05-17)
 
 
