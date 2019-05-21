@@ -71,7 +71,6 @@ export const CarouselImage = styled.img`
 `;
 
 export const ThumbnailWrapper = styled(Wrapper)`
-	max-height: 120px;
 	text-align: right;
 `;
 
