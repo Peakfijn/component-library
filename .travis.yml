@@ -1,0 +1,31 @@
+---
+language: node_js
+node_js:
+  - 12
+  - 10
+  - 8
+cache:
+  directories:
+    - ~/.npm
+before_install:
+  - npm install --global npm@latest
+install:
+  - npm ci
+script:
+  - npm run lint:code
+  - npm run lint:style
+  - npx commitlint-travis
+  - npm run test
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: npx semantic-release --dry-run --branch develop
+    on:
+      node: 10
+      branch: develop
+  - provider: script
+    skip_cleanup: true
+    script: npx semantic-release --branch master
+    on:
+      node: 10
+      branch: master

@@ -6,7 +6,7 @@ import moment from 'moment';
 import FormGroup from '../form-group';
 import StyledDatepicker, { StyledReactDatePicker } from './styles';
 
-import { Text } from '..';
+import Text from '../text';
 
 class Datepicker extends Component {
 	onKeyPress = (ev) => {

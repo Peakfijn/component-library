@@ -45,15 +45,12 @@
 		"styled-components": "^4.2.0"
 	},
 	"devDependencies": {
-		"@peakfijn/config-commitizen": "^1.0.0-rc.3",
-		"@peakfijn/config-commitlint": "^1.0.0-rc.2",
-		"@peakfijn/config-eslint": "^1.0.0-rc.2",
-		"@peakfijn/config-release-react": "^1.0.0-rc.3",
-		"@peakfijn/config-stylelint": "^1.0.0-rc.2",
-		"@semantic-release/changelog": "^2.1.2",
-		"@semantic-release/exec": "^2.3.0",
-		"@semantic-release/gitlab": "^3.1.0",
-		"@semantic-release/gitlab-config": "^5.0.0",
+		"@commitlint/travis-cli": "^7.6.1",
+		"@peakfijn/config-commitizen": "^1.0.1",
+		"@peakfijn/config-commitlint": "^1.0.1",
+		"@peakfijn/config-eslint": "^1.0.1",
+		"@peakfijn/config-release-react": "^1.0.1",
+		"@peakfijn/config-stylelint": "^1.0.1",
 		"babel-cli": "^6.26.0",
 		"babel-core": "^6.26.3",
 		"babel-eslint": "^8.2.6",
@@ -64,7 +61,6 @@
 		"babel-preset-stage-0": "^6.24.1",
 		"babel-preset-stage-1": "^6.24.1",
 		"commitizen": "^2.10.1",
-		"conventional-changelog-peakfijn": "^1.0.0-rc.3",
 		"eslint": "5.6.0",
 		"eslint-config-prettier": "^3.0.1",
 		"eslint-plugin-filenames": "^1.2.0",
@@ -115,7 +111,7 @@
 		"extends": "@peakfijn/config-release-react",
 		"plugins": [
 			[
-				"@semantic-release/gitlab"
+				"@semantic-release/github"
 			]
 		]
 	},

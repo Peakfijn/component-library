@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NotificationBar } from '..';
+import NotificationBar from '../bar';
 
 export const AlertDialog = styled(NotificationBar)`
 	width: ${props => props.stretch ? '100%' : 'auto'};
