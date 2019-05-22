@@ -1,6 +1,6 @@
 # Peakfijn Component Library
 
-This project is intended for internal use.
+This is the React component library used by Peakfijn, now publicly available!
 
 ## Install
 
