@@ -12,13 +12,15 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _ = require('..');
+var _bar = require('../bar');
+
+var _bar2 = _interopRequireDefault(_bar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var AlertDialog = exports.AlertDialog = (0, _styledComponents2.default)(_.NotificationBar)(_templateObject, function (props) {
+var AlertDialog = exports.AlertDialog = (0, _styledComponents2.default)(_bar2.default)(_templateObject, function (props) {
 	return props.stretch ? '100%' : 'auto';
 }, function (props) {
 	return props.theme.gutter.small;
