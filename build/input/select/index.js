@@ -66,7 +66,8 @@ var Select = function Select(_ref) {
 					'option',
 					{
 						key: 'select-option-' + id + '-' + item.value,
-						value: item.value
+						value: item.value,
+						disabled: item.disabled
 					},
 					item.label
 				);
