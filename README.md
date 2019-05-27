@@ -26,8 +26,6 @@ When developing please keep in mind that all the input types should be usable wi
   type="text"
   placeholder="Focused"
   id={`name-of-field`}
-  validate={[required]}
-  autoFocus
 />
 ```
 
@@ -38,12 +36,12 @@ When making changes to this repository you might want to include this into an ot
 ```terminal
 npm link
 ```
-This will give you a global reference for this project `peakfijn-component-library`. You can then attach it to an other React project:
+This will give you a global reference for this project `component-library`. You can then attach it to an other React project:
 
 ```terminal
-npm link peakfijn-component-library
+npm link component-library
 ```
-This will create symbolic link to this project in the other project's `node_modules` folder (e.g. `node_modules/peakfijn-component-library`). Do keep in mind that if you run `npm i` in the other project this symbolic link will be removed and you have to run this last command again.
+This will create symbolic link to this project in the other project's `node_modules` folder (e.g. `node_modules/component-library`). Do keep in mind that if you run `npm i` in the other project this symbolic link will be removed and you have to run this last command again.
 
 ## Contributing
 
