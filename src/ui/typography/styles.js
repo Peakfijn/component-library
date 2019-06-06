@@ -14,7 +14,17 @@ export const DividerStyled = styled.span`
 	height: ${({ theme, fontSize }) => theme.fontSize[fontSize]};
 	margin: auto;
 `;
+export const SeparatorStyled = styled.hr`
+	margin: 0;
+	border: none;
+	border-top:
+		${({ borderWidth, theme }) => theme.borderWidth[borderWidth]}
+		solid
+		${({ color, theme }) => theme.color.border[color]};
+	width: inherit;
+	min-width: ${props => props.theme.gutter.humongous};
+`;
 
 HorizontalDividerStyled.defaultProps = defaultProps;
 DividerStyled.defaultProps = defaultProps;
-
+SeparatorStyled.defaultProps  = defaultProps;

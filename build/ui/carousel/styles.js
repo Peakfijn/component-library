@@ -11,7 +11,7 @@ var _templateObject = _taggedTemplateLiteral(['\n\tposition: relative;\n\twidth:
     _templateObject4 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\n\t', ';\n'], ['\n\tdisplay: flex;\n\n\t', ';\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n\tposition: relative;\n'], ['\n\tposition: relative;\n']),
     _templateObject6 = _taggedTemplateLiteral(['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n'], ['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n\tmax-height: 120px;\n\ttext-align: right;\n'], ['\n\tmax-height: 120px;\n\ttext-align: right;\n']);
+    _templateObject7 = _taggedTemplateLiteral(['\n\ttext-align: right;\n'], ['\n\ttext-align: right;\n']);
 
 var _styledComponents = require('styled-components');
 
