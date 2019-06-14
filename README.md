@@ -26,6 +26,7 @@ When developing please keep in mind that all the input types should be usable wi
   type="text"
   placeholder="Focused"
   id={`name-of-field`}
+  validate={[required]}
 />
 ```
 
