@@ -41,7 +41,7 @@ const StyledButton = styled.button`
 		width: 100%;
 	`}
 
-	${({ modifier }) => modifier === 'no-margin' && `
+	${({ modifier, noMargin }) => (modifier === 'no-margin' || noMargin) && `
 		margin-bottom: 0;
 	` || ''}
 
