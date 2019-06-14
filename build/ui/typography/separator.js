@@ -4,26 +4,35 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n\tmargin: 0;\n\tborder: none;\n\tborder-top: 1px solid ', ';\n\twidth: inherit;\n\tmin-width: ', ';\n'], ['\n\tmargin: 0;\n\tborder: none;\n\tborder-top: 1px solid ', ';\n\twidth: inherit;\n\tmin-width: ', ';\n']);
+var _react = require('react');
 
-var _styledComponents = require('styled-components');
+var _react2 = _interopRequireDefault(_react);
 
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
+var _propTypes = require('prop-types');
 
-var _defaultProps = require('../../default-props');
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _defaultProps2 = _interopRequireDefault(_defaultProps);
+var _styles = require('./styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+var Separator = function Separator(_ref) {
+	var borderWidth = _ref.borderWidth,
+	    color = _ref.color;
+	return _react2.default.createElement(_styles.SeparatorStyled, {
+		borderWidth: borderWidth,
+		color: color
+	});
+};
 
-var Separator = _styledComponents2.default.hr(_templateObject, function (props) {
-	return props.theme.color.border.light;
-}, function (props) {
-	return props.theme.gutter.humongous;
-});
+Separator.defaultProps = {
+	borderWidth: 'small',
+	color: 'light'
+};
 
-Separator.defaultProps = _defaultProps2.default;
+Separator.propTypes = {
+	borderWidth: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+	color: _propTypes2.default.oneOf(['grey', 'light', 'normal', 'dark', 'inverted'])
+};
 
 exports.default = Separator;

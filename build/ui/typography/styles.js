@@ -3,10 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.DividerStyled = exports.HorizontalDividerStyled = undefined;
+exports.SeparatorStyled = exports.DividerStyled = exports.HorizontalDividerStyled = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n\tdisplay: block;\n\theight: 100%;\n\ttext-align: center;\n'], ['\n\tdisplay: block;\n\theight: 100%;\n\ttext-align: center;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n'], ['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n'], ['\n\twidth: 1px;\n\tborder-right: ', 'px solid ', ';\n\toverflow: hidden;\n\tdisplay: block;\n\theight: ', ';\n\tmargin: auto;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\tmargin: 0;\n\tborder: none;\n\tborder-top:\n\t\t', '\n\t\tsolid\n\t\t', ';\n\twidth: inherit;\n\tmin-width: ', ';\n'], ['\n\tmargin: 0;\n\tborder: none;\n\tborder-top:\n\t\t', '\n\t\tsolid\n\t\t', ';\n\twidth: inherit;\n\tmin-width: ', ';\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -33,6 +34,18 @@ var DividerStyled = exports.DividerStyled = _styledComponents2.default.span(_tem
 	    fontSize = _ref3.fontSize;
 	return theme.fontSize[fontSize];
 });
+var SeparatorStyled = exports.SeparatorStyled = _styledComponents2.default.hr(_templateObject3, function (_ref4) {
+	var borderWidth = _ref4.borderWidth,
+	    theme = _ref4.theme;
+	return theme.borderWidth[borderWidth];
+}, function (_ref5) {
+	var color = _ref5.color,
+	    theme = _ref5.theme;
+	return theme.color.border[color];
+}, function (props) {
+	return props.theme.gutter.humongous;
+});
 
 HorizontalDividerStyled.defaultProps = _defaultProps2.default;
 DividerStyled.defaultProps = _defaultProps2.default;
+SeparatorStyled.defaultProps = _defaultProps2.default;

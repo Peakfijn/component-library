@@ -1,14 +1,22 @@
-import styled from 'styled-components';
-import defaultProps from '../../default-props';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { SeparatorStyled } from './styles';
 
-const Separator = styled.hr`
-	margin: 0;
-	border: none;
-	border-top: 1px solid ${props => props.theme.color.border.light};
-	width: inherit;
-	min-width: ${props => props.theme.gutter.humongous};
-`;
+const Separator = ({ borderWidth, color }) => (
+	<SeparatorStyled
+		borderWidth={borderWidth}
+		color={color}
+	/>
+);
 
-Separator.defaultProps = defaultProps;
+Separator.defaultProps = {
+	borderWidth: 'small',
+	color: 'light',
+};
+
+Separator.propTypes = {
+	borderWidth: PropTypes.oneOf(['small', 'medium', 'large']),
+	color: PropTypes.oneOf(['grey', 'light', 'normal', 'dark', 'inverted']),
+};
 
 export default Separator;
