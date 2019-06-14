@@ -30,7 +30,9 @@ var _styles = require('./styles');
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _ = require('..');
+var _text = require('../text');
+
+var _text2 = _interopRequireDefault(_text);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -126,7 +128,7 @@ var Datepicker = function (_Component) {
 					)
 				);
 			}
-			return _react2.default.createElement(_.Text, _extends({
+			return _react2.default.createElement(_text2.default, _extends({
 				type: 'date',
 				onChange: function onChange(event) {
 					return _this2.handleChange(event.target.value);

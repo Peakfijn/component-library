@@ -40,6 +40,7 @@ const Select = ({
 				<option
 					key={`select-option-${id}-${item.value}`}
 					value={item.value}
+					disabled={item.disabled}
 				>
 					{item.label}
 				</option>
