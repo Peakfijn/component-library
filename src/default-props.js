@@ -62,6 +62,11 @@ export default {
 			medium: '5px',
 			large: '10px',
 		},
+		borderWidth: {
+			small: '1px',
+			medium: '1px',
+			large: '2px',
+		},
 		iconWidth: {
 			small: '12px',
 			medium: '16px',
