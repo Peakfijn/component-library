@@ -27,6 +27,7 @@ Icon.propTypes = {
 	className: PropTypes.string,
 	icon: PropTypes.oneOfType([
 		PropTypes.string,
+		PropTypes.array,
 		PropTypes.objectOf(PropTypes.any),
 	]).isRequired,
 	spin: PropTypes.bool,
