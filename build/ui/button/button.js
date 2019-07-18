@@ -38,13 +38,15 @@ var Button = function Button(props) {
 	    noPadding = props.noPadding,
 	    fontSize = props.fontSize,
 	    borderRadius = props.borderRadius,
-	    className = props.className;
+	    className = props.className,
+	    noMargin = props.noMargin;
 
 
 	return _react2.default.createElement(
 		_styles2.default,
 		{
 			type: type,
+			noMargin: noMargin,
 			modifier: modifier,
 			disabled: disabled,
 			loading: loading,
@@ -69,6 +71,7 @@ Button.defaultProps = {
 	disabled: false,
 	loading: false,
 	noPadding: false,
+	noMargin: false,
 	state: null,
 	children: null,
 	width: null,
@@ -89,6 +92,7 @@ Button.propTypes = {
 	disabled: _propTypes2.default.bool,
 	loading: _propTypes2.default.bool,
 	noPadding: _propTypes2.default.bool,
+	noMargin: _propTypes2.default.bool,
 	modifier: _propTypes2.default.string,
 	color: _propTypes2.default.string,
 	text: _propTypes2.default.string,

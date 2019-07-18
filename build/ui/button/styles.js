@@ -61,8 +61,9 @@ var StyledButton = _styledComponents2.default.button(_templateObject, function (
 }, function (props) {
 	return (props.modifier === 'full' || props.modifier === 'ghost-full') && '\n\t\twidth: 100%;\n\t';
 }, function (_ref) {
-	var modifier = _ref.modifier;
-	return modifier === 'no-margin' && '\n\t\tmargin-bottom: 0;\n\t' || '';
+	var modifier = _ref.modifier,
+	    noMargin = _ref.noMargin;
+	return (modifier === 'no-margin' || noMargin) && '\n\t\tmargin-bottom: 0;\n\t' || '';
 }, function (_ref2) {
 	var modifier = _ref2.modifier,
 	    color = _ref2.color,
