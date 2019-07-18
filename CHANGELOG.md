@@ -1,3 +1,28 @@
+# [1.12.0](https://github.com/Peakfijn/component-library/compare/1.11.0...1.12.0) (2019-07-18)
+
+
+### Bug fixes
+
+* 🐛 remove max height from carousel ([5f4b545](https://github.com/Peakfijn/component-library/commit/5f4b545))
+* fixed the header text of the readme ([de0f2d4](https://github.com/Peakfijn/component-library/commit/de0f2d4))
+* implemented noMargin in button ([01ffba3](https://github.com/Peakfijn/component-library/commit/01ffba3))
+* missing default props for border width ([c92f4e4](https://github.com/Peakfijn/component-library/commit/c92f4e4))
+* updated comittizen version ([75f0d6e](https://github.com/Peakfijn/component-library/commit/75f0d6e))
+
+
+### New features
+
+* added no margin property to button to allow modifier combinations ([8e5b496](https://github.com/Peakfijn/component-library/commit/8e5b496))
+* change color and width of separator ([891ed1c](https://github.com/Peakfijn/component-library/commit/891ed1c))
+* disable select options ([d8c1f97](https://github.com/Peakfijn/component-library/commit/d8c1f97))
+
+
+### Other chores
+
+* changed node version package config ([ac5d7ff](https://github.com/Peakfijn/component-library/commit/ac5d7ff))
+* changed the readme to fit github better ([c4ad851](https://github.com/Peakfijn/component-library/commit/c4ad851))
+* returned the validate statement in the readme ([85e48fb](https://github.com/Peakfijn/component-library/commit/85e48fb))
+
 # [1.11.0](https://github.com/Peakfijn/component-library/compare/1.10.2...1.11.0) (2019-05-20)
 
 
