@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/Peakfijn/component-library/compare/1.12.0...1.12.1) (2019-07-18)
+
+
+### Other chores
+
+* fogot to run build ([04a742f](https://github.com/Peakfijn/component-library/commit/04a742f))
+
 # [1.12.0](https://github.com/Peakfijn/component-library/compare/1.11.0...1.12.0) (2019-07-18)
 
 
