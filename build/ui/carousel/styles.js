@@ -11,7 +11,7 @@ var _templateObject = _taggedTemplateLiteral(['\n\tposition: relative;\n\twidth:
     _templateObject4 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\n\t', ';\n'], ['\n\tdisplay: flex;\n\n\t', ';\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n\tposition: relative;\n'], ['\n\tposition: relative;\n']),
     _templateObject6 = _taggedTemplateLiteral(['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n'], ['\n\tbackground-size: cover;\n\tbackground-position: center;\n\tflex-shrink: 0;\n\tflex-grow: 0;\n\theight: 100%;\n\n\t', ';\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n\ttext-align: right;\n'], ['\n\ttext-align: right;\n']);
+    _templateObject7 = _taggedTemplateLiteral(['\n\ttext-align: right;\n\t& > * {\n\t\tmax-height: ', ';\n\t}\n'], ['\n\ttext-align: right;\n\t& > * {\n\t\tmax-height: ', ';\n\t}\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -56,7 +56,9 @@ var CarouselImage = exports.CarouselImage = _styledComponents2.default.img(_temp
 	return showThumbnails ? '\n\t\theight: auto;\n\t\theight: -webkit-fill-available;\n\t\tmax-width: 100%;\n\t\tposition: relative;\n\t\tmax-height: 100%;\n\t\t' + (active && '\n\t\t\toutline: 1px solid ' + theme.color.border.dark + ';\n\t\t' || '') + '\n\t' : '\n\t\tdisplay: block;\n\t';
 });
 
-var ThumbnailWrapper = exports.ThumbnailWrapper = (0, _styledComponents2.default)(_layout.Wrapper)(_templateObject7);
+var ThumbnailWrapper = exports.ThumbnailWrapper = (0, _styledComponents2.default)(_layout.Wrapper)(_templateObject7, function (props) {
+	return props.theme.componentSize.carousel.thumbnailHeight || '120px';
+});
 
 ThumbnailWrapper.defaultProps = _defaultProps2.default;
 CarouselWrapper.defaultProps = _defaultProps2.default;
