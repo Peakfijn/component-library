@@ -21,11 +21,13 @@ const Button = props => {
 		fontSize,
 		borderRadius,
 		className,
+		noMargin,
 	} = props;
 
 	return (
 		<StyledButton
 			type={type}
+			noMargin={noMargin}
 			modifier={modifier}
 			disabled={disabled}
 			loading={loading}
@@ -51,6 +53,7 @@ Button.defaultProps = {
 	disabled: false,
 	loading: false,
 	noPadding: false,
+	noMargin: false,
 	state: null,
 	children: null,
 	width: null,
@@ -71,6 +74,7 @@ Button.propTypes = {
 	disabled: PropTypes.bool,
 	loading: PropTypes.bool,
 	noPadding: PropTypes.bool,
+	noMargin: PropTypes.bool,
 	modifier: PropTypes.string,
 	color: PropTypes.string,
 	text: PropTypes.string,
