@@ -103,6 +103,9 @@ export default {
 				height: '24px',
 			},
 			slider: '16px',
+			carousel: {
+				thumbnailHeight: '120px'
+			}
 		}
 	}
 };

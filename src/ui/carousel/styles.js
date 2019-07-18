@@ -72,6 +72,10 @@ export const CarouselImage = styled.img`
 
 export const ThumbnailWrapper = styled(Wrapper)`
 	text-align: right;
+
+	& > * {
+		max-height: ${props => props.theme.componentSize.carousel.thumbnailHeight || '120px'};
+	}
 `;
 
 ThumbnailWrapper.defaultProps = defaultProps;
