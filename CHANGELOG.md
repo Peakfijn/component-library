@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Peakfijn/component-library/compare/1.12.1...1.13.0) (2019-07-18)
+
+
+### New features
+
+* add a configurable max height on carousal thumbnail ([8c70ee4](https://github.com/Peakfijn/component-library/commit/8c70ee4))
+
 ## [1.12.1](https://github.com/Peakfijn/component-library/compare/1.12.0...1.12.1) (2019-07-18)
 
 
