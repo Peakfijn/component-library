@@ -4,6 +4,7 @@ import borderRadiusModifier from '../../ui/button/modifiers/border-radius';
 import defaultProps from '../../default-props';
 
 export const Box = styled.div`
+	font-size: 12px;
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
@@ -14,6 +15,7 @@ export const Box = styled.div`
 	background-color: ${props => props.theme.color.background.input};
 	border: 1px solid ${props => props.theme.color.border.normal};
 	margin-right: ${props => props.theme.gutter.small};
+	box-sizing: border-box;
 
 	/* States */
 	${stateStyles}
