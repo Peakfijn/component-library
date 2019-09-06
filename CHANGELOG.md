@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/Peakfijn/component-library/compare/1.13.1...1.13.2) (2019-09-06)
+
+
+### Other chores
+
+* forgot to build previous fix ([e305c9e](https://github.com/Peakfijn/component-library/commit/e305c9e))
+
 ## [1.13.1](https://github.com/Peakfijn/component-library/compare/1.13.0...1.13.1) (2019-09-06)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "peakfijn-component-library",
-	"version": "1.13.1",
+	"version": "1.13.2",
 	"main": "build/index.js",
 	"repository": {
 		"type": "git",
