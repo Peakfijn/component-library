@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/Peakfijn/component-library/compare/1.13.0...1.13.1) (2019-09-06)
+
+
+### Bug fixes
+
+* proportions of checkbox ([5ab77de](https://github.com/Peakfijn/component-library/commit/5ab77de))
+
 # [1.13.0](https://github.com/Peakfijn/component-library/compare/1.12.1...1.13.0) (2019-07-18)
 
 
