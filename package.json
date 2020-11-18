@@ -69,7 +69,7 @@
 		"jest-junit": "^5.0.0",
 		"prettier": "^1.14.3",
 		"react-test-renderer": "^16.4.2",
-		"semantic-release": "^15.13.14",
+		"semantic-release": "^17.2.3",
 		"semantic-release-git-branches": "^0.2.0",
 		"stylelint": "^9.5.0",
 		"stylelint-config-concentric-order": "^3.4.0",
